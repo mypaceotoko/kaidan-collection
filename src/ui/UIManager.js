@@ -76,23 +76,40 @@ export class UIManager {
   setBackground(bgId) {
     if (!bgId || bgId === this._currentBg) return;
 
-    // Remove old class
-    if (this._currentBg) {
+    // Remove old CSS class (only when previous bg was a plain name)
+    if (this._currentBg && !this._currentBg.startsWith('.') && !this._currentBg.startsWith('/')) {
       this._bgLayer.classList.remove(`bg-${this._currentBg}`);
     }
 
-    // Is it a file path?
+    this._currentBg = bgId;
+
+    // Explicit file path → use directly
     if (bgId.startsWith('./') || bgId.startsWith('/') || bgId.startsWith('http')) {
-      this._bgLayer.style.backgroundImage = `url('${bgId}')`;
-      this._bgLayer.style.backgroundSize  = 'cover';
-      this._bgLayer.style.backgroundPosition = 'center';
-      this._currentBg = bgId;
-    } else {
-      // CSS class-based background
-      this._bgLayer.style.backgroundImage = '';
-      this._bgLayer.classList.add(`bg-${bgId}`);
-      this._currentBg = bgId;
+      this._applyBgImage(bgId);
+      return;
     }
+
+    // Plain name → try assets/bg/<name>.svg first, then CSS class fallback
+    const svgPath = `./assets/bg/${bgId}.svg`;
+    const probe = new Image();
+    probe.onload  = () => { if (this._currentBg === bgId) this._applyBgImage(svgPath); };
+    probe.onerror = () => {
+      if (this._currentBg === bgId) {
+        this._bgLayer.style.backgroundImage = '';
+        this._bgLayer.classList.add(`bg-${bgId}`);
+      }
+    };
+    probe.src = svgPath;
+
+    // Apply CSS class immediately as a placeholder while the probe loads
+    this._bgLayer.classList.add(`bg-${bgId}`);
+  }
+
+  /** @private */
+  _applyBgImage(url) {
+    this._bgLayer.style.backgroundImage    = `url('${url}')`;
+    this._bgLayer.style.backgroundSize     = 'cover';
+    this._bgLayer.style.backgroundPosition = 'center';
   }
 
   // ── Story header ──────────────────────────────────────────────────────────

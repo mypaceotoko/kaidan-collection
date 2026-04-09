@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!--
+    The window reflection scene.
+    The protagonist's reflection in the window is visible —
+    but the reflection's head is tilted at an unnatural angle.
+  -->
+  <defs>
+    <radialGradient id="void2" cx="50%" cy="42%" r="30%">
+      <stop offset="0%"   stop-color="#000000"/>
+      <stop offset="50%"  stop-color="#01010a"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#04040a"/>
+      <stop offset="100%" stop-color="#08080f"/>
+    </linearGradient>
+    <!-- Window — moonlit outside -->
+    <linearGradient id="nightOutside" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#02031c"/>
+      <stop offset="50%"  stop-color="#01021a"/>
+      <stop offset="100%" stop-color="#010114"/>
+    </linearGradient>
+    <!-- Reflection glow -->
+    <radialGradient id="reflGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%"   stop-color="#06061e" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base dark -->
+  <rect width="1920" height="1080" fill="#030308"/>
+
+  <!-- PLANES: same corridor geometry ──────────────────────────────────── -->
+  <!-- VP = (960, 453) -->
+  <polygon points="0,0     1920,0    960,453" fill="#020205"/>
+  <polygon points="0,0     0,1080    960,453" fill="#07070e"/>
+  <polygon points="1920,0  1920,1080 960,453" fill="#060609"/>
+  <polygon points="0,1080  1920,1080 960,453" fill="url(#floorG)"/>
+  <ellipse cx="960" cy="453" rx="400" ry="210" fill="url(#void2)"/>
+
+  <!-- Floor grid -->
+  <line x1="960" y1="453" x2="0"    y2="1080" stroke="#05050d" stroke-width="1.5"/>
+  <line x1="960" y1="453" x2="480"  y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="960"  y2="1080" stroke="#06060e" stroke-width="2"/>
+  <line x1="960" y1="453" x2="1440" y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="1920" y2="1080" stroke="#05050d" stroke-width="1.5"/>
+  <line x1="0"   y1="865" x2="1920" y2="865"  stroke="#05050c" stroke-width="1"/>
+  <line x1="0"   y1="720" x2="1920" y2="720"  stroke="#04040b" stroke-width="0.8"/>
+  <line x1="50"  y1="610" x2="1870" y2="610"  stroke="#04040a" stroke-width="0.6"/>
+  <line x1="200" y1="540" x2="1720" y2="540"  stroke="#04040a" stroke-width="0.5"/>
+
+  <!-- LEFT: LOCKERS (same as corridor) ────────────────────────────────── -->
+  <rect x="0"   y="110" width="108" height="850" fill="#0a0a14"/>
+  <rect x="4"   y="114" width="98"  height="840" fill="#08080f"/>
+  <rect x="4"   y="114" width="98"  height="277" fill="#07070e"/>
+  <rect x="4"   y="395" width="98"  height="278" fill="#08080f"/>
+  <rect x="4"   y="677" width="98"  height="277" fill="#07070e"/>
+  <rect x="4"   y="391" width="98"  height="4"   fill="#0b0b16"/>
+  <rect x="4"   y="673" width="98"  height="4"   fill="#0b0b16"/>
+  <rect x="94"  y="246" width="8"   height="22"  fill="#14141e" rx="2"/>
+  <rect x="94"  y="528" width="8"   height="22"  fill="#14141e" rx="2"/>
+  <rect x="108" y="190" width="74"  height="740" fill="#09090e"/>
+  <rect x="111" y="193" width="67"  height="733" fill="#07070c"/>
+  <rect x="111" y="193" width="67"  height="242" fill="#06060b"/>
+  <rect x="111" y="439" width="67"  height="244" fill="#07070c"/>
+  <rect x="111" y="687" width="67"  height="239" fill="#06060b"/>
+  <rect x="170" y="312" width="5"   height="16"  fill="#121218" rx="1"/>
+  <rect x="182" y="252" width="55"  height="640" fill="#08080c"/>
+  <rect x="185" y="255" width="49"  height="634" fill="#06060a"/>
+  <rect x="237" y="295" width="42"  height="588" fill="#07070b"/>
+  <rect x="279" y="318" width="32"  height="550" fill="#06060a"/>
+  <rect x="311" y="336" width="26"  height="520" fill="#060609"/>
+  <rect x="337" y="349" width="565" height="486" fill="#040407"/>
+
+  <!-- RIGHT: DOMINANT WINDOW (the key element of this scene) ─────────── -->
+  <!-- The window is large and prominent, showing the dark schoolyard -->
+  <!-- and a reflection that isn't quite right -->
+
+  <!-- Window background (outside view) -->
+  <rect x="1200" y="60"  width="720" height="680" fill="#02031e"/>
+  <rect x="1210" y="70"  width="700" height="660" fill="url(#nightOutside)"/>
+
+  <!-- Moonlit schoolyard outside -->
+  <!-- Ground plane -->
+  <rect x="1210" y="560" width="700" height="170" fill="#020218" opacity="0.7"/>
+  <!-- Distant school fence / wall shapes -->
+  <rect x="1250" y="480" width="8"   height="80"  fill="#01011a" opacity="0.6"/>
+  <rect x="1310" y="470" width="8"   height="90"  fill="#01011a" opacity="0.6"/>
+  <rect x="1370" y="475" width="8"   height="85"  fill="#01011a" opacity="0.5"/>
+  <!-- Connecting fence line -->
+  <rect x="1250" y="478" width="140" height="4"   fill="#02021a" opacity="0.6"/>
+  <!-- Bare tree outside -->
+  <line x1="1650" y1="560" x2="1650" y2="320"    stroke="#010118" stroke-width="5" opacity="0.6"/>
+  <line x1="1650" y1="380" x2="1610" y2="330"    stroke="#010118" stroke-width="2" opacity="0.5"/>
+  <line x1="1650" y1="340" x2="1690" y2="295"    stroke="#010118" stroke-width="2" opacity="0.5"/>
+  <line x1="1650" y1="360" x2="1620" y2="310"    stroke="#010118" stroke-width="1.5" opacity="0.4"/>
+  <!-- Moon in upper right of window -->
+  <circle cx="1820" cy="110" r="26"  fill="#04041e"/>
+  <circle cx="1820" cy="110" r="20"  fill="#05051c"/>
+  <!-- Faint moonbeam on outside ground -->
+  <ellipse cx="1560" cy="600" rx="120" ry="30"   fill="#03041e" opacity="0.4"/>
+
+  <!-- Window frame -->
+  <rect x="1200" y="60"  width="8"   height="680" fill="#0e0e18"/>
+  <rect x="1912" y="60"  width="8"   height="680" fill="#0e0e18"/>
+  <rect x="1200" y="60"  width="720" height="8"   fill="#0e0e18"/>
+  <rect x="1200" y="732" width="720" height="8"   fill="#0e0e18"/>
+  <!-- Horizontal crossbar -->
+  <rect x="1200" y="394" width="720" height="5"   fill="#0c0c16"/>
+  <!-- Vertical crossbar -->
+  <rect x="1558" y="60"  width="5"   height="680" fill="#0c0c16"/>
+
+  <!-- Window sill -->
+  <rect x="1190" y="732" width="730" height="22"  fill="#10101a"/>
+  <rect x="1190" y="738" width="730" height="10"  fill="#12121e"/>
+
+  <!-- ── THE REFLECTION ────────────────────────────────────────────────── -->
+  <!--
+    The reflection in the window shows a figure.
+    But when you look closely: the head is tilted to the LEFT
+    at an angle the viewer is NOT tilting theirs.
+    The viewer is standing still. The reflection is... wrong.
+  -->
+  <!-- Reflection aura glow (makes it slightly visible) -->
+  <ellipse cx="1558" cy="390" rx="55" ry="120" fill="url(#reflGlow)"/>
+
+  <!-- Reflection body (slightly translucent dark shape) -->
+  <!-- Head — tilted LEFT about 30 degrees -->
+  <!-- Normal head would be at 1558, 290 with no tilt -->
+  <!-- Tilted: the head top is shifted left, chin right -->
+  <!-- Simulated by a rotated ellipse (SVG transform) -->
+  <g transform="translate(1558, 300) rotate(-28)">
+    <ellipse cx="0" cy="0" rx="18" ry="21" fill="#030318" opacity="0.75"/>
+  </g>
+  <!-- Neck -->
+  <rect x="1551" y="316" width="14" height="16"  fill="#030318" opacity="0.7"/>
+  <!-- Shoulders -->
+  <rect x="1528" y="330" width="60" height="14"  fill="#030318" opacity="0.68"/>
+  <!-- Body -->
+  <rect x="1538" y="342" width="40" height="80"  fill="#030318" opacity="0.65" rx="2"/>
+  <!-- Arms (hanging) -->
+  <rect x="1524" y="348" width="13" height="65"  fill="#030316" opacity="0.6"/>
+  <rect x="1581" y="348" width="13" height="65"  fill="#030316" opacity="0.6"/>
+  <!-- Legs -->
+  <rect x="1538" y="422" width="15" height="70"  fill="#030318" opacity="0.55"/>
+  <rect x="1556" y="422" width="15" height="70"  fill="#030318" opacity="0.55"/>
+
+  <!-- Reflection shimmer (thin horizontal lines across window, like glass) -->
+  <rect x="1210" y="160" width="700" height="1"  fill="#05051e" opacity="0.3"/>
+  <rect x="1210" y="280" width="700" height="1"  fill="#04041c" opacity="0.25"/>
+  <rect x="1210" y="420" width="700" height="1"  fill="#05051e" opacity="0.3"/>
+  <rect x="1210" y="560" width="700" height="1"  fill="#04041c" opacity="0.2"/>
+  <rect x="1210" y="650" width="700" height="1"  fill="#04041c" opacity="0.2"/>
+
+  <!-- Small second window in distance -->
+  <rect x="1060" y="330" width="140" height="170" fill="#01021a"/>
+  <rect x="1063" y="333" width="134" height="164" fill="#01011a"/>
+  <rect x="1060" y="330" width="3"   height="170" fill="#09090e"/>
+  <rect x="1197" y="330" width="3"   height="170" fill="#09090e"/>
+  <rect x="1060" y="330" width="140" height="3"   fill="#09090e"/>
+  <rect x="1060" y="497" width="140" height="3"   fill="#09090e"/>
+
+  <!-- Ceiling light -->
+  <rect x="815"  y="55"  width="290" height="20"  fill="#141420" rx="2"/>
+  <rect x="820"  y="58"  width="280" height="12"  fill="#1a1a2c" rx="1"/>
+  <ellipse cx="960" cy="65"  rx="290" ry="78"  fill="#0d0d1c" opacity="0.5"/>
+
+  <rect x="884"  y="196" width="152" height="13"  fill="#101018" rx="1"/>
+  <ellipse cx="960" cy="202" rx="175" ry="44"  fill="#0a0a16" opacity="0.4"/>
+
+  <!-- Ceiling wires -->
+  <line x1="815"  y1="0"   x2="815"  y2="55"  stroke="#07070e" stroke-width="1.5"/>
+  <line x1="1105" y1="0"   x2="1105" y2="55"  stroke="#07070e" stroke-width="1.5"/>
+
+  <!-- Floor reflection of window light -->
+  <polygon points="1200,732 1920,732 1920,1080 800,1080"
+           fill="#03031a" opacity="0.18"/>
+
+  <!-- Overall darkness -->
+  <rect width="1920" height="1080" fill="#000004" opacity="0.22"/>
+</svg>

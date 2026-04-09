@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!--
+    School gate at night.
+    Looking from the street toward the gate.
+    School building is visible dark in the background.
+    A lamp post casts an amber pool of light.
+    This is the "escape" scene — and the "seen something" ending.
+  -->
+  <defs>
+    <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#010109"/>
+      <stop offset="40%"  stop-color="#020212"/>
+      <stop offset="75%"  stop-color="#050310"/>
+      <stop offset="100%" stop-color="#080408"/>
+    </linearGradient>
+    <!-- Lamp post amber glow -->
+    <radialGradient id="lampGlow" cx="50%" cy="15%" r="85%">
+      <stop offset="0%"   stop-color="#1e1006" stop-opacity="0.7"/>
+      <stop offset="40%"  stop-color="#12090400" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <!-- Ground -->
+    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#050404"/>
+      <stop offset="100%" stop-color="#020202"/>
+    </linearGradient>
+    <!-- Moon glow -->
+    <radialGradient id="moonG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#10101e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyG)"/>
+
+  <!-- Stars -->
+  <circle cx="240"  cy="60"  r="1.2" fill="#0d0d1e" opacity="0.6"/>
+  <circle cx="420"  cy="95"  r="1.0" fill="#0c0c1c" opacity="0.5"/>
+  <circle cx="620"  cy="45"  r="1.4" fill="#0e0e20" opacity="0.6"/>
+  <circle cx="780"  cy="130" r="1.0" fill="#0c0c1e" opacity="0.4"/>
+  <circle cx="1050" cy="55"  r="1.2" fill="#0d0d1e" opacity="0.55"/>
+  <circle cx="1260" cy="90"  r="1.0" fill="#0c0c1c" opacity="0.5"/>
+  <circle cx="1440" cy="40"  r="1.4" fill="#0e0e20" opacity="0.6"/>
+  <circle cx="1680" cy="120" r="1.0" fill="#0c0c1e" opacity="0.4"/>
+  <circle cx="1800" cy="65"  r="1.2" fill="#0d0d1e" opacity="0.55"/>
+  <circle cx="900"  cy="170" r="0.9" fill="#0c0c1e" opacity="0.4"/>
+
+  <!-- Moon -->
+  <ellipse cx="1500" cy="200" rx="180" ry="130" fill="url(#moonG)"/>
+  <circle  cx="1500" cy="200" r="30"   fill="#0d0d22"/>
+  <circle  cx="1500" cy="200" r="24"   fill="#0f0f25"/>
+  <!-- Thin clouds crossing moon -->
+  <ellipse cx="1400" cy="215" rx="140" ry="30"  fill="#06060e" opacity="0.8"/>
+  <ellipse cx="1580" cy="198" rx="120" ry="25"  fill="#05050d" opacity="0.85"/>
+
+  <!-- Ground / road -->
+  <rect x="0" y="780" width="1920" height="300" fill="url(#groundG)"/>
+  <!-- Pavement seam -->
+  <rect x="0" y="778" width="1920" height="5"   fill="#030302"/>
+  <!-- Road markings (faint) -->
+  <rect x="880" y="820" width="160" height="6"  fill="#060604" opacity="0.5"/>
+  <rect x="880" y="860" width="160" height="6"  fill="#060604" opacity="0.4"/>
+  <rect x="880" y="900" width="160" height="6"  fill="#060604" opacity="0.3"/>
+
+  <!-- ── SCHOOL BUILDING (dark, background) ────────────────────────────── -->
+  <!-- Main block -->
+  <rect x="160"  y="250" width="1600" height="530" fill="#030307"/>
+  <!-- Floor lines -->
+  <rect x="160"  y="425" width="1600" height="4"   fill="#020206"/>
+  <rect x="160"  y="600" width="1600" height="4"   fill="#020205"/>
+  <!-- Roof -->
+  <rect x="140"  y="234" width="1640" height="20"  fill="#02020a"/>
+  <rect x="120"  y="222" width="1680" height="15"  fill="#020208"/>
+  <!-- Corner columns -->
+  <rect x="160"  y="250" width="22"   height="530" fill="#020207"/>
+  <rect x="1738" y="250" width="22"   height="530" fill="#020207"/>
+
+  <!-- Windows (all dark) -->
+  <!-- 3rd floor -->
+  <rect x="290"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="420"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="550"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="680"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="810"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="940"  y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="1070" y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="1200" y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="1330" y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="1460" y="275" width="65"  height="110" fill="#020206"/>
+  <rect x="1590" y="275" width="65"  height="110" fill="#020206"/>
+  <!-- ONE lit window — 3rd floor center-left -->
+  <!-- This is the window where something will be standing in END A -->
+  <rect x="680" y="275" width="65" height="110" fill="#0a0804"/>
+  <rect x="683" y="278" width="59" height="104" fill="#090703"/>
+  <!-- The FIGURE in the window (END A: 影) — faint silhouette -->
+  <!-- Standing in center of the lit window -->
+  <ellipse cx="712" cy="304" rx="10" ry="11" fill="#030202"/>
+  <rect    x="706" y="313" width="12" height="40" fill="#030202"/>
+  <rect    x="700" y="316" width="8"  height="24" fill="#030202"/>
+  <rect    x="718" y="316" width="8"  height="24" fill="#030202"/>
+  <!-- Amber glow around the lit window -->
+  <ellipse cx="712" cy="330" rx="55" ry="70" fill="#12090200" opacity="0.3"/>
+
+  <!-- 2nd floor windows (all dark) -->
+  <rect x="290"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="420"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="550"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="680"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="810"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="940"  y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="1200" y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="1330" y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="1460" y="450" width="65"  height="108" fill="#020205"/>
+  <rect x="1590" y="450" width="65"  height="108" fill="#020205"/>
+
+  <!-- 1st floor windows -->
+  <rect x="290"  y="622" width="65"  height="100" fill="#020205"/>
+  <rect x="420"  y="622" width="65"  height="100" fill="#020205"/>
+  <rect x="550"  y="622" width="65"  height="100" fill="#020205"/>
+  <rect x="1330" y="622" width="65"  height="100" fill="#020205"/>
+  <rect x="1460" y="622" width="65"  height="100" fill="#020205"/>
+  <rect x="1590" y="622" width="65"  height="100" fill="#020205"/>
+
+  <!-- Entrance -->
+  <rect x="878" y="622" width="164" height="158" fill="#010104"/>
+
+  <!-- Trees on school grounds -->
+  <path d="M 260,780 L 300,490 L 340,780 Z" fill="#020204"/>
+  <path d="M 285,780 L 318,560 L 355,780 Z" fill="#030305"/>
+  <rect x="297"  y="720" width="8"  height="60"  fill="#030304"/>
+
+  <path d="M 1560,780 L 1600,500 L 1640,780 Z" fill="#020204"/>
+  <path d="M 1595,780 L 1625,570 L 1660,780 Z" fill="#030305"/>
+  <rect x="1608" y="725" width="8"  height="55"  fill="#030304"/>
+
+  <!-- ── SCHOOL GATE ─────────────────────────────────────────────────── -->
+  <!-- Left gate pillar -->
+  <rect x="580" y="588" width="52"  height="192" fill="#080810"/>
+  <rect x="574" y="580" width="64"  height="16"  fill="#0a0a14"/><!-- cap -->
+  <rect x="568" y="572" width="76"  height="12"  fill="#0c0c16"/><!-- cap top -->
+
+  <!-- Right gate pillar -->
+  <rect x="1288" y="588" width="52"  height="192" fill="#080810"/>
+  <rect x="1282" y="580" width="64"  height="16"  fill="#0a0a14"/>
+  <rect x="1276" y="572" width="76"  height="12"  fill="#0c0c16"/>
+
+  <!-- Gate fence (iron bars) -->
+  <!-- Left half of gate -->
+  <rect x="632" y="608" width="328" height="8"   fill="#07070e"/><!-- top bar -->
+  <rect x="632" y="700" width="328" height="6"   fill="#07070e"/><!-- mid bar -->
+  <rect x="632" y="760" width="328" height="6"   fill="#06060c"/><!-- low bar -->
+  <!-- Iron verticals (left gate) -->
+  <rect x="640"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="668"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="696"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="724"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="752"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="780"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="808"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="836"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="864"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="892"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="920"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="948"  y="608" width="5"  height="160" fill="#070710"/>
+
+  <!-- Right half of gate -->
+  <rect x="960"  y="608" width="328" height="8"  fill="#07070e"/>
+  <rect x="960"  y="700" width="328" height="6"  fill="#07070e"/>
+  <rect x="960"  y="760" width="328" height="6"  fill="#06060c"/>
+  <rect x="968"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="996"  y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1024" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1052" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1080" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1108" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1136" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1164" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1192" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1220" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1248" y="608" width="5"  height="160" fill="#070710"/>
+  <rect x="1276" y="608" width="5"  height="160" fill="#070710"/>
+
+  <!-- Spear tops on gate verticals (pointed) -->
+  <polygon points="642,600 647,608 652,600" fill="#090912"/>
+  <polygon points="670,600 675,608 680,600" fill="#090912"/>
+  <polygon points="698,600 703,608 708,600" fill="#090912"/>
+  <polygon points="726,600 731,608 736,600" fill="#090912"/>
+  <polygon points="754,600 759,608 764,600" fill="#090912"/>
+  <polygon points="782,600 787,608 792,600" fill="#090912"/>
+
+  <!-- Low boundary walls flanking gate -->
+  <rect x="0"    y="680" width="580" height="100" fill="#060608"/>
+  <rect x="1340" y="680" width="580" height="100" fill="#060608"/>
+  <!-- Wall top cap -->
+  <rect x="0"    y="673" width="580" height="10"  fill="#08080c"/>
+  <rect x="1340" y="673" width="580" height="10"  fill="#08080c"/>
+
+  <!-- ── LAMP POST (right side of gate, warm amber) ────────────────────── -->
+  <rect x="1352" y="390" width="8"   height="390" fill="#0a0a0e"/><!-- pole -->
+  <rect x="1352" y="387" width="8"   height="6"   fill="#0c0c12"/><!-- joint -->
+  <!-- Arm extending left -->
+  <rect x="1310" y="387" width="48"  height="6"   fill="#0a0a0e"/>
+  <!-- Lamp fixture -->
+  <rect x="1290" y="362" width="28"  height="30"  fill="#0e0e14"/>
+  <rect x="1294" y="366" width="20"  height="22"  fill="#1a1208"/><!-- warm bulb -->
+  <polygon points="1284,392 1324,392 1318,406 1290,406" fill="#0c0c10"/><!-- shade -->
+
+  <!-- Lamp glow (amber) -->
+  <ellipse cx="1304" cy="386" rx="220" ry="260" fill="url(#lampGlow)"/>
+  <!-- Pool of light on ground -->
+  <ellipse cx="1310" cy="810" rx="160" ry="50"  fill="#120b02" opacity="0.4"/>
+  <ellipse cx="1310" cy="820" rx="90"  ry="28"  fill="#160d03" opacity="0.35"/>
+
+  <!-- Darkness vignette -->
+  <rect width="1920" height="1080" fill="#000004" opacity="0.28"/>
+</svg>

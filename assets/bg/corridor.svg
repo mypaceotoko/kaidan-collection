@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <!-- Deep void at vanishing point -->
+    <radialGradient id="void" cx="50%" cy="42%" r="32%">
+      <stop offset="0%"   stop-color="#000000"/>
+      <stop offset="45%"  stop-color="#01010a"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#04040a"/>
+      <stop offset="100%" stop-color="#09090f"/>
+    </linearGradient>
+    <!-- Cold window moonlight -->
+    <linearGradient id="moonW" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#04051a"/>
+      <stop offset="100%" stop-color="#020210"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1920" height="1080" fill="#030308"/>
+
+  <!-- PLANES ────────────────────────────────────────────────────────────── -->
+  <!-- VP = (960, 453) -->
+  <polygon points="0,0     1920,0    960,453" fill="#020205"/><!-- ceiling -->
+  <polygon points="0,0     0,1080    960,453" fill="#07070e"/><!-- left wall -->
+  <polygon points="1920,0  1920,1080 960,453" fill="#060609"/><!-- right wall -->
+  <polygon points="0,1080  1920,1080 960,453" fill="url(#floorG)"/><!-- floor -->
+
+  <!-- Void at center -->
+  <ellipse cx="960" cy="453" rx="420" ry="220" fill="url(#void)"/>
+
+  <!-- FLOOR PERSPECTIVE GRID ───────────────────────────────────────────── -->
+  <!-- Radial from VP -->
+  <line x1="960" y1="453" x2="0"    y2="1080" stroke="#05050d" stroke-width="1.5"/>
+  <line x1="960" y1="453" x2="384"  y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="768"  y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="960"  y2="1080" stroke="#06060e" stroke-width="2"/>
+  <line x1="960" y1="453" x2="1152" y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="1536" y2="1080" stroke="#04040b" stroke-width="1"/>
+  <line x1="960" y1="453" x2="1920" y2="1080" stroke="#05050d" stroke-width="1.5"/>
+  <!-- Horizontal depth marks -->
+  <line x1="0"   y1="865" x2="1920" y2="865"  stroke="#06060d" stroke-width="1.2"/>
+  <line x1="0"   y1="720" x2="1920" y2="720"  stroke="#05050c" stroke-width="0.9"/>
+  <line x1="30"  y1="608" x2="1890" y2="608"  stroke="#04040a" stroke-width="0.7"/>
+  <line x1="140" y1="540" x2="1780" y2="540"  stroke="#04040a" stroke-width="0.6"/>
+  <line x1="320" y1="500" x2="1600" y2="500"  stroke="#03030a" stroke-width="0.5"/>
+  <line x1="500" y1="475" x2="1420" y2="475"  stroke="#03030a" stroke-width="0.4"/>
+
+  <!-- LEFT WALL: LOCKERS ──────────────────────────────────────────────── -->
+  <!-- L1 – very close, tall -->
+  <rect x="0"   y="110" width="108" height="850" fill="#0a0a14"/>
+  <rect x="4"   y="114" width="98"  height="840" fill="#08080f"/>
+  <rect x="4"   y="114" width="98"  height="277" fill="#07070e"/>
+  <rect x="4"   y="395" width="98"  height="278" fill="#08080f"/>
+  <rect x="4"   y="677" width="98"  height="277" fill="#07070e"/>
+  <rect x="4"   y="391" width="98"  height="4"   fill="#0b0b16"/>
+  <rect x="4"   y="673" width="98"  height="4"   fill="#0b0b16"/>
+  <rect x="94"  y="246" width="8"   height="22"  fill="#14141e" rx="2"/>
+  <rect x="94"  y="528" width="8"   height="22"  fill="#14141e" rx="2"/>
+  <rect x="94"  y="810" width="8"   height="22"  fill="#14141e" rx="2"/>
+
+  <!-- L2 -->
+  <rect x="108" y="190" width="74"  height="740" fill="#09090e"/>
+  <rect x="111" y="193" width="67"  height="733" fill="#07070c"/>
+  <rect x="111" y="193" width="67"  height="242" fill="#06060b"/>
+  <rect x="111" y="439" width="67"  height="244" fill="#07070c"/>
+  <rect x="111" y="687" width="67"  height="239" fill="#06060b"/>
+  <rect x="111" y="435" width="67"  height="4"   fill="#09090e"/>
+  <rect x="111" y="683" width="67"  height="4"   fill="#09090e"/>
+  <rect x="170" y="312" width="5"   height="16"  fill="#121218" rx="1"/>
+  <rect x="170" y="556" width="5"   height="16"  fill="#121218" rx="1"/>
+
+  <!-- L3 -->
+  <rect x="182" y="252" width="55"  height="640" fill="#08080c"/>
+  <rect x="185" y="255" width="49"  height="634" fill="#06060a"/>
+  <rect x="185" y="255" width="49"  height="210" fill="#05050a"/>
+  <rect x="185" y="469" width="49"  height="212" fill="#06060a"/>
+  <rect x="185" y="685" width="49"  height="204" fill="#05050a"/>
+  <rect x="185" y="465" width="49"  height="4"   fill="#08080c"/>
+  <rect x="185" y="681" width="49"  height="4"   fill="#08080c"/>
+  <rect x="228" y="358" width="4"   height="13"  fill="#0f0f14" rx="1"/>
+
+  <!-- L4–∞: decreasing size toward VP -->
+  <rect x="237" y="295" width="42"  height="588" fill="#07070b"/>
+  <rect x="279" y="318" width="32"  height="550" fill="#06060a"/>
+  <rect x="311" y="336" width="26"  height="520" fill="#060609"/>
+  <rect x="337" y="349" width="20"  height="496" fill="#050509"/>
+  <rect x="357" y="360" width="16"  height="474" fill="#050509"/>
+  <rect x="373" y="368" width="12"  height="455" fill="#040408"/>
+  <rect x="385" y="374" width="9"   height="440" fill="#040407"/>
+  <rect x="394" y="378" width="566" height="430" fill="#030306"/>
+
+  <!-- RIGHT WALL: WINDOWS ─────────────────────────────────────────────── -->
+  <!-- W1 close – large -->
+  <rect x="1476" y="155" width="444" height="464" fill="#030312"/>
+  <rect x="1484" y="163" width="428" height="448" fill="url(#moonW)"/>
+  <!-- Frame -->
+  <rect x="1476" y="155" width="6"   height="464" fill="#0c0c16"/>
+  <rect x="1914" y="155" width="6"   height="464" fill="#0c0c16"/>
+  <rect x="1476" y="155" width="444" height="6"   fill="#0c0c16"/>
+  <rect x="1476" y="613" width="444" height="6"   fill="#0c0c16"/>
+  <rect x="1476" y="380" width="444" height="4"   fill="#0a0a12"/>
+  <rect x="1698" y="155" width="4"   height="464" fill="#0a0a12"/>
+  <!-- Night scene visible outside: faint school building/trees -->
+  <rect x="1530" y="400" width="180" height="210" fill="#01010e" opacity="0.6"/>
+  <path d="M1530,400 L1580,280 L1630,400Z" fill="#010110" opacity="0.5"/>
+  <path d="M1680,380 L1720,280 L1760,380Z" fill="#010110" opacity="0.4"/>
+  <!-- Ground plane outside -->
+  <rect x="1484" y="540" width="428" height="71"  fill="#020212" opacity="0.5"/>
+
+  <!-- W2 mid -->
+  <rect x="1260" y="268" width="216" height="260" fill="#020210"/>
+  <rect x="1266" y="274" width="204" height="248" fill="#01010e"/>
+  <rect x="1260" y="268" width="4"   height="260" fill="#09090e"/>
+  <rect x="1472" y="268" width="4"   height="260" fill="#09090e"/>
+  <rect x="1260" y="268" width="216" height="4"   fill="#09090e"/>
+  <rect x="1260" y="524" width="216" height="4"   fill="#09090e"/>
+
+  <!-- W3 far -->
+  <rect x="1136" y="354" width="124" height="168" fill="#01010e"/>
+  <rect x="1139" y="357" width="118" height="162" fill="#01010c"/>
+
+  <!-- W4 very far -->
+  <rect x="1063" y="400" width="73"  height="108" fill="#01010a"/>
+
+  <!-- CEILING LIGHT FIXTURES ──────────────────────────────────────────── -->
+  <!-- Close -->
+  <rect x="812"  y="55"  width="296" height="22"  fill="#161624" rx="2"/>
+  <rect x="817"  y="59"  width="286" height="14"  fill="#1e1e30" rx="1"/>
+  <ellipse cx="960" cy="66"  rx="310" ry="85"  fill="#0e0e1e" opacity="0.55"/>
+  <ellipse cx="960" cy="66"  rx="150" ry="42"  fill="#12121e" opacity="0.45"/>
+  <!-- Broken section (one panel dark/flickering) -->
+  <rect x="900"  y="59"  width="70"  height="14"  fill="#0d0d1a" rx="1"/>
+
+  <!-- Mid -->
+  <rect x="882"  y="196" width="156" height="14"  fill="#111120" rx="1"/>
+  <rect x="886"  y="199" width="148" height="8"   fill="#161628" rx="1"/>
+  <ellipse cx="960" cy="203" rx="185" ry="48"  fill="#0b0b18" opacity="0.45"/>
+
+  <!-- Far -->
+  <rect x="912"  y="308" width="96"  height="10"  fill="#0d0d1a" rx="1"/>
+  <ellipse cx="960" cy="313" rx="112" ry="30"  fill="#09091a" opacity="0.35"/>
+
+  <!-- Very far -->
+  <rect x="932"  y="383" width="56"  height="7"   fill="#0b0b16" rx="1"/>
+  <ellipse cx="960" cy="387" rx="68"  ry="20"  fill="#08081a" opacity="0.25"/>
+
+  <!-- Ceiling fixture wires -->
+  <line x1="812"  y1="0"   x2="812"  y2="55"  stroke="#07070e" stroke-width="2"/>
+  <line x1="1108" y1="0"   x2="1108" y2="55"  stroke="#07070e" stroke-width="2"/>
+  <line x1="882"  y1="55"  x2="882"  y2="196" stroke="#06060c" stroke-width="1.2"/>
+  <line x1="1038" y1="55"  x2="1038" y2="196" stroke="#06060c" stroke-width="1.2"/>
+  <line x1="912"  y1="196" x2="912"  y2="308" stroke="#05050a" stroke-width="0.8"/>
+  <line x1="1008" y1="196" x2="1008" y2="308" stroke="#05050a" stroke-width="0.8"/>
+
+  <!-- ── SHADOW FIGURE at vanishing point ──────────────────────────────── -->
+  <!-- This is the source of all dread: barely-visible silhouette -->
+  <!-- Faint body aura -->
+  <ellipse cx="960" cy="424" rx="28" ry="52" fill="#02021a" opacity="0.7"/>
+  <!-- Head -->
+  <ellipse cx="960" cy="384" rx="13" ry="15" fill="#010112" opacity="0.85"/>
+  <!-- Neck + body -->
+  <rect    x="954" y="397" width="12" height="10"  fill="#01010f" opacity="0.8"/>
+  <rect    x="950" y="405" width="20" height="36"  fill="#010110" opacity="0.75" rx="1"/>
+  <!-- Arms hanging at sides -->
+  <rect    x="938" y="412" width="10" height="30"  fill="#01010d" opacity="0.6"/>
+  <rect    x="972" y="412" width="10" height="30"  fill="#01010d" opacity="0.6"/>
+  <!-- Legs -->
+  <rect    x="952" y="440" width="7"  height="22"  fill="#01010e" opacity="0.55"/>
+  <rect    x="962" y="440" width="7"  height="22"  fill="#01010e" opacity="0.55"/>
+
+  <!-- Overall darkness vignette -->
+  <rect width="1920" height="1080" fill="#000004" opacity="0.22"/>
+</svg>

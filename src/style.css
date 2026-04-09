@@ -368,6 +368,8 @@ button:focus-visible {
 }
 
 .bg-layer {
+  background-size:     cover;
+  background-position: center;
   position: absolute;
   inset: 0;
   transition: background 1.2s ease;
