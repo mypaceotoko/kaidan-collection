@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>怪談コレクション</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+  <!-- ============ Title Screen ============ -->
+  <div id="screen-title" class="screen active">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="title-bg" aria-hidden="true"></div>
+    <div class="title-content">
+      <div class="title-logo" aria-label="怪談コレクション">
+        <span class="title-kanji">怪</span>
+        <span class="title-kanji">談</span>
+      </div>
+      <div class="title-subtitle-text">コレクション</div>
+      <p class="title-flavor">―― 読み始めたら、最後まで読んでください。</p>
+      <div class="title-buttons">
+        <button id="btn-start" class="btn-main">は じ め る</button>
+        <button id="btn-continue" class="btn-sub hidden">つ づ き か ら</button>
+      </div>
+      <p class="title-version">v1.0</p>
+    </div>
+  </div>
+
+  <!-- ============ Story Select Screen ============ -->
+  <div id="screen-select" class="screen">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="select-wrapper">
+      <div class="select-header">
+        <h2 class="select-title">― 怪 談 一 覧 ―</h2>
+        <p class="select-desc">物語を選んでください</p>
+      </div>
+      <div id="story-list" class="story-list"></div>
+      <div class="select-footer">
+        <button id="btn-back-title" class="btn-sub">タイトルへ戻る</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Game Screen ============ -->
+  <div id="screen-game" class="screen">
+
+    <!-- Scene background (CSS-generated) -->
+    <div id="bg-layer" class="bg-layer" aria-hidden="true"></div>
+
+    <!-- Visual effects overlay -->
+    <div id="effect-layer" class="effect-layer" aria-hidden="true"></div>
+
+    <!-- CRT scanlines -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Game UI -->
+    <div id="game-ui" class="game-ui">
+
+      <!-- Chapter title banner (shown at start of story) -->
+      <div id="story-header" class="story-header hidden" aria-live="polite">
+        <span id="story-chapter-display" class="story-chapter"></span>
+        <span id="story-title-display" class="story-title-display"></span>
+      </div>
+
+      <!-- Main text area — click/tap here to advance -->
+      <div id="text-area" class="text-area" role="main" aria-live="polite" tabindex="0">
+        <div id="text-box" class="text-box">
+          <p id="text-content" class="text-content"></p>
+          <span id="next-indicator" class="next-indicator" aria-hidden="true">▼</span>
+        </div>
+      </div>
+
+      <!-- Choice buttons -->
+      <div id="choice-area" class="choice-area hidden" aria-live="polite">
+        <div id="choice-buttons" class="choice-buttons"></div>
+      </div>
+
+    </div><!-- /.game-ui -->
+
+    <!-- Top-right game menu bar -->
+    <div id="game-menu" class="game-menu" role="toolbar" aria-label="ゲームメニュー">
+      <button id="btn-auto" class="menu-btn" title="自動送り (AUTO)">AUTO</button>
+      <button id="btn-skip" class="menu-btn" title="スキップ">SKIP</button>
+      <button id="btn-menu" class="menu-btn" title="メニューを開く">MENU</button>
+    </div>
+
+    <!-- Menu overlay (pause menu) -->
+    <div id="menu-overlay" class="menu-overlay hidden" role="dialog" aria-modal="true" aria-label="メニュー">
+      <div class="menu-panel">
+        <h3 class="menu-title">― メニュー ―</h3>
+        <button id="btn-save"  class="menu-item-btn">セーブ</button>
+        <button id="btn-load"  class="menu-item-btn">ロード</button>
+        <div class="menu-divider"></div>
+        <button id="btn-title" class="menu-item-btn">タイトルへ戻る</button>
+        <button id="btn-close-menu" class="menu-item-btn secondary">閉じる</button>
+      </div>
+    </div>
+
+    <!-- Ending screen overlay -->
+    <div id="ending-screen" class="ending-screen hidden" role="dialog" aria-modal="true" aria-label="エンディング">
+      <div class="ending-content">
+        <div class="ending-decoration" aria-hidden="true">―――――――――</div>
+        <div class="ending-label"></div>
+        <div class="ending-decoration" aria-hidden="true">―――――――――</div>
+        <div class="ending-buttons">
+          <button id="btn-replay"   class="btn-ending">もう一度</button>
+          <button id="btn-to-title" class="btn-ending">タイトルへ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast notification for save/load -->
+    <div id="save-notification" class="save-notification hidden" role="status" aria-live="polite"></div>
+
+  </div><!-- /#screen-game -->
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

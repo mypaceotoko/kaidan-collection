@@ -1,0 +1,313 @@
+{
+  "id":       "chapter1",
+  "title":    "放課後の教室",
+  "subtitle": "忘れ物",
+
+  "scenes": [
+
+    {
+      "id":   "s01",
+      "bg":   "dusk_school",
+      "bgm":  "ambient_silence",
+      "text": "七月。\n\n学期末試験の最終日。",
+      "next": "s02"
+    },
+
+    {
+      "id":   "s02",
+      "text": "クラスメイトたちは笑い合いながら校門を出ていった。\n私も一緒に帰るはずだった。",
+      "next": "s03"
+    },
+
+    {
+      "id":   "s03",
+      "text": "バスを待つ列に並んで、ようやく気づいた。\n\n——ノートが、ない。",
+      "se":   "paper_rustle",
+      "next": "s04"
+    },
+
+    {
+      "id":   "s04",
+      "text": "明日の補習に必要なノートだ。\n取りに戻らなければ。\n\nため息をついて、私は来た道を引き返した。",
+      "next": "s05"
+    },
+
+    {
+      "id":   "s05",
+      "bg":   "school_entrance",
+      "bgm":  "ambient_dark",
+      "text": "校舎に入ると、廊下は静まり返っていた。\n\nもう先生も帰ったのだろう。\n電灯が、ひとつだけ薄く点滅している。",
+      "se":   "light_flicker",
+      "effects": [{ "type": "flicker" }],
+      "next": "s06"
+    },
+
+    {
+      "id":   "s06",
+      "bg":   "corridor",
+      "text": "三階まで上がらなければならない。\n\n階段を踏みしめるたびに、自分の足音だけが大きく響いた。\n\n……やけに、大きく聞こえる。",
+      "next": "s07"
+    },
+
+    {
+      "id":   "s07",
+      "bg":   "classroom",
+      "text": "三階。三年二組。\n\n戸を引くと、しんとした空気が流れ出てきた。\n\n黒板の前に——椅子が、ひとつ。\n誰かが忘れていったのか、机から離れてぽつんと置かれていた。",
+      "next": "s08"
+    },
+
+    {
+      "id":   "s08",
+      "text": "窓の外は、もう夕闇に染まっていた。\n\n急いで自分の席に向かい、引き出しを探る。\n\n——あった。ノートだ。",
+      "next": "s09"
+    },
+
+    {
+      "id":   "s09",
+      "text": "ほっとして、ノートをカバンに入れた。\n立ち上がろうとした——その瞬間。\n\n廊下から、足音が聞こえた。",
+      "se":   "footstep_slow",
+      "next": "s10"
+    },
+
+    {
+      "id":   "s10",
+      "text": "こつ、こつ、こつ。\n\n一定のリズムで、近づいてくる。\n\nこの時間に、まだ誰かいるのだろうか。",
+      "se":   "footstep_slow",
+      "next": "s11"
+    },
+
+    {
+      "id":   "s11",
+      "text": "足音は、教室の前で——止まった。\n\n……。\n\n戸が、ゆっくりと開く音がした。",
+      "se":   "door_creak",
+      "effects": [{ "type": "shake" }],
+      "next": "choice1"
+    },
+
+    {
+      "id":   "choice1",
+      "text": "私は——",
+      "choices": [
+        { "label": "振り返った",      "next": "a01" },
+        { "label": "振り返らなかった", "next": "b01" }
+      ]
+    },
+
+
+    {
+      "id":   "a01",
+      "bg":   "classroom",
+      "bgm":  "tension_a",
+      "text": "ゆっくりと、振り返った。\n\n——誰も、いない。",
+      "next": "a02"
+    },
+
+    {
+      "id":   "a02",
+      "text": "戸は半開きのまま揺れていた。\n\n廊下の奥まで目を凝らしたが、人の姿はなかった。\n\n……空気が動いて、開いただけかもしれない。",
+      "next": "a03"
+    },
+
+    {
+      "id":   "a03",
+      "bg":   "corridor",
+      "text": "早く帰ろうと思い、廊下に出た。\n\nそのとき、右手の窓ガラスに\n自分の姿が映っていることに気がついた。",
+      "next": "a04"
+    },
+
+    {
+      "id":   "a04",
+      "bg":   "corridor_window",
+      "text": "夜の校庭を背に、窓ガラスに映る自分と目が合った。\n\n……。\n\n私は動いていないのに。",
+      "next": "a05"
+    },
+
+    {
+      "id":   "a05",
+      "bgm":  "dread",
+      "text": "窓の中の私が——ゆっくりと首を傾けた。\n\nこちらを、じっと見ている。",
+      "se":   "heartbeat",
+      "effects": [{ "type": "shake" }],
+      "next": "choice2a"
+    },
+
+    {
+      "id":   "choice2a",
+      "bg":   "corridor_window",
+      "text": "どうする——",
+      "choices": [
+        { "label": "その場から走って逃げる", "next": "ea1" },
+        { "label": "窓の中の自分に話しかける", "next": "ea2" }
+      ]
+    },
+
+    {
+      "id":   "ea1",
+      "bg":   "school_gate_night",
+      "bgm":  "ending_relief",
+      "text": "走った。\n\n階段を駆け下り、玄関を飛び出し、校門を抜けた。\n\n止まれなかった。振り返れなかった。",
+      "se":   "run_footstep",
+      "next": "ea1b"
+    },
+
+    {
+      "id":   "ea1b",
+      "text": "ようやく息が続かなくなって、バス通りで立ち止まった。\n\n荒い呼吸を整えながら——ふと、校舎を見上げた。",
+      "next": "ea1c"
+    },
+
+    {
+      "id":   "ea1c",
+      "text": "三階の、教室の窓。\n\nそこに、誰かが立っていた。\n\nこちらを、見ていた。",
+      "next": "ea1d"
+    },
+
+    {
+      "id":   "ea1d",
+      "bg":   "black",
+      "bgm":  null,
+      "text": "——それは、私の顔をしていた。",
+      "se":   "static",
+      "effects": [{ "type": "static", "duration": 1200 }],
+      "ending": { "label": "END A ── 影", "type": "bad" }
+    },
+
+
+    {
+      "id":   "ea2",
+      "bg":   "corridor_window",
+      "bgm":  "dread",
+      "text": "「……誰？」\n\n喉から、かすれた声が出た。\n\n窓の中の私は——微笑んだ。",
+      "next": "ea2b"
+    },
+
+    {
+      "id":   "ea2b",
+      "text": "口が動いた。言葉は聞こえなかった。\n\nでも、唇の形はわかった。\n\n「——ありがとう」",
+      "next": "ea2c"
+    },
+
+    {
+      "id":   "ea2c",
+      "bg":   "black",
+      "bgm":  null,
+      "text": "翌朝、私のクラスに私は来なかった。\n\n先生も、クラスメイトも、\nはじめから私がいなかったように話していたという。",
+      "next": "ea2d"
+    },
+
+    {
+      "id":   "ea2d",
+      "bg":   "black",
+      "text": "ただひとつだけ。\n私の引き出しの中に、ノートが残っていた。\n\n表紙に、見覚えのない字が書いてあった。",
+      "next": "ea2e"
+    },
+
+    {
+      "id":   "ea2e",
+      "bg":   "black",
+      "text": "「——もう、帰れない。」",
+      "se":   "static",
+      "effects": [{ "type": "static", "duration": 1500 }, { "type": "shake" }],
+      "ending": { "label": "END B ── 入れ替わり", "type": "worst" }
+    },
+
+
+    {
+      "id":   "b01",
+      "bg":   "classroom",
+      "bgm":  "tension_b",
+      "text": "振り返らなかった。\n\n気のせいだ、と心の中で繰り返した。\n\n早足で、廊下へ出る。",
+      "next": "b02"
+    },
+
+    {
+      "id":   "b02",
+      "bg":   "corridor",
+      "text": "廊下は暗かった。\n\nさっきより電灯が一つ減っている気がした。\n\n後ろから、また——足音。",
+      "se":   "footstep_follow",
+      "next": "b03"
+    },
+
+    {
+      "id":   "b03",
+      "text": "こつ、こつ、こつ。\n\n私の歩調に、ぴったりと合わせてくる。\n\n立ち止まると、足音も——止まった。",
+      "se":   "heartbeat",
+      "next": "b04"
+    },
+
+    {
+      "id":   "b04",
+      "text": "何か、いる。\n\n出口まで、あと少し。\n階段を降りれば、玄関だ。\n\n……振り返りたい衝動を、押さえた。",
+      "next": "choice2b"
+    },
+
+    {
+      "id":   "choice2b",
+      "bg":   "corridor",
+      "text": "私は——",
+      "choices": [
+        { "label": "走って階段を駆け下りた", "next": "eb1" },
+        { "label": "そのまま歩き続けた",     "next": "eb2" }
+      ]
+    },
+
+    {
+      "id":   "eb1",
+      "bg":   "school_entrance",
+      "bgm":  "tension_b",
+      "text": "走った。\n\n足音が加速した——追いかけてくる。\n\n階段を一気に駆け下り、玄関へ飛び込んだ。",
+      "se":   "run_footstep",
+      "next": "eb1b"
+    },
+
+    {
+      "id":   "eb1b",
+      "text": "靴を履き替える時間も惜しかった。\n\nドアノブに手をかけた——そのとき。\n\n冷たい何かが、肩を掴んだ。",
+      "se":   "grab",
+      "effects": [{ "type": "shake" }],
+      "next": "eb1c"
+    },
+
+    {
+      "id":   "eb1c",
+      "bg":   "black",
+      "bgm":  null,
+      "text": "私は、振り返った。\n\n\n\n——見てしまった。",
+      "se":   "scream",
+      "effects": [{ "type": "flash", "color": "white" }, { "type": "static", "duration": 1500 }],
+      "ending": { "label": "END C ── 捕捉", "type": "worst" }
+    },
+
+
+    {
+      "id":   "eb2",
+      "bg":   "school_gate_night",
+      "bgm":  "ending_relief",
+      "text": "ゆっくりと、歩き続けた。\n\n足音は、ついてきていた。\nでも私は一度も振り返らなかった。\n\n玄関を抜け、校門を出た。",
+      "next": "eb2b"
+    },
+
+    {
+      "id":   "eb2b",
+      "text": "道路に出ると——足音が、消えた。\n\n振り返ると、誰もいなかった。\n\n助かった、と思った。",
+      "next": "eb2c"
+    },
+
+    {
+      "id":   "eb2c",
+      "text": "その夜、布団に入ってから気がついた。\n\n私は三階から一階まで、靴の底で廊下を歩いてきた。\n上履きの音だ。",
+      "next": "eb2d"
+    },
+
+    {
+      "id":   "eb2d",
+      "bg":   "black",
+      "bgm":  null,
+      "text": "だとしたら——。\n\n後ろにいたのは。\n\nなんの音を、立てていたんだろう。",
+      "se":   "static",
+      "effects": [{ "type": "static", "duration": 1000 }],
+      "ending": { "label": "END D ── 後日談", "type": "ambiguous" }
+    }
+
+  ]
+}

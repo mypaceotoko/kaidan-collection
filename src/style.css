@@ -1,0 +1,998 @@
+/* ===================================================
+   怪談コレクション — Main Stylesheet
+   Horror Sound Novel Game
+   =================================================== */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --color-bg:          #07060b;
+  --color-panel:       rgba(4, 3, 8, 0.92);
+  --color-panel-light: rgba(10, 8, 15, 0.85);
+  --color-text:        #cfc8be;
+  --color-text-dim:    #7a7068;
+  --color-text-title:  #e8ddd0;
+  --color-accent:      #7a1515;
+  --color-accent-glow: rgba(122, 21, 21, 0.4);
+  --color-accent-dim:  #4a0d0d;
+  --color-border:      rgba(120, 90, 70, 0.25);
+  --color-border-glow: rgba(180, 120, 80, 0.15);
+  --color-white:       #e8e0d8;
+  --color-danger:      #cc2222;
+
+  --font-serif: 'Shippori Mincho', 'Yu Mincho', 'YuMincho', '游明朝', 'ヒラギノ明朝 Pro', serif;
+  --font-sans:  'Noto Sans JP', 'Yu Gothic', 'YuGothic', 'ヒラギノ角ゴ Pro', sans-serif;
+
+  --text-speed: 45ms;
+  --transition: 0.35s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Screen Management ---------- */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.screen.active {
+  display: flex;
+  opacity: 1;
+}
+
+.screen.fading-in {
+  opacity: 0;
+  animation: screenFadeIn 0.8s ease forwards;
+}
+
+@keyframes screenFadeIn {
+  to { opacity: 1; }
+}
+
+/* ---------- CRT Scanlines ---------- */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.12) 3px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+}
+
+/* ===================================================
+   TITLE SCREEN
+   =================================================== */
+#screen-title {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 30%, #0d0a18 0%, #060408 60%, #020206 100%);
+}
+
+.title-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(80, 10, 10, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 30% at 30% 70%, rgba(30, 10, 60, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 70% 20%, rgba(10, 5, 40, 0.08) 0%, transparent 60%);
+  animation: titlePulse 8s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+.title-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title-logo {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.title-kanji {
+  font-size: clamp(5rem, 14vw, 9rem);
+  font-weight: 700;
+  color: var(--color-text-title);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-shadow:
+    0 0 30px rgba(180, 80, 80, 0.5),
+    0 0 60px rgba(140, 40, 40, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+  animation: kanjiFlicker 12s ease-in-out infinite;
+}
+
+@keyframes kanjiFlicker {
+  0%, 88%, 92%, 96%, 100% { opacity: 1; }
+  89%   { opacity: 0.5; }
+  90%   { opacity: 1; }
+  93%   { opacity: 0.3; }
+  94%   { opacity: 0.9; }
+  97%   { opacity: 0.6; }
+}
+
+.title-subtitle-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  letter-spacing: 0.5em;
+  color: var(--color-text-dim);
+  text-transform: none;
+}
+
+.title-flavor {
+  font-family: var(--font-serif);
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.title-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.btn-main {
+  padding: 0.85rem 3.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  letter-spacing: 0.5em;
+  color: var(--color-text-title);
+  background: transparent;
+  border: 1px solid rgba(180, 120, 90, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(120, 30, 30, 0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.btn-main:hover {
+  color: var(--color-white);
+  border-color: rgba(200, 100, 80, 0.7);
+  box-shadow: 0 0 20px rgba(160, 40, 40, 0.3);
+  text-shadow: 0 0 10px rgba(255, 150, 100, 0.4);
+}
+
+.btn-main:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-sub {
+  padding: 0.6rem 2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  letter-spacing: 0.3em;
+  color: var(--color-text-dim);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.btn-sub:hover {
+  color: var(--color-text);
+  border-color: rgba(150, 100, 80, 0.5);
+}
+
+.title-version {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: rgba(100, 90, 85, 0.5);
+  letter-spacing: 0.1em;
+}
+
+/* ===================================================
+   STORY SELECT SCREEN
+   =================================================== */
+#screen-select {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.select-wrapper {
+  position: relative;
+  z-index: 10;
+  width: min(600px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-height: 90vh;
+}
+
+.select-header {
+  text-align: center;
+}
+
+.select-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.4rem;
+}
+
+.select-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(120, 100, 90, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  overflow-y: auto;
+  max-height: 60vh;
+  padding: 0.2rem;
+}
+
+/* Story item button (generated in JS) */
+.story-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.4rem;
+  text-align: left;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.story-item:hover {
+  border-color: rgba(180, 100, 80, 0.5);
+  background: rgba(15, 8, 12, 0.95);
+}
+
+.story-item:hover::before {
+  transform: scaleY(1);
+}
+
+.story-item.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.story-item .story-number {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.story-item .story-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--color-text-title);
+  letter-spacing: 0.1em;
+}
+
+.story-item .story-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.05em;
+}
+
+.select-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+/* ===================================================
+   GAME SCREEN — BACKGROUND LAYERS
+   =================================================== */
+#screen-game {
+  display: none; /* override when active */
+  flex-direction: column;
+}
+
+#screen-game.active {
+  display: flex;
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  transition: background 1.2s ease;
+  z-index: 0;
+}
+
+.effect-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  background: transparent;
+  transition: opacity 0.3s ease;
+}
+
+/* ===================================================
+   CSS Scene Backgrounds
+   (used when no image file is available)
+   =================================================== */
+
+/* Night school exterior — dusk, just past sunset */
+.bg-dusk_school {
+  background:
+    radial-gradient(ellipse 80% 30% at 50% 100%, rgba(40, 15, 5, 0.6) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 30% 60%, rgba(10, 5, 20, 0.4) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #020308 0%,
+      #040618 25%,
+      #060412 55%,
+      #0a0508 80%,
+      #0d0608 100%
+    );
+}
+
+/* Dark school entrance / lobby */
+.bg-school_entrance {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(0, 0, 0, 0.25) 55px,
+      rgba(0, 0, 0, 0.25) 57px
+    ),
+    linear-gradient(to bottom,
+      #050508 0%,
+      #090810 60%,
+      #0a0808 100%
+    );
+}
+
+/* Long corridor — deep vanishing point in center */
+.bg-corridor {
+  background:
+    radial-gradient(ellipse 10% 20% at 50% 42%, rgba(25, 18, 12, 0.6) 0%, transparent 100%),
+    radial-gradient(ellipse 30% 60% at 50% 42%, rgba(15, 10, 8, 0.5) 0%, transparent 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 70px,
+      rgba(0, 0, 0, 0.2) 70px,
+      rgba(0, 0, 0, 0.2) 72px
+    ),
+    linear-gradient(to bottom,
+      #040406 0%,
+      #08080e 40%,
+      #0a0808 100%
+    );
+}
+
+/* Classroom — desk grid suggestion */
+.bg-classroom {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 38px,
+      rgba(5, 5, 15, 0.45) 38px,
+      rgba(5, 5, 15, 0.45) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(5, 5, 15, 0.2) 55px,
+      rgba(5, 5, 15, 0.2) 57px
+    ),
+    linear-gradient(to bottom,
+      #040510 0%,
+      #06060f 50%,
+      #090608 100%
+    );
+}
+
+/* Corridor with window — lighter area simulating moonlit window */
+.bg-corridor_window {
+  background:
+    radial-gradient(ellipse 12% 20% at 72% 32%, rgba(8, 12, 25, 0.9) 0%, rgba(5, 8, 18, 0.5) 50%, transparent 100%),
+    radial-gradient(ellipse 8% 30% at 50% 42%, rgba(20, 15, 10, 0.5) 0%, transparent 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 70px,
+      rgba(0, 0, 0, 0.2) 70px,
+      rgba(0, 0, 0, 0.2) 72px
+    ),
+    linear-gradient(to bottom,
+      #040406 0%,
+      #08080e 40%,
+      #0a0808 100%
+    );
+}
+
+/* School gate at night — open sky */
+.bg-school_gate_night {
+  background:
+    radial-gradient(ellipse 40% 25% at 50% 0%, rgba(5, 5, 18, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(10, 5, 5, 0.6) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #02030c 0%,
+      #040810 35%,
+      #060508 75%,
+      #080508 100%
+    );
+}
+
+/* Pure black — silence */
+.bg-black {
+  background: #000;
+}
+
+/* ===================================================
+   GAME UI
+   =================================================== */
+.game-ui {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem 5.5rem;
+  pointer-events: none; /* children re-enable as needed */
+}
+
+/* Story chapter/title banner */
+.story-header {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.story-chapter {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.2rem;
+}
+
+.story-title-display {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+}
+
+/* ===================================================
+   TEXT BOX
+   =================================================== */
+.text-area {
+  width: min(820px, 100%);
+  pointer-events: all;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.text-box {
+  position: relative;
+  padding: 1.4rem 1.8rem 1.6rem;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-glow);
+  box-shadow:
+    0 -4px 20px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(180, 140, 100, 0.05);
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.text-content {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  line-height: 2;
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+  white-space: pre-wrap;
+  word-break: break-all; /* Japanese line-wrap */
+  min-height: 3.5em;
+}
+
+/* Blinking next-page indicator */
+.next-indicator {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: blink 1.2s ease-in-out infinite;
+  padding-right: 0.2rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.1; }
+}
+
+/* ===================================================
+   CHOICE AREA
+   =================================================== */
+.choice-area {
+  width: min(820px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  pointer-events: all;
+}
+
+.choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.choice-btn {
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  background: var(--color-panel-light);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  animation: choiceAppear 0.3s ease backwards;
+}
+
+.choice-btn:nth-child(2) { animation-delay: 0.1s; }
+.choice-btn:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes choiceAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.choice-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(100, 20, 20, 0.12), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.choice-btn:hover {
+  color: var(--color-white);
+  border-color: rgba(160, 80, 60, 0.6);
+  background: rgba(20, 8, 10, 0.97);
+  box-shadow: 0 0 12px rgba(120, 20, 20, 0.2);
+}
+
+.choice-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.choice-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===================================================
+   GAME MENU BAR (top-right)
+   =================================================== */
+.game-menu {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 150;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.menu-btn {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(130, 110, 100, 0.7);
+  background: rgba(5, 3, 8, 0.6);
+  border: 1px solid rgba(80, 60, 50, 0.3);
+  padding: 0.3rem 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+  color: var(--color-text);
+  border-color: rgba(150, 100, 80, 0.5);
+}
+
+.menu-btn.active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ===================================================
+   MENU OVERLAY (pause menu)
+   =================================================== */
+.menu-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 300;
+  background: rgba(2, 1, 4, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+.menu-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 2rem 2.5rem;
+  background: rgba(6, 4, 10, 0.98);
+  border: 1px solid var(--color-border);
+  min-width: 220px;
+  text-align: center;
+}
+
+.menu-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.4rem;
+}
+
+.menu-item-btn {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.menu-item-btn:hover {
+  color: var(--color-white);
+  border-color: rgba(180, 100, 80, 0.5);
+  background: rgba(15, 5, 8, 0.8);
+}
+
+.menu-item-btn.secondary {
+  color: var(--color-text-dim);
+  border-color: transparent;
+  font-size: 0.82rem;
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.3rem 0;
+}
+
+/* ===================================================
+   ENDING SCREEN
+   =================================================== */
+.ending-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 400;
+  background: rgba(0, 0, 0, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: endingFadeIn 2s ease forwards;
+}
+
+@keyframes endingFadeIn {
+  from { background: rgba(0, 0, 0, 0); }
+  to   { background: rgba(0, 0, 0, 0.96); }
+}
+
+.ending-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  animation: endingContentAppear 1.5s ease 0.8s backwards;
+}
+
+@keyframes endingContentAppear {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ending-decoration {
+  font-family: var(--font-serif);
+  color: rgba(100, 70, 60, 0.5);
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.ending-label {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  letter-spacing: 0.3em;
+  color: var(--color-text);
+  padding: 0.3rem 0;
+}
+
+/* Ending type color variants */
+.ending-screen[data-ending-type="bad"]       .ending-label { color: #c08060; }
+.ending-screen[data-ending-type="worst"]     .ending-label { color: #cc3333; }
+.ending-screen[data-ending-type="ambiguous"] .ending-label { color: #9090c0; }
+
+.ending-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-ending {
+  padding: 0.6rem 2rem;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.btn-ending:hover {
+  color: var(--color-white);
+  border-color: rgba(180, 100, 80, 0.6);
+}
+
+/* ===================================================
+   SAVE NOTIFICATION TOAST
+   =================================================== */
+.save-notification {
+  position: absolute;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  background: rgba(5, 3, 8, 0.95);
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 1.2rem;
+  white-space: nowrap;
+  animation: toastShow 0.3s ease;
+}
+
+@keyframes toastShow {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ===================================================
+   VISUAL EFFECT CLASSES
+   =================================================== */
+
+/* Screen shake */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10%  { transform: translate(-4px,  2px) rotate(-0.3deg); }
+  20%  { transform: translate( 5px, -2px) rotate( 0.2deg); }
+  30%  { transform: translate(-3px,  3px) rotate(-0.2deg); }
+  40%  { transform: translate( 4px, -1px) rotate( 0.1deg); }
+  50%  { transform: translate(-2px,  2px) rotate(-0.1deg); }
+  60%  { transform: translate( 3px, -2px) rotate( 0.2deg); }
+  70%  { transform: translate(-2px,  1px) rotate(-0.1deg); }
+  80%  { transform: translate( 2px, -1px) rotate( 0.1deg); }
+  90%  { transform: translate(-1px,  0px); }
+}
+
+.screen-shake {
+  animation: shake 0.55s ease-in-out;
+}
+
+/* Static/noise overlay */
+@keyframes staticAnim {
+  0%   { background-position: 0 0; }
+  25%  { background-position: 30px 20px; }
+  50%  { background-position: -20px 40px; }
+  75%  { background-position: 40px -10px; }
+  100% { background-position: 0 0; }
+}
+
+.effect-static {
+  opacity: 0.15 !important;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  animation: staticAnim 0.08s steps(1) infinite;
+  transition: none !important;
+}
+
+/* Light flicker */
+@keyframes lightFlicker {
+  0%, 90%, 100% { opacity: 1; }
+  91%  { opacity: 0.3; }
+  92%  { opacity: 0.9; }
+  94%  { opacity: 0.2; }
+  95%  { opacity: 0.8; }
+  97%  { opacity: 0.5; }
+  98%  { opacity: 0.95; }
+}
+
+.bg-flicker {
+  animation: lightFlicker 0.6s ease-in-out;
+}
+
+/* ===================================================
+   UTILITY CLASSES
+   =================================================== */
+.hidden {
+  display: none !important;
+}
+
+/* ===================================================
+   RESPONSIVE — Mobile
+   =================================================== */
+@media (max-width: 600px) {
+  .text-box {
+    padding: 1rem 1.2rem 1.2rem;
+  }
+
+  .text-content {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .game-menu {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .menu-btn {
+    font-size: 0.58rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .game-ui {
+    padding-bottom: 5rem;
+  }
+
+  .choice-btn {
+    padding: 0.75rem 1rem;
+  }
+
+  .title-kanji {
+    font-size: 5rem;
+  }
+
+  .btn-main {
+    padding: 0.75rem 2.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .ending-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .text-content {
+    font-size: 0.92rem;
+  }
+
+  .title-kanji {
+    font-size: 4rem;
+  }
+}
