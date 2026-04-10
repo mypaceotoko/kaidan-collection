@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#2a4870"/>
+      <stop offset="40%"  stop-color="#486898"/>
+      <stop offset="80%"  stop-color="#608090"/>
+      <stop offset="100%" stop-color="#7090a0"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#182858"/>
+      <stop offset="50%"  stop-color="#142050"/>
+      <stop offset="100%" stop-color="#101840"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#b09040"/>
+      <stop offset="100%" stop-color="#988030"/>
+    </linearGradient>
+    <radialGradient id="cloudGlow" cx="50%" cy="35%" r="50%">
+      <stop offset="0%"   stop-color="#708090" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#708090" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="68%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Overcast sky (grayer, heavier) -->
+  <rect x="0" y="0" width="1920" height="620" fill="url(#skyGrad)"/>
+  <rect x="0" y="0" width="1920" height="620" fill="url(#cloudGlow)"/>
+
+  <!-- Heavy cloud cover -->
+  <ellipse cx="200"  cy="100" rx="280" ry="60" fill="#5870a0" opacity="0.55"/>
+  <ellipse cx="100"  cy="120" rx="160" ry="44" fill="#4a6090" opacity="0.5"/>
+  <ellipse cx="380"  cy="90"  rx="200" ry="52" fill="#506888" opacity="0.5"/>
+  <ellipse cx="700"  cy="130" rx="250" ry="58" fill="#4a6080" opacity="0.5"/>
+  <ellipse cx="600"  cy="150" rx="180" ry="46" fill="#506080" opacity="0.45"/>
+  <ellipse cx="960"  cy="80"  rx="220" ry="50" fill="#486080" opacity="0.5"/>
+  <ellipse cx="1200" cy="110" rx="260" ry="60" fill="#4a6080" opacity="0.5"/>
+  <ellipse cx="1100" cy="140" rx="180" ry="48" fill="#506888" opacity="0.45"/>
+  <ellipse cx="1500" cy="90"  rx="230" ry="54" fill="#4a6080" opacity="0.5"/>
+  <ellipse cx="1700" cy="120" rx="220" ry="56" fill="#506080" opacity="0.5"/>
+  <ellipse cx="1820" cy="100" rx="160" ry="44" fill="#4a6090" opacity="0.45"/>
+
+  <!-- Horizon -->
+  <rect x="0" y="615" width="1920" height="10" fill="#607890" opacity="0.4"/>
+
+  <!-- Sea (darker, heavier under cloud) -->
+  <rect x="0" y="618" width="1920" height="140" fill="url(#seaGrad)"/>
+  <!-- Muted wave reflections -->
+  <ellipse cx="400"  cy="640" rx="200" ry="5" fill="#304878" opacity="0.4"/>
+  <ellipse cx="1000" cy="652" rx="240" ry="4" fill="#283870" opacity="0.35"/>
+  <ellipse cx="1600" cy="638" rx="180" ry="4" fill="#304878" opacity="0.4"/>
+  <ellipse cx="700"  cy="690" rx="200" ry="3" fill="#202860" opacity="0.3"/>
+  <ellipse cx="1300" cy="685" rx="180" ry="3" fill="#202860" opacity="0.3"/>
+
+  <!-- Wave break (muted) -->
+  <ellipse cx="960" cy="628" rx="960" ry="9" fill="#90a8c0" opacity="0.3"/>
+
+  <!-- Sandy beach (still warm, but eerie) -->
+  <rect x="0" y="758" width="1920" height="322" fill="url(#sandGrad)"/>
+  <!-- Sand texture -->
+  <ellipse cx="500"  cy="820" rx="300" ry="6" fill="#887020" opacity="0.2"/>
+  <ellipse cx="1400" cy="840" rx="280" ry="5" fill="#887020" opacity="0.18"/>
+
+  <!-- ABANDONED ITEMS — things left behind, no owners -->
+  <!-- Parasol 1 (collapsed, tilted) -->
+  <line x1="310" y1="762" x2="290" y2="880" stroke="#8a6028" stroke-width="7"/>
+  <ellipse cx="310" cy="762" rx="65" ry="16" fill="#c83030" opacity="0.7" transform="rotate(-8 310 762)"/>
+  <!-- Towel flat on sand -->
+  <rect x="380" y="890" width="150" height="60" fill="#d04040" rx="3" opacity="0.5" transform="rotate(-3 380 890)"/>
+  <!-- Floatie (deflated-looking, flat) -->
+  <ellipse cx="720" cy="870" rx="75" ry="22" fill="#e84040" opacity="0.6"/>
+  <ellipse cx="720" cy="870" rx="56" ry="14" fill="#b89040"/>
+  <!-- Beach ball (rolling away) -->
+  <ellipse cx="1100" cy="810" rx="38" ry="36" fill="#e84040" opacity="0.65"/>
+  <ellipse cx="1118" cy="800" rx="18" ry="36" fill="#f8f040" opacity="0.6"/>
+  <ellipse cx="1082" cy="800" rx="18" ry="36" fill="#4080e0" opacity="0.5"/>
+  <!-- Sandcastle (half-built, abandoned) -->
+  <rect x="1400" y="848" width="80" height="50" fill="#c0a040" rx="3" opacity="0.7"/>
+  <rect x="1418" y="828" width="44" height="24" fill="#c0a040" rx="2" opacity="0.7"/>
+  <rect x="1424" y="812" width="32" height="18" fill="#c0a040" rx="2" opacity="0.65"/>
+  <!-- Abandoned bag -->
+  <rect x="1600" y="880" width="65" height="50" fill="#3850a0" rx="4" opacity="0.6"/>
+  <!-- Lone towel corner peeking out (wind lifted) -->
+  <rect x="1700" y="860" width="130" height="55" fill="#3080c0" rx="3" opacity="0.5" transform="rotate(5 1700 860)"/>
+
+  <!-- Footprints (trails leading to water, no one there) -->
+  <ellipse cx="960" cy="775" rx="12" ry="17" fill="#a07830" opacity="0.45"/>
+  <ellipse cx="978" cy="800" rx="12" ry="17" fill="#a07830" opacity="0.42"/>
+  <ellipse cx="963" cy="826" rx="12" ry="17" fill="#a07830" opacity="0.38"/>
+  <ellipse cx="979" cy="852" rx="12" ry="17" fill="#a07830" opacity="0.35"/>
+  <!-- Continue to water -->
+  <ellipse cx="964" cy="730" rx="12" ry="17" fill="#a07830" opacity="0.4"/>
+  <ellipse cx="978" cy="706" rx="12" ry="17" fill="#a07830" opacity="0.35"/>
+  <ellipse cx="962" cy="682" rx="12" ry="17" fill="#a07830" opacity="0.28"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#180610"/>
+      <stop offset="18%"  stop-color="#601020"/>
+      <stop offset="38%"  stop-color="#c83010"/>
+      <stop offset="55%"  stop-color="#e86020"/>
+      <stop offset="68%"  stop-color="#f09030"/>
+      <stop offset="78%"  stop-color="#f8b840"/>
+      <stop offset="88%"  stop-color="#f0c040"/>
+      <stop offset="100%" stop-color="#e8a020"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a0820"/>
+      <stop offset="40%"  stop-color="#160618"/>
+      <stop offset="100%" stop-color="#100410"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="59%" r="45%">
+      <stop offset="0%"   stop-color="#f8c040" stop-opacity="0.85"/>
+      <stop offset="35%"  stop-color="#e87020" stop-opacity="0.45"/>
+      <stop offset="70%"  stop-color="#c03010" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#800010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="reflGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#e87030" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#801828" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="68%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="1920" height="680" fill="url(#skyGrad)"/>
+  <!-- Sunset glow overlay -->
+  <rect x="0" y="0" width="1920" height="680" fill="url(#sunGlow)"/>
+  <!-- Sun at horizon -->
+  <ellipse cx="960" cy="640" rx="70" ry="32" fill="#f8e060" opacity="0.9"/>
+  <ellipse cx="960" cy="638" rx="48" ry="20" fill="#fffcc0"/>
+
+  <!-- Cloud silhouettes (dark against sunset) -->
+  <ellipse cx="300"  cy="220" rx="180" ry="50" fill="#380a10" opacity="0.65"/>
+  <ellipse cx="200"  cy="240" rx="100" ry="34" fill="#2c0808" opacity="0.6"/>
+  <ellipse cx="420"  cy="210" rx="120" ry="36" fill="#400c10" opacity="0.55"/>
+  <ellipse cx="1700" cy="180" rx="200" ry="55" fill="#380a10" opacity="0.6"/>
+  <ellipse cx="1820" cy="200" rx="120" ry="38" fill="#2c0808" opacity="0.55"/>
+  <ellipse cx="1580" cy="200" rx="140" ry="42" fill="#400c10" opacity="0.5"/>
+  <!-- Middle clouds catching orange light -->
+  <ellipse cx="680"  cy="310" rx="160" ry="38" fill="#c83818" opacity="0.35"/>
+  <ellipse cx="1300" cy="290" rx="150" ry="36" fill="#c83818" opacity="0.35"/>
+
+  <!-- Horizon line -->
+  <rect x="0" y="638" width="1920" height="8" fill="#f8c840" opacity="0.55"/>
+
+  <!-- Dark sea -->
+  <rect x="0" y="640" width="1920" height="440" fill="url(#seaGrad)"/>
+  <!-- Sunset reflection band -->
+  <ellipse cx="960" cy="720" rx="200" ry="80" fill="#e07030" opacity="0.3"/>
+  <ellipse cx="960" cy="800" rx="140" ry="60" fill="#c04018" opacity="0.2"/>
+  <!-- Water ripple reflections -->
+  <ellipse cx="960"  cy="660" rx="120" ry="5"  fill="#f8b030" opacity="0.5"/>
+  <ellipse cx="960"  cy="680" rx="90"  ry="4"  fill="#e89030" opacity="0.4"/>
+  <ellipse cx="960"  cy="700" rx="70"  ry="3"  fill="#c06020" opacity="0.3"/>
+  <!-- Dark wave lines -->
+  <ellipse cx="400"  cy="668" rx="200" ry="5"  fill="#0e0418" opacity="0.6"/>
+  <ellipse cx="1600" cy="672" rx="180" ry="4"  fill="#0e0418" opacity="0.55"/>
+  <ellipse cx="700"  cy="720" rx="250" ry="4"  fill="#0c0416" opacity="0.5"/>
+  <ellipse cx="1300" cy="716" rx="220" ry="4"  fill="#0c0416" opacity="0.5"/>
+
+  <!-- Sand (silhouette, very dark) -->
+  <rect x="0" y="940" width="1920" height="140" fill="#0c0808" opacity="0.8"/>
+  <!-- Sand silhouette edge -->
+  <ellipse cx="960" cy="940" rx="980" ry="24" fill="#100a0a" opacity="0.9"/>
+
+  <!-- Abandoned items silhouettes on beach -->
+  <!-- Parasol pole (dark) -->
+  <rect x="340" y="870" width="6" height="72" fill="#0a0606" opacity="0.8"/>
+  <ellipse cx="343" cy="870" rx="52" ry="14" fill="#0c0808" opacity="0.75"/>
+  <!-- Towel/bag on sand -->
+  <rect x="480" y="930" width="90" height="20" fill="#0a0606" opacity="0.75" rx="3"/>
+  <!-- Floatie left behind -->
+  <ellipse cx="1400" cy="940" rx="60" ry="18" fill="#0c0808" opacity="0.7"/>
+  <ellipse cx="1400" cy="940" rx="40" ry="10" fill="#0a0606" opacity="0.75"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

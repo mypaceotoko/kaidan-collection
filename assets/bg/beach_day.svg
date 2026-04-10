@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#3a6ab8"/>
+      <stop offset="45%"  stop-color="#6a9ed0"/>
+      <stop offset="100%" stop-color="#90c0e0"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a4a90"/>
+      <stop offset="100%" stop-color="#2060a8"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#c8a850"/>
+      <stop offset="100%" stop-color="#b08838"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="70%" cy="20%" r="30%">
+      <stop offset="0%"   stop-color="#fff8c0" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#f0d060" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f0d060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="30%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="1920" height="620" fill="url(#skyGrad)"/>
+  <!-- Sun glow -->
+  <rect x="0" y="0" width="1920" height="620" fill="url(#sunGlow)"/>
+  <!-- Sun disc -->
+  <ellipse cx="1344" cy="168" rx="52" ry="50" fill="#fff8c0"/>
+  <ellipse cx="1344" cy="168" rx="36" ry="34" fill="#fffcd8"/>
+
+  <!-- Clouds -->
+  <ellipse cx="320" cy="120" rx="160" ry="42" fill="#d8ecf8" opacity="0.85"/>
+  <ellipse cx="220" cy="128" rx="90"  ry="32" fill="#e0f0f8" opacity="0.7"/>
+  <ellipse cx="420" cy="114" rx="100" ry="28" fill="#d0e8f4" opacity="0.7"/>
+  <ellipse cx="780" cy="80"  rx="130" ry="35" fill="#d8ecf8" opacity="0.75"/>
+  <ellipse cx="700" cy="88"  rx="80"  ry="26" fill="#e0f0f8" opacity="0.6"/>
+  <ellipse cx="1600" cy="140" rx="110" ry="30" fill="#d8ecf8" opacity="0.7"/>
+  <ellipse cx="1700" cy="132" rx="70"  ry="22" fill="#e0f0f8" opacity="0.6"/>
+
+  <!-- Ocean -->
+  <rect x="0" y="558" width="1920" height="130" fill="url(#seaGrad)"/>
+  <!-- Horizon shimmer -->
+  <rect x="0" y="556" width="1920" height="6" fill="#90c8e8" opacity="0.5"/>
+  <!-- Wave highlights -->
+  <ellipse cx="350"  cy="568" rx="180" ry="5" fill="#b8ddf0" opacity="0.5"/>
+  <ellipse cx="900"  cy="574" rx="220" ry="4" fill="#a8d4ec" opacity="0.45"/>
+  <ellipse cx="1500" cy="562" rx="160" ry="4" fill="#b8ddf0" opacity="0.5"/>
+  <!-- Sun reflection on water -->
+  <ellipse cx="1344" cy="605" rx="40" ry="90" fill="#f8e880" opacity="0.25"/>
+
+  <!-- Wave foam line -->
+  <rect x="0" y="620" width="1920" height="8" fill="#d0eaf8" opacity="0.45"/>
+  <ellipse cx="240"  cy="624" rx="120" ry="6" fill="#e0f0f8" opacity="0.5"/>
+  <ellipse cx="700"  cy="622" rx="150" ry="5" fill="#d8ecf4" opacity="0.45"/>
+  <ellipse cx="1150" cy="626" rx="130" ry="6" fill="#e0f0f8" opacity="0.5"/>
+  <ellipse cx="1700" cy="621" rx="140" ry="5" fill="#d8ecf4" opacity="0.45"/>
+
+  <!-- Sandy beach -->
+  <rect x="0" y="628" width="1920" height="452" fill="url(#sandGrad)"/>
+  <!-- Sand texture lines -->
+  <ellipse cx="500"  cy="700" rx="300" ry="6" fill="#c09030" opacity="0.25"/>
+  <ellipse cx="1400" cy="720" rx="280" ry="5" fill="#c09030" opacity="0.2"/>
+  <ellipse cx="900"  cy="780" rx="350" ry="6" fill="#a87828" opacity="0.2"/>
+  <ellipse cx="300"  cy="850" rx="260" ry="5" fill="#c09030" opacity="0.15"/>
+  <ellipse cx="1600" cy="860" rx="220" ry="4" fill="#c09030" opacity="0.15"/>
+
+  <!-- Parasols -->
+  <!-- Parasol 1 (red, left) -->
+  <ellipse cx="280" cy="640" rx="90" ry="22" fill="#cc3030" opacity="0.9"/>
+  <ellipse cx="280" cy="640" rx="68" ry="15" fill="#e03838"/>
+  <line x1="280" y1="640" x2="280" y2="760" stroke="#5a3010" stroke-width="5"/>
+  <rect x="186" y="756" width="188" height="8" fill="#c8a850" rx="2"/>
+  <!-- Parasol 2 (blue, center-right) -->
+  <ellipse cx="1200" cy="648" rx="100" ry="24" fill="#3060b0" opacity="0.9"/>
+  <ellipse cx="1200" cy="648" rx="76"  ry="16" fill="#3870c8"/>
+  <line x1="1200" y1="648" x2="1200" y2="770" stroke="#5a3010" stroke-width="5"/>
+  <rect x="1102" y="766" width="196" height="8" fill="#c8a850" rx="2"/>
+  <!-- Parasol 3 (orange, right) -->
+  <ellipse cx="1640" cy="638" rx="80" ry="20" fill="#d06020" opacity="0.9"/>
+  <ellipse cx="1640" cy="638" rx="60" ry="13" fill="#e07030"/>
+  <line x1="1640" y1="638" x2="1640" y2="740" stroke="#5a3010" stroke-width="5"/>
+  <rect x="1562" y="736" width="156" height="7" fill="#c8a850" rx="2"/>
+
+  <!-- Beach chairs / items (silhouette shapes) -->
+  <rect x="220" y="760" width="120" height="28" fill="#a87030" rx="4" opacity="0.6"/>
+  <rect x="1140" y="770" width="130" height="26" fill="#a87030" rx="4" opacity="0.6"/>
+  <!-- Towel on sand -->
+  <rect x="500" y="780" width="140" height="60" fill="#d04040" rx="3" opacity="0.55"/>
+  <rect x="900" y="800" width="160" height="55" fill="#3070b0" rx="3" opacity="0.55"/>
+
+  <!-- People silhouettes (distant, small) -->
+  <!-- Figure 1 -->
+  <ellipse cx="640" cy="635" rx="12" ry="14" fill="#5a3820"/>
+  <rect x="633" y="648" width="14" height="32" fill="#5a3820"/>
+  <!-- Figure 2 -->
+  <ellipse cx="820" cy="638" rx="11" ry="12" fill="#4a3010"/>
+  <rect x="814" y="650" width="12" height="28" fill="#4a3010"/>
+  <!-- Figure 3 (child, smaller) -->
+  <ellipse cx="760" cy="648" rx="8"  ry="9"  fill="#6a4020"/>
+  <rect x="754" y="656" width="10" height="20" fill="#6a4020"/>
+
+  <!-- Floatie on beach -->
+  <ellipse cx="1400" cy="780" rx="55" ry="22" fill="#f04040" opacity="0.75"/>
+  <ellipse cx="1400" cy="780" rx="38" ry="14" fill="#c8a850"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

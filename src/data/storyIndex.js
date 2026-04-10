@@ -45,13 +45,22 @@ export const STORY_INDEX = [
     available: true,
   },
 
+  {
+    id:        'chapter3',
+    chapter:   'Episode 3',
+    title:     'ひとり分の波',
+    subtitle:  '海は、ちゃんと呼んでいた',
+    path:      './stories/chapter3.json',
+    available: true,
+  },
+
   // ── Placeholder for future episodes ─────────────────────────────────────
   // {
-  //   id:        'chapter3',
-  //   chapter:   'Episode 3',
+  //   id:        'chapter4',
+  //   chapter:   'Episode 4',
   //   title:     '新しい話のタイトル',
   //   subtitle:  'サブタイトル',
-  //   path:      './stories/chapter3.json',
+  //   path:      './stories/chapter4.json',
   //   available: false,
   // },
 ];

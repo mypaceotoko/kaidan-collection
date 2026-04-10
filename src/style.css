@@ -591,6 +591,103 @@ button:focus-visible {
   background: #000;
 }
 
+/* ── Episode 3 background gradients (CSS fallback while SVG loads) ───────── */
+
+/* Sunny beach — bright sky, blue ocean, warm sand */
+.bg-beach_day {
+  background:
+    radial-gradient(ellipse 50% 30% at 50% 18%, rgba(255, 230, 120, 0.55) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #4a7ec0 0%,
+      #7aaad8 30%,
+      #1e5090 42%,
+      #2464a8 55%,
+      #c8a850 62%,
+      #b89040 100%
+    );
+}
+
+/* Wave break / shallows — transparent water, wet sand */
+.bg-beach_shore {
+  background:
+    radial-gradient(ellipse 40% 20% at 50% 42%, rgba(100, 180, 220, 0.35) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #5888c8 0%,
+      #7aaad8 22%,
+      #2060a0 32%,
+      #4080b8 48%,
+      #9a8048 58%,
+      #c8a850 100%
+    );
+}
+
+/* Beach house — warm wooden interior, bright opening to outside */
+.bg-beach_house {
+  background:
+    radial-gradient(ellipse 30% 40% at 50% 45%, rgba(70, 136, 192, 0.4) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      #3a2818 0%,
+      #4a3220 25%,
+      #3a2a18 60%,
+      #2a1e10 100%
+    );
+}
+
+/* Looking out to sea — large sky, horizon, deep ocean */
+.bg-ocean_view {
+  background:
+    radial-gradient(ellipse 60% 30% at 65% 35%, rgba(255, 220, 100, 0.25) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #3a6ab8 0%,
+      #7aaad8 38%,
+      #90b8d8 52%,
+      #1e3878 58%,
+      #162860 100%
+    );
+}
+
+/* Underwater horror — near-black, deep cold, shadowed figure */
+.bg-ocean_shadow {
+  background:
+    radial-gradient(ellipse 40% 25% at 50% 5%, rgba(26, 40, 64, 0.7) 0%, transparent 80%),
+    radial-gradient(ellipse 20% 40% at 50% 60%, rgba(8, 12, 20, 0.9) 0%, transparent 80%),
+    linear-gradient(to bottom,
+      #081428 0%,
+      #060e1e 35%,
+      #040810 70%,
+      #020408 100%
+    );
+}
+
+/* Sunset beach — orange/red sky, dark ocean */
+.bg-beach_evening {
+  background:
+    radial-gradient(ellipse 40% 25% at 52% 52%, rgba(248, 140, 40, 0.5) 0%, transparent 75%),
+    linear-gradient(to bottom,
+      #280818 0%,
+      #801828 20%,
+      #d04018 35%,
+      #f09030 48%,
+      #f8c040 55%,
+      #200828 62%,
+      #181840 100%
+    );
+}
+
+/* Empty deserted beach — same shore, abandoned, eerie */
+.bg-beach_empty {
+  background:
+    radial-gradient(ellipse 50% 20% at 50% 38%, rgba(80, 100, 140, 0.3) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #3a607a 0%,
+      #5878a8 28%,
+      #182860 42%,
+      #203060 55%,
+      #b09040 62%,
+      #988030 100%
+    );
+}
+
 /* ===================================================
    GAME UI
    =================================================== */

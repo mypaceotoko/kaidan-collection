@@ -203,6 +203,77 @@ export class AudioEngine {
     return nodes;
   }
 
+  // ── Chapter 3 BGM ─────────────────────────────────────────────────────────
+
+  /** Sunny beach: wave wash + summer warmth */
+  _bgm_ambient_sea(ctx, out) {
+    const nodes = [];
+    // Wave roar: noise through broad bandpass
+    const wave = this._noise(ctx, 10);
+    const bp = this._bpf(ctx, 'bandpass', 900, 0.28);
+    const gw = ctx.createGain(); gw.gain.value = 0.22;
+    wave.connect(bp); bp.connect(gw); gw.connect(out);
+    wave.loop = true; wave.start(); nodes.push(wave);
+    // Wave rhythm LFO: gentle swell at ~0.13 Hz
+    const lfo  = this._osc(ctx, 'sine', 0.13);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.14;
+    lfo.connect(lfoG); lfoG.connect(gw.gain); lfo.start(); nodes.push(lfo);
+    // High-frequency splash (brightens the sound)
+    const splash = this._noise(ctx, 9);
+    const hp = this._bpf(ctx, 'highpass', 2400, 0.5);
+    const gs = ctx.createGain(); gs.gain.value = 0.045;
+    splash.connect(hp); hp.connect(gs); gs.connect(out);
+    splash.loop = true; splash.start(); nodes.push(splash);
+    // Faint warm drone (summer haze)
+    const sun  = this._osc(ctx, 'sine', 60);
+    const gsun = ctx.createGain(); gsun.gain.value = 0.04;
+    sun.connect(gsun); gsun.connect(out); sun.start(); nodes.push(sun);
+    return nodes;
+  }
+
+  /** Sea with something wrong: waves + unsettling low beating */
+  _bgm_ambient_sea_dark(ctx, out) {
+    const nodes = [];
+    // Same wave wash, slightly quieter
+    const wave = this._noise(ctx, 10);
+    const bp = this._bpf(ctx, 'bandpass', 700, 0.25);
+    const gw = ctx.createGain(); gw.gain.value = 0.18;
+    wave.connect(bp); bp.connect(gw); gw.connect(out);
+    wave.loop = true; wave.start(); nodes.push(wave);
+    const lfo  = this._osc(ctx, 'sine', 0.09);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.10;
+    lfo.connect(lfoG); lfoG.connect(gw.gain); lfo.start(); nodes.push(lfo);
+    // Unsettling undertone: psychoacoustic beating
+    [44, 45.6].forEach(f => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = 0.22;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    return nodes;
+  }
+
+  /** Ocean dread: irregular swell + dissonant drone column */
+  _bgm_tension_sea(ctx, out) {
+    const nodes = [];
+    // Low-pass noise for deep water pressure feel
+    const wave = this._noise(ctx, 10);
+    const lp = this._bpf(ctx, 'lowpass', 400, 0.5);
+    const gw = ctx.createGain(); gw.gain.value = 0.14;
+    wave.connect(lp); lp.connect(gw); gw.connect(out);
+    wave.loop = true; wave.start(); nodes.push(wave);
+    // Dissonant drone: tritone-adjacent stack
+    [[55, 0.38], [77.8, 0.24], [110, 0.10]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Slow pulsing LFO ≈ 0.14 Hz
+    const pulse  = this._osc(ctx, 'sine', 0.14);
+    const pulseG = ctx.createGain(); pulseG.gain.value = 0.24;
+    pulse.connect(pulseG); pulseG.connect(out.gain); pulse.start(); nodes.push(pulse);
+    return nodes;
+  }
+
   /** Post-escape: single unresolved drone — alive but not safe */
   _bgm_ending_relief(ctx, out) {
     const nodes = [];
@@ -440,6 +511,86 @@ export class AudioEngine {
     g.gain.linearRampToValueAtTime(0, t + 0.80);
     n.connect(bp); bp.connect(g); g.connect(ctx.destination);
     n.start(t); n.stop(t + 0.82);
+  }
+
+  // ── Chapter 3 SE ──────────────────────────────────────────────────────────
+
+  /** Ocean wave: bandpass noise swell + fade */
+  _se_wave_splash(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 2.2);
+    const bp = this._bpf(ctx, 'bandpass', 850, 0.28);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.38, t + 0.35);
+    g.gain.setValueAtTime(this._seVolume * 0.32, t + 0.7);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 2.0);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 2.2);
+  }
+
+  /** Distant child laughter: short rising tonal bursts */
+  _se_child_laugh(ctx) {
+    const t = ctx.currentTime;
+    [0, 0.14, 0.26, 0.37].forEach((offset, i) => {
+      const freq = 520 + i * 55;
+      const o = this._osc(ctx, 'sine', freq);
+      o.frequency.setValueAtTime(freq, t + offset);
+      o.frequency.linearRampToValueAtTime(freq + 120, t + offset + 0.09);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0, t + offset);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.10, t + offset + 0.025);
+      g.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.09);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t + offset); o.stop(t + offset + 0.1);
+    });
+  }
+
+  /** Footstep on dry sand: soft mid-band noise */
+  _se_sand_step(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 0.28);
+    const bp = this._bpf(ctx, 'bandpass', 620, 0.9);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.42, t + 0.016);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.24);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.28);
+  }
+
+  /** Underwater bubbles: series of small pitched pops */
+  _se_water_bubble(ctx) {
+    const t = ctx.currentTime;
+    for (let i = 0; i < 5; i++) {
+      const ti   = t + i * 0.11 + (i % 2) * 0.03;
+      const freq = 280 + i * 40;
+      const o = this._osc(ctx, 'sine', freq);
+      o.frequency.setValueAtTime(freq, ti);
+      o.frequency.exponentialRampToValueAtTime(freq * 0.55, ti + 0.07);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(this._seVolume * 0.28, ti);
+      g.gain.exponentialRampToValueAtTime(0.001, ti + 0.08);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(ti); o.stop(ti + 0.09);
+    }
+  }
+
+  /** Distant voice calling: formant-like bandpass sweep, very faint */
+  _se_distant_call(ctx) {
+    const t = ctx.currentTime;
+    const n  = this._noise(ctx, 0.65);
+    const bp = this._bpf(ctx, 'bandpass', 700, 2.8);
+    bp.frequency.setValueAtTime(480, t);
+    bp.frequency.linearRampToValueAtTime(860, t + 0.14);
+    bp.frequency.linearRampToValueAtTime(580, t + 0.45);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.16, t + 0.08);
+    g.gain.setValueAtTime(this._seVolume * 0.13, t + 0.32);
+    g.gain.linearRampToValueAtTime(0, t + 0.60);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.65);
   }
 
   _se_run_footstep(ctx) {

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#284e9a"/>
+      <stop offset="45%"  stop-color="#5888c8"/>
+      <stop offset="75%"  stop-color="#7aacd8"/>
+      <stop offset="100%" stop-color="#90b8d8"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a3878"/>
+      <stop offset="50%"  stop-color="#162868"/>
+      <stop offset="100%" stop-color="#101e50"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="62%" cy="30%" r="38%">
+      <stop offset="0%"   stop-color="#fff0a0" stop-opacity="0.7"/>
+      <stop offset="55%"  stop-color="#f8d060" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f8d060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shadowHint" cx="50%" cy="72%" r="20%">
+      <stop offset="0%"   stop-color="#0a0e1e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0a0e1e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="25%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="1920" height="640" fill="url(#skyGrad)"/>
+  <!-- Sun glow -->
+  <rect x="0" y="0" width="1920" height="640" fill="url(#sunGlow)"/>
+  <!-- Sun disc -->
+  <ellipse cx="1190" cy="220" rx="58" ry="54" fill="#fff8c8"/>
+  <ellipse cx="1190" cy="220" rx="40" ry="38" fill="#fffce0"/>
+
+  <!-- Clouds (some dark/heavy — hinting at change) -->
+  <ellipse cx="200"  cy="160" rx="170" ry="44" fill="#d0e4f4" opacity="0.8"/>
+  <ellipse cx="130"  cy="172" rx="90"  ry="32" fill="#d8ecf8" opacity="0.65"/>
+  <ellipse cx="320"  cy="152" rx="110" ry="30" fill="#c8dcec" opacity="0.7"/>
+  <ellipse cx="650"  cy="100" rx="140" ry="38" fill="#d0e4f4" opacity="0.75"/>
+  <ellipse cx="580"  cy="110" rx="80"  ry="28" fill="#d8ecf8" opacity="0.6"/>
+  <!-- Darker cloud mass (far right) -->
+  <ellipse cx="1680" cy="200" rx="240" ry="60" fill="#a0b8cc" opacity="0.6"/>
+  <ellipse cx="1820" cy="180" rx="140" ry="44" fill="#90a8c0" opacity="0.55"/>
+  <ellipse cx="1540" cy="220" rx="180" ry="48" fill="#aabcce" opacity="0.5"/>
+  <ellipse cx="1700" cy="250" rx="200" ry="40" fill="#8898ac" opacity="0.45"/>
+
+  <!-- Horizon shimmer line -->
+  <rect x="0" y="635" width="1920" height="12" fill="#90b8d8" opacity="0.5"/>
+
+  <!-- Sea -->
+  <rect x="0" y="638" width="1920" height="442" fill="url(#seaGrad)"/>
+
+  <!-- Sun reflection column -->
+  <ellipse cx="1190" cy="700" rx="55" ry="160" fill="#f0d860" opacity="0.18"/>
+
+  <!-- Wave highlights -->
+  <ellipse cx="300"  cy="660" rx="200" ry="6"  fill="#4888c0" opacity="0.45"/>
+  <ellipse cx="800"  cy="675" rx="260" ry="5"  fill="#3878b0" opacity="0.4"/>
+  <ellipse cx="1450" cy="658" rx="220" ry="5"  fill="#4888c0" opacity="0.45"/>
+  <ellipse cx="600"  cy="720" rx="180" ry="4"  fill="#305888" opacity="0.35"/>
+  <ellipse cx="1300" cy="710" rx="200" ry="4"  fill="#305888" opacity="0.35"/>
+  <ellipse cx="960"  cy="780" rx="300" ry="4"  fill="#243070" opacity="0.3"/>
+  <ellipse cx="400"  cy="830" rx="220" ry="3"  fill="#1e2860" opacity="0.25"/>
+  <ellipse cx="1600" cy="820" rx="200" ry="3"  fill="#1e2860" opacity="0.25"/>
+
+  <!-- Deep water darkness -->
+  <rect x="0" y="900" width="1920" height="180" fill="#080e20" opacity="0.3"/>
+
+  <!-- THE SHADOW HINT (deep, barely visible) -->
+  <rect x="0" y="640" width="1920" height="440" fill="url(#shadowHint)"/>
+  <!-- Vague shape in the depths — ambiguous -->
+  <ellipse cx="960" cy="860" rx="28" ry="60" fill="#0a0e1a" opacity="0.35"/>
+  <ellipse cx="960" cy="810" rx="18" ry="24" fill="#0a0e1a" opacity="0.28"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>
