@@ -54,13 +54,22 @@ export const STORY_INDEX = [
     available: true,
   },
 
+  {
+    id:        'chapter4',
+    chapter:   'Episode 4',
+    title:     'ここに住んでいた',
+    subtitle:  '玄関の灯りが、まだついていた',
+    path:      './stories/chapter4.json',
+    available: true,
+  },
+
   // ── Placeholder for future episodes ─────────────────────────────────────
   // {
-  //   id:        'chapter4',
-  //   chapter:   'Episode 4',
+  //   id:        'chapter5',
+  //   chapter:   'Episode 5',
   //   title:     '新しい話のタイトル',
   //   subtitle:  'サブタイトル',
-  //   path:      './stories/chapter4.json',
+  //   path:      './stories/chapter5.json',
   //   available: false,
   // },
 ];

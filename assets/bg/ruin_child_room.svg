@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#181428"/>
+      <stop offset="100%" stop-color="#12102a"/>
+    </linearGradient>
+    <linearGradient id="tatami" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#222030"/>
+      <stop offset="100%" stop-color="#1a1828"/>
+    </linearGradient>
+    <!-- Moonlight from window -->
+    <radialGradient id="moonGlow" cx="85%" cy="35%" r="38%">
+      <stop offset="0%"   stop-color="#9090c0" stop-opacity="0.4"/>
+      <stop offset="50%"  stop-color="#7070a8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7070a8" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Moon floor pool -->
+    <radialGradient id="moonFloor" cx="85%" cy="20%" r="70%">
+      <stop offset="0%"   stop-color="#8888b8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8888b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="68%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base (faded lavender-grey walls — once a child's room) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
+
+  <!-- Moonlight overlays -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#moonGlow)"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#moonFloor)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="140" fill="#0e0c1a"/>
+  <rect x="0" y="138" width="1920" height="5" fill="#08060e" opacity="0.8"/>
+
+  <!-- Left wall -->
+  <rect x="0"   y="140" width="380" height="760" fill="#181426"/>
+  <!-- Right wall -->
+  <rect x="1540" y="140" width="380" height="760" fill="#181426"/>
+
+  <!-- Back wall -->
+  <rect x="380" y="140" width="1160" height="760" fill="#161224"/>
+
+  <!-- Window (right side — moonlit) -->
+  <rect x="1560" y="200" width="280" height="360" fill="#10101e"/>
+  <rect x="1570" y="208" width="260" height="344" fill="#0e0e1c"/>
+  <!-- Window frame -->
+  <line x1="1700" y1="208" x2="1700" y2="552" stroke="#141220" stroke-width="6"/>
+  <line x1="1570" y1="340" x2="1830" y2="340" stroke="#141220" stroke-width="5"/>
+  <line x1="1570" y1="430" x2="1830" y2="430" stroke="#141220" stroke-width="5"/>
+  <!-- Curtain (limp, torn) -->
+  <rect x="1570" y="208" width="60"  height="344" fill="#201e32" opacity="0.7"/>
+  <rect x="1820" y="208" width="20"  height="344" fill="#201e32" opacity="0.6"/>
+  <!-- Moon outside -->
+  <ellipse cx="1720" cy="280" rx="40" ry="38" fill="#c8c0a8" opacity="0.6"/>
+  <!-- Moon light shaft onto floor -->
+  <polygon points="1560,552 1840,552 1920,700 1920,900 1840,760 1560,720" fill="#9090c0" opacity="0.05"/>
+
+  <!-- Child drawings on wall (left side) -->
+  <rect x="80"  y="200" width="240" height="200" fill="#141220" rx="2"/>
+  <rect x="88"  y="208" width="224" height="184" fill="#121020" rx="1"/>
+  <!-- Stick figure (child's drawing) — slightly wrong -->
+  <circle cx="200" cy="240" r="20" fill="none" stroke="#282440" stroke-width="4"/>
+  <line x1="200" y1="260" x2="200" y2="320" stroke="#282440" stroke-width="4"/>
+  <line x1="200" y1="280" x2="168" y2="300" stroke="#282440" stroke-width="3"/>
+  <line x1="200" y1="280" x2="232" y2="300" stroke="#282440" stroke-width="3"/>
+  <line x1="200" y1="320" x2="178" y2="370" stroke="#282440" stroke-width="3"/>
+  <line x1="200" y1="320" x2="222" y2="370" stroke="#282440" stroke-width="3"/>
+  <!-- Second drawing (sun, house) -->
+  <rect x="80"  y="420" width="200" height="160" fill="#141220" rx="2"/>
+  <rect x="88"  y="428" width="184" height="144" fill="#121020" rx="1"/>
+  <!-- Simple house outline -->
+  <rect x="118" y="490" width="80" height="70" fill="none" stroke="#282440" stroke-width="3"/>
+  <polygon points="118,490 158,456 198,490" fill="none" stroke="#282440" stroke-width="3"/>
+  <!-- Another stick figure next to house, taller — but the proportions are wrong -->
+  <circle cx="220" cy="476" r="14" fill="none" stroke="#302850" stroke-width="3"/>
+  <line x1="220" y1="490" x2="220" y2="540" stroke="#302850" stroke-width="3"/>
+  <line x1="220" y1="505" x2="205" y2="522" stroke="#302850" stroke-width="3"/>
+  <line x1="220" y1="505" x2="235" y2="522" stroke="#302850" stroke-width="3"/>
+  <!-- Extra arms (wrong — too many) -->
+  <line x1="220" y1="500" x2="198" y2="512" stroke="#302850" stroke-width="2" opacity="0.6"/>
+
+  <!-- Bedding (futon laid out — unused but pristine) -->
+  <rect x="400"  y="820" width="600" height="180" fill="#282438" rx="6"/>
+  <rect x="412"  y="832" width="576" height="156" fill="#242038" rx="4"/>
+  <!-- Pillow -->
+  <rect x="420"  y="832" width="160" height="80"  fill="#2e2a44" rx="4"/>
+  <!-- Blanket fold line -->
+  <line x1="412" y1="890" x2="988" y2="890" stroke="#201e30" stroke-width="3" opacity="0.5"/>
+
+  <!-- THE STUFFED ANIMAL (sitting upright, facing us — horror element) -->
+  <!-- Bear body -->
+  <ellipse cx="960" cy="800" rx="55" ry="60" fill="#3a3050"/>
+  <!-- Bear head -->
+  <ellipse cx="960" cy="726" rx="46" ry="44" fill="#3a3050"/>
+  <!-- Ears -->
+  <ellipse cx="926" cy="700" rx="18" ry="18" fill="#3a3050"/>
+  <ellipse cx="926" cy="700" rx="11" ry="11" fill="#302848"/>
+  <ellipse cx="994" cy="700" rx="18" ry="18" fill="#3a3050"/>
+  <ellipse cx="994" cy="700" rx="11" ry="11" fill="#302848"/>
+  <!-- EYES — open, glass eyes, staring forward -->
+  <ellipse cx="944" cy="722" rx="9"  ry="10" fill="#080810"/>
+  <ellipse cx="976" cy="722" rx="9"  ry="10" fill="#080810"/>
+  <ellipse cx="945" cy="721" rx="3.5" ry="4" fill="#3050a0" opacity="0.8"/>
+  <ellipse cx="977" cy="721" rx="3.5" ry="4" fill="#3050a0" opacity="0.8"/>
+  <ellipse cx="946" cy="720" rx="1.5" ry="2" fill="#a0a0c0" opacity="0.7"/>
+  <ellipse cx="978" cy="720" rx="1.5" ry="2" fill="#a0a0c0" opacity="0.7"/>
+  <!-- Nose and mouth -->
+  <ellipse cx="960" cy="738" rx="8"  ry="6"  fill="#28203a"/>
+  <path d="M 950,744 Q 960,752 970,744" stroke="#28203a" stroke-width="3" fill="none"/>
+  <!-- Arms -->
+  <ellipse cx="906" cy="800" rx="20" ry="40" fill="#342c4a" transform="rotate(-15 906 800)"/>
+  <ellipse cx="1014" cy="800" rx="20" ry="40" fill="#342c4a" transform="rotate(15 1014 800)"/>
+  <!-- Legs -->
+  <ellipse cx="932" cy="858" rx="20" ry="24" fill="#342c4a"/>
+  <ellipse cx="988" cy="858" rx="20" ry="24" fill="#342c4a"/>
+
+  <!-- Toys scattered on tatami floor -->
+  <!-- Tatami -->
+  <rect x="0" y="900" width="1920" height="180" fill="url(#tatami)"/>
+  <rect x="0" y="900" width="1920" height="4"   fill="#181428" opacity="0.6"/>
+  <rect x="640" y="900" width="4"   height="180" fill="#181428" opacity="0.5"/>
+  <rect x="1280" y="900" width="4"  height="180" fill="#181428" opacity="0.5"/>
+
+  <!-- Scattered toys -->
+  <!-- Block cube -->
+  <rect x="1100" y="870" width="50" height="50" fill="#4a4060" rx="3" opacity="0.75"/>
+  <rect x="1108" y="870" width="34" height="6"  fill="#5a5070" opacity="0.6"/>
+  <!-- Small toy car (simple) -->
+  <rect x="300"  y="880" width="70" height="30" fill="#504060" rx="3" opacity="0.7"/>
+  <ellipse cx="318" cy="912" rx="14" ry="14" fill="#282030" opacity="0.8"/>
+  <ellipse cx="352" cy="912" rx="14" ry="14" fill="#282030" opacity="0.8"/>
+  <!-- Ball -->
+  <ellipse cx="1500" cy="900" rx="30" ry="28" fill="#482c60" opacity="0.65"/>
+  <!-- Some blocks arranged in a circle (child was playing) -->
+  <rect x="700"  y="892" width="28" height="28" fill="#3a3060" rx="2" opacity="0.65"/>
+  <rect x="740"  y="888" width="24" height="24" fill="#4a4070" rx="2" opacity="0.6"/>
+  <rect x="778"  y="892" width="28" height="28" fill="#3a3060" rx="2" opacity="0.65"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

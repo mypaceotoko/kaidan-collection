@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1e1c14"/>
+      <stop offset="100%" stop-color="#181408"/>
+    </linearGradient>
+    <linearGradient id="tatami" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#262010"/>
+      <stop offset="100%" stop-color="#1e1a0c"/>
+    </linearGradient>
+    <!-- Warm room glow: this place is inhabited -->
+    <radialGradient id="roomLight" cx="50%" cy="45%" r="55%">
+      <stop offset="0%"   stop-color="#c08020" stop-opacity="0.65"/>
+      <stop offset="40%"  stop-color="#906010" stop-opacity="0.30"/>
+      <stop offset="80%"  stop-color="#604008" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#604008" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Steam from food -->
+    <radialGradient id="steamGlow" cx="50%" cy="35%" r="25%">
+      <stop offset="0%"   stop-color="#d0c0a0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#d0c0a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="68%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.72"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
+
+  <!-- Warm room glow (inhabited, lit) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#roomLight)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="150" fill="#12100a"/>
+  <rect x="0" y="148" width="1920" height="4" fill="#0e0c08" opacity="0.8"/>
+
+  <!-- Ceiling lamp (working, warm light) -->
+  <!-- Cord -->
+  <line x1="960" y1="0" x2="960" y2="160" stroke="#1a1810" stroke-width="4"/>
+  <!-- Shade -->
+  <ellipse cx="960" cy="170" rx="80"  ry="24" fill="#2a2018"/>
+  <rect x="908"  y="170" width="104"  height="40" fill="#241c14" rx="2"/>
+  <ellipse cx="960" cy="210" rx="52"  ry="16" fill="#201810"/>
+  <!-- Bulb glow -->
+  <ellipse cx="960" cy="194" rx="28"  ry="18" fill="#f0c050" opacity="0.85"/>
+  <ellipse cx="960" cy="194" rx="16"  ry="10" fill="#fff8e0"/>
+
+  <!-- Left wall -->
+  <rect x="0"   y="150" width="360" height="790" fill="#201e14"/>
+  <!-- Right wall -->
+  <rect x="1560" y="150" width="360" height="790" fill="#201e14"/>
+  <!-- Back wall -->
+  <rect x="360" y="150" width="1200" height="790" fill="#1c1a10"/>
+
+  <!-- Sliding door (left, partial) -->
+  <rect x="360"  y="150" width="280" height="790" fill="#1e1c12"/>
+  <rect x="368"  y="158" width="264" height="774" fill="#1a1810"/>
+  <!-- Sliding door handle -->
+  <rect x="620"  y="530" width="16"  height="60"  fill="#242018" rx="3"/>
+  <!-- Right sliding door -->
+  <rect x="1280" y="150" width="280" height="790" fill="#1e1c12"/>
+  <rect x="1288" y="158" width="264" height="774" fill="#1a1810"/>
+  <rect x="1284" y="530" width="16"  height="60"  fill="#242018" rx="3"/>
+
+  <!-- Tokonoma (alcove, back right) with something inside -->
+  <rect x="1320" y="168" width="230" height="620" fill="#1a1808" opacity="0.7"/>
+  <!-- Hanging scroll in tokonoma -->
+  <rect x="1388" y="188" width="90"  height="220" fill="#141208" rx="2"/>
+  <rect x="1392" y="192" width="82"  height="212" fill="#100e06" rx="1"/>
+  <!-- Rod -->
+  <rect x="1384" y="188" width="98"  height="8"   fill="#201c0e" rx="2"/>
+  <rect x="1384" y="408" width="98"  height="8"   fill="#201c0e" rx="2"/>
+  <!-- Candle (second one, lit) in tokonoma -->
+  <rect x="1418" y="420" width="30"  height="70"  fill="#c8c0a0" rx="2"/>
+  <ellipse cx="1433" cy="420" rx="16" ry="6" fill="#d0c8b0"/>
+  <ellipse cx="1433" cy="408" rx="8"  ry="12" fill="#f8d060" opacity="0.9"/>
+  <ellipse cx="1433" cy="404" rx="5"  ry="8"  fill="#fffca0"/>
+  <!-- Small candle glow -->
+  <ellipse cx="1433" cy="450" rx="50" ry="60" fill="#c08020" opacity="0.12"/>
+
+  <!-- Tatami floor -->
+  <rect x="0" y="940" width="1920" height="140" fill="url(#tatami)"/>
+  <rect x="0" y="940" width="1920" height="4"   fill="#161208" opacity="0.6"/>
+  <rect x="640" y="940" width="4"   height="140" fill="#161208" opacity="0.5"/>
+  <rect x="1280" y="940" width="4"  height="140" fill="#161208" opacity="0.5"/>
+
+  <!-- THE TABLE (chabudai) — with food laid out, including the extra seat -->
+  <!-- Table top -->
+  <ellipse cx="960"  cy="820" rx="520" ry="100" fill="#3a2e18"/>
+  <ellipse cx="960"  cy="815" rx="508" ry="92"  fill="#2e2410"/>
+  <!-- Table legs -->
+  <rect x="820"  y="820" width="16" height="80" fill="#241c0c" rx="3"/>
+  <rect x="1084" y="820" width="16" height="80" fill="#241c0c" rx="3"/>
+  <rect x="936"  y="820" width="16" height="80" fill="#241c0c" rx="3"/>
+
+  <!-- Steam glow overlay (food is warm) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#steamGlow)"/>
+
+  <!-- Bowl / plate settings (multiple) -->
+  <!-- Setting 1 (left) -->
+  <ellipse cx="720"  cy="800" rx="70" ry="24" fill="#4a3820"/>
+  <ellipse cx="720"  cy="796" rx="60" ry="18" fill="#5a4828"/>
+  <ellipse cx="720"  cy="792" rx="48" ry="14" fill="#c8a858" opacity="0.5"/>
+  <!-- Steam rising from bowl 1 -->
+  <path d="M 710,792 Q 705,760 712,740" stroke="#c0b090" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M 720,790 Q 718,755 725,732" stroke="#c0b090" stroke-width="2" fill="none" opacity="0.25"/>
+  <path d="M 732,792 Q 732,758 738,738" stroke="#c0b090" stroke-width="2" fill="none" opacity="0.3"/>
+  <!-- Small chopsticks -->
+  <line x1="680" y1="816" x2="758" y2="810" stroke="#2a2018" stroke-width="4"/>
+  <line x1="686" y1="820" x2="764" y2="814" stroke="#2a2018" stroke-width="4"/>
+  <!-- Cup (tea) -->
+  <rect x="640"  y="780" width="44" height="40" fill="#3a3020" rx="4"/>
+  <ellipse cx="662" cy="780" rx="22" ry="8" fill="#4a4030"/>
+
+  <!-- Setting 2 (right) -->
+  <ellipse cx="1200" cy="800" rx="70" ry="24" fill="#4a3820"/>
+  <ellipse cx="1200" cy="796" rx="60" ry="18" fill="#5a4828"/>
+  <ellipse cx="1200" cy="792" rx="48" ry="14" fill="#c8a858" opacity="0.5"/>
+  <path d="M 1190,792 Q 1185,760 1192,740" stroke="#c0b090" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M 1202,790 Q 1200,755 1208,732" stroke="#c0b090" stroke-width="2" fill="none" opacity="0.25"/>
+  <line x1="1162" y1="816" x2="1240" y2="810" stroke="#2a2018" stroke-width="4"/>
+  <line x1="1168" y1="820" x2="1246" y2="814" stroke="#2a2018" stroke-width="4"/>
+  <rect x="1236" y="780" width="44" height="40" fill="#3a3020" rx="4"/>
+  <ellipse cx="1258" cy="780" rx="22" ry="8" fill="#4a4030"/>
+
+  <!-- Setting 3 (center — THE EXTRA SEAT, always there) -->
+  <ellipse cx="960"  cy="780" rx="70" ry="24" fill="#4a3820"/>
+  <ellipse cx="960"  cy="776" rx="60" ry="18" fill="#5a4828"/>
+  <ellipse cx="960"  cy="772" rx="48" ry="14" fill="#c8a858" opacity="0.55"/>
+  <!-- Steam (this one slightly more visible — it's the freshest) -->
+  <path d="M 948,770 Q 942,728 950,702" stroke="#d0c098" stroke-width="2.5" fill="none" opacity="0.4"/>
+  <path d="M 960,768 Q 958,722 966,696" stroke="#d0c098" stroke-width="2.5" fill="none" opacity="0.35"/>
+  <path d="M 974,770 Q 975,726 980,702" stroke="#d0c098" stroke-width="2.5" fill="none" opacity="0.4"/>
+  <line x1="920"  y1="796" x2="1000" y2="790" stroke="#2a2018" stroke-width="4"/>
+  <line x1="926"  y1="800" x2="1006" y2="794" stroke="#2a2018" stroke-width="4"/>
+  <rect x="918"  y="760" width="44" height="40" fill="#3a3020" rx="4"/>
+  <ellipse cx="940" cy="760" rx="22" ry="8" fill="#4a4030"/>
+
+  <!-- Zabuton seat cushions (for each setting) -->
+  <ellipse cx="720"  cy="920" rx="100" ry="40" fill="#382c1a" opacity="0.7"/>
+  <ellipse cx="1200" cy="920" rx="100" ry="40" fill="#382c1a" opacity="0.7"/>
+  <ellipse cx="960"  cy="920" rx="100" ry="40" fill="#3c3020" opacity="0.75"/>
+
+  <!-- The occupied seat suggestion (the far-end person): vague dark shape in chair -->
+  <!-- Silhouette of someone sitting at far end of table, facing us -->
+  <ellipse cx="960"  cy="590" rx="40" ry="44" fill="#1a1810" opacity="0.55"/>
+  <rect x="930"    y="630" width="60" height="100" fill="#181408" opacity="0.5"/>
+  <!-- Vague arm outlines -->
+  <ellipse cx="908"  cy="680" rx="22" ry="48" fill="#141208" opacity="0.42" transform="rotate(-15 908 680)"/>
+  <ellipse cx="1012" cy="680" rx="22" ry="48" fill="#141208" opacity="0.42" transform="rotate(15 1012 680)"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

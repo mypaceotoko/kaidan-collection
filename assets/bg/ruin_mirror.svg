@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0c0a10"/>
+      <stop offset="100%" stop-color="#080608"/>
+    </linearGradient>
+    <linearGradient id="mirrorFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#3a3028"/>
+      <stop offset="40%"  stop-color="#2e2820"/>
+      <stop offset="100%" stop-color="#241e18"/>
+    </linearGradient>
+    <!-- Mirror surface: dark glass with cold blue tint -->
+    <linearGradient id="mirrorGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#101418"/>
+      <stop offset="50%"  stop-color="#0c1016"/>
+      <stop offset="100%" stop-color="#080c10"/>
+    </linearGradient>
+    <!-- The wrong reflection light (slightly brighter inside mirror) -->
+    <radialGradient id="mirrorInnerGlow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%"   stop-color="#2a2838" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2a2838" stop-opacity="0"/>
+    </radialGradient>
+    <!-- The figure in the mirror — wrong glow -->
+    <radialGradient id="figureGlow" cx="50%" cy="42%" r="22%">
+      <stop offset="0%"   stop-color="#404060" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#404060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="15%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Room darkness -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#roomGrad)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="120" fill="#08060a"/>
+
+  <!-- Floor -->
+  <rect x="0" y="940" width="1920" height="140" fill="#0a0808"/>
+  <!-- Floor planks -->
+  <rect x="0" y="940" width="1920" height="3" fill="#0e0c08" opacity="0.6"/>
+  <rect x="0" y="958" width="1920" height="2" fill="#0c0a06" opacity="0.5"/>
+  <rect x="0" y="976" width="1920" height="2" fill="#0c0a06" opacity="0.45"/>
+  <rect x="0" y="994" width="1920" height="2" fill="#0a0804" opacity="0.4"/>
+
+  <!-- Wall texture -->
+  <rect x="0"   y="120" width="480" height="820" fill="#0e0c10"/>
+  <rect x="1440" y="120" width="480" height="820" fill="#0e0c10"/>
+  <rect x="480" y="120" width="960" height="820" fill="#0a0810"/>
+
+  <!-- ─── THE MIRROR ─── -->
+  <!-- Outer ornate frame (heavy Victorian-style) -->
+  <rect x="560" y="60" width="800" height="920" fill="url(#mirrorFrame)" rx="8"/>
+  <!-- Frame ornamental detail (corner flourishes) -->
+  <ellipse cx="560"  cy="60"  rx="30" ry="30" fill="#342c22"/>
+  <ellipse cx="1360" cy="60"  rx="30" ry="30" fill="#342c22"/>
+  <ellipse cx="560"  cy="980" rx="30" ry="30" fill="#342c22"/>
+  <ellipse cx="1360" cy="980" rx="30" ry="30" fill="#342c22"/>
+  <!-- Frame side decorations -->
+  <ellipse cx="560"  cy="520" rx="22" ry="40" fill="#382e24"/>
+  <ellipse cx="1360" cy="520" rx="22" ry="40" fill="#382e24"/>
+  <!-- Frame top center ornament -->
+  <ellipse cx="960"  cy="60"  rx="48" ry="24" fill="#3a3026"/>
+  <ellipse cx="960"  cy="980" rx="48" ry="24" fill="#3a3026"/>
+  <!-- Frame inner rim -->
+  <rect x="576" y="76"  width="768" height="888" fill="#201c16" rx="4"/>
+  <rect x="584" y="84"  width="752" height="872" fill="#181410" rx="3"/>
+
+  <!-- Mirror glass surface -->
+  <rect x="592" y="92"  width="736" height="856" fill="url(#mirrorGlass)" rx="2"/>
+  <!-- Mirror inner glow (like there's light behind it) -->
+  <rect x="592" y="92"  width="736" height="856" fill="url(#mirrorInnerGlow)"/>
+
+  <!-- Mirror CRACKS (it's broken in places) -->
+  <!-- Main crack from top-left -->
+  <line x1="620"  y1="92"  x2="820"  y2="380" stroke="#282030" stroke-width="2" opacity="0.7"/>
+  <line x1="820"  y1="380" x2="750"  y2="580" stroke="#282030" stroke-width="1.5" opacity="0.6"/>
+  <line x1="820"  y1="380" x2="960"  y2="480" stroke="#282030" stroke-width="1.5" opacity="0.6"/>
+  <!-- Secondary crack -->
+  <line x1="1200" y1="120" x2="1100" y2="300" stroke="#282030" stroke-width="1.5" opacity="0.65"/>
+  <line x1="1100" y1="300" x2="900"  y2="440" stroke="#282030" stroke-width="1" opacity="0.5"/>
+  <!-- Small crack bottom -->
+  <line x1="700"  y1="820" x2="800"  y2="920" stroke="#282030" stroke-width="1.5" opacity="0.6"/>
+  <!-- Missing shard (dark area where glass fell) -->
+  <polygon points="640,110 700,108 720,160 660,165" fill="#080608" opacity="0.9"/>
+
+  <!-- THE REFLECTION — our side: faint silhouettes of viewers (correct count) -->
+  <!-- Figure 1 (far left viewer reflection) -->
+  <rect x="620"  y="600" width="30" height="120" fill="#1a1820" opacity="0.4"/>
+  <ellipse cx="635" cy="588" rx="16" ry="18" fill="#1a1820" opacity="0.4"/>
+  <!-- Figure 2 (center-left reflection) -->
+  <rect x="760"  y="580" width="34" height="130" fill="#1c1a22" opacity="0.45"/>
+  <ellipse cx="777" cy="566" rx="18" ry="20" fill="#1c1a22" opacity="0.45"/>
+
+  <!-- THE EXTRA FIGURE — the wrong one, slightly brighter, raising hand -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#figureGlow)"/>
+  <!-- Extra figure body (center mirror, more visible) -->
+  <rect x="928"  y="480" width="64" height="260" fill="#282640" opacity="0.65"/>
+  <ellipse cx="960" cy="464" rx="36" ry="38" fill="#2a2840" opacity="0.68"/>
+  <!-- Extra figure — RAISED ARM (hand raised in beckoning gesture) -->
+  <!-- Arm raised to the left-up direction -->
+  <rect x="860"  y="380" width="72"  height="20" fill="#282640" opacity="0.60" transform="rotate(-35 896 390)"/>
+  <!-- Hand at end of raised arm -->
+  <ellipse cx="846" cy="362" rx="20" ry="16" fill="#282640" opacity="0.58"/>
+  <!-- Fingers (vague) -->
+  <line x1="836" y1="354" x2="826" y2="344" stroke="#282640" stroke-width="5" opacity="0.5"/>
+  <line x1="843" y1="350" x2="835" y2="338" stroke="#282640" stroke-width="5" opacity="0.5"/>
+  <line x1="850" y1="348" x2="845" y2="336" stroke="#282640" stroke-width="5" opacity="0.5"/>
+  <line x1="856" y1="350" x2="854" y2="338" stroke="#282640" stroke-width="5" opacity="0.5"/>
+  <!-- Extra figure legs -->
+  <rect x="928"  y="736" width="26" height="120" fill="#282640" opacity="0.58"/>
+  <rect x="966"  y="736" width="26" height="120" fill="#282640" opacity="0.58"/>
+  <!-- Extra figure eyes (slightly visible) -->
+  <ellipse cx="946" cy="460" rx="5"  ry="6"  fill="#4040608" opacity="0.5"/>
+  <ellipse cx="974" cy="460" rx="5"  ry="6"  fill="#404060" opacity="0.5"/>
+
+  <!-- Mirror surface reflection: cold shimmer -->
+  <rect x="592" y="92"  width="736" height="10" fill="#3a3858" opacity="0.18"/>
+  <!-- Bottom reflection (floor in mirror) -->
+  <rect x="592" y="880" width="736" height="68" fill="#181620" opacity="0.3"/>
+
+  <!-- Objects in room (vague silhouettes) -->
+  <!-- Old dresser (left side of room) -->
+  <rect x="60"  y="720" width="320" height="220" fill="#0c0a0e" rx="3" opacity="0.9"/>
+  <rect x="70"  y="730" width="300" height="60"  fill="#0e0c10" rx="2" opacity="0.85"/>
+  <rect x="70"  y="800" width="300" height="60"  fill="#0e0c10" rx="2" opacity="0.85"/>
+  <rect x="70"  y="870" width="300" height="60"  fill="#0e0c10" rx="2" opacity="0.85"/>
+  <!-- Drawer handles -->
+  <rect x="196" y="756" width="40" height="8" fill="#181418" rx="3"/>
+  <rect x="196" y="826" width="40" height="8" fill="#181418" rx="3"/>
+  <rect x="196" y="896" width="40" height="8" fill="#181418" rx="3"/>
+
+  <!-- Something on dresser top (undefined, ominous shape) -->
+  <ellipse cx="220" cy="720" rx="50" ry="18" fill="#0e0c10" opacity="0.7"/>
+
+  <!-- Vignette (very heavy) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

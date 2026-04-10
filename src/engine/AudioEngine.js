@@ -203,6 +203,80 @@ export class AudioEngine {
     return nodes;
   }
 
+  // ── Chapter 4 BGM ─────────────────────────────────────────────────────────
+
+  /** Abandoned house silence: wind through broken glass + oppressive sub drone */
+  _bgm_ambient_ruin(ctx, out) {
+    const nodes = [];
+    // Wind through cracks: narrow-band noise, high frequency
+    const wind = this._noise(ctx, 12);
+    const bp   = this._bpf(ctx, 'bandpass', 1900, 0.75);
+    const gw   = ctx.createGain(); gw.gain.value = 0.055;
+    wind.connect(bp); bp.connect(gw); gw.connect(out);
+    wind.loop = true; wind.start(); nodes.push(wind);
+    // Sub-bass pressure: oppressive weight of silence
+    const sub  = this._osc(ctx, 'sine', 36);
+    const gs   = ctx.createGain(); gs.gain.value = 0.20;
+    sub.connect(gs); gs.connect(out); sub.start(); nodes.push(sub);
+    // Breathing LFO: very slow pulse
+    const lfo  = this._osc(ctx, 'sine', 0.045);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.11;
+    lfo.connect(lfoG); lfoG.connect(gs.gain); lfo.start(); nodes.push(lfo);
+    // Faint room-tone noise
+    const room = this._noise(ctx, 8);
+    const lp   = this._bpf(ctx, 'lowpass', 280, 1);
+    const gr   = ctx.createGain(); gr.gain.value = 0.014;
+    room.connect(lp); lp.connect(gr); gr.connect(out);
+    room.loop = true; room.start(); nodes.push(room);
+    return nodes;
+  }
+
+  /** Ruin with wrongness: same wind + psychoacoustic beating pair */
+  _bgm_ambient_ruin_dark(ctx, out) {
+    const nodes = [];
+    const wind = this._noise(ctx, 12);
+    const bp   = this._bpf(ctx, 'bandpass', 1700, 0.7);
+    const gw   = ctx.createGain(); gw.gain.value = 0.05;
+    wind.connect(bp); bp.connect(gw); gw.connect(out);
+    wind.loop = true; wind.start(); nodes.push(wind);
+    // Detuned bass pair → beating
+    [36, 37.6].forEach(f => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = 0.24;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Cold upper harmonic (haunted overtone)
+    const hi  = this._osc(ctx, 'sine', 144);
+    const gh  = ctx.createGain(); gh.gain.value = 0.055;
+    hi.connect(gh); gh.connect(out); hi.start(); nodes.push(hi);
+    // Slow LFO
+    const lfo  = this._osc(ctx, 'sine', 0.052);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.13;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
+  /** Ruin tension: dissonant tritone stack + irregular tremor */
+  _bgm_tension_ruin(ctx, out) {
+    const nodes = [];
+    const wind = this._noise(ctx, 12);
+    const bp   = this._bpf(ctx, 'bandpass', 2200, 0.6);
+    const gw   = ctx.createGain(); gw.gain.value = 0.07;
+    wind.connect(bp); bp.connect(gw); gw.connect(out);
+    wind.loop = true; wind.start(); nodes.push(wind);
+    // Tritone-adjacent stack: maximum harmonic dissonance
+    [[44, 0.42], [62.2, 0.30], [88, 0.18], [124.4, 0.08]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Faster irregular tremor LFO (0.22 Hz ≈ nervous heartbeat)
+    const lfo  = this._osc(ctx, 'sine', 0.22);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.30;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
   // ── Chapter 3 BGM ─────────────────────────────────────────────────────────
 
   /** Sunny beach: wave wash + summer warmth */
@@ -511,6 +585,105 @@ export class AudioEngine {
     g.gain.linearRampToValueAtTime(0, t + 0.80);
     n.connect(bp); bp.connect(g); g.connect(ctx.destination);
     n.start(t); n.stop(t + 0.82);
+  }
+
+  // ── Chapter 4 SE ──────────────────────────────────────────────────────────
+
+  /** Wood floor creak: pitched sawtooth sweep downward */
+  _se_floor_creak(ctx) {
+    const t = ctx.currentTime;
+    const o = this._osc(ctx, 'sawtooth', 380);
+    o.frequency.setValueAtTime(380, t);
+    o.frequency.exponentialRampToValueAtTime(55, t + 1.4);
+    const ws = ctx.createWaveShaper(); ws.curve = this._distCurve(120);
+    const lp = this._bpf(ctx, 'lowpass', 800, 1);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(this._seVolume * 0.28, t);
+    g.gain.setValueAtTime(this._seVolume * 0.20, t + 0.6);
+    g.gain.linearRampToValueAtTime(0, t + 1.4);
+    o.connect(ws); ws.connect(lp); lp.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t + 1.5);
+  }
+
+  /** Distant glass shard falling: bright transient + metallic decay */
+  _se_glass_break(ctx) {
+    const t = ctx.currentTime;
+    // Initial sharp impact
+    const n1 = this._noise(ctx, 0.08);
+    const hp = this._bpf(ctx, 'highpass', 3500, 0.5);
+    const g1 = ctx.createGain();
+    g1.gain.setValueAtTime(this._seVolume * 0.5, t);
+    g1.gain.exponentialRampToValueAtTime(0.001, t + 0.07);
+    n1.connect(hp); hp.connect(g1); g1.connect(ctx.destination);
+    n1.start(t); n1.stop(t + 0.08);
+    // Metallic ring decay
+    const o = this._osc(ctx, 'sine', 2800);
+    o.frequency.setValueAtTime(2800, t + 0.01);
+    o.frequency.exponentialRampToValueAtTime(900, t + 0.7);
+    const g2 = ctx.createGain();
+    g2.gain.setValueAtTime(this._seVolume * 0.22, t + 0.01);
+    g2.gain.exponentialRampToValueAtTime(0.001, t + 0.65);
+    o.connect(g2); g2.connect(ctx.destination);
+    o.start(t + 0.01); o.stop(t + 0.7);
+  }
+
+  /** Distorted music-box toy: detuned tones, malformed melody */
+  _se_toy_sound(ctx) {
+    const t = ctx.currentTime;
+    // A few notes of a simple melody, heavily distorted
+    const melody = [523.3, 440, 392, 349.2, 392];
+    melody.forEach((freq, i) => {
+      const ti = t + i * 0.28;
+      const o  = this._osc(ctx, 'sine', freq * 0.97); // slightly flat = unsettling
+      const ws = ctx.createWaveShaper(); ws.curve = this._distCurve(80);
+      const g  = ctx.createGain();
+      g.gain.setValueAtTime(0, ti);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.30, ti + 0.02);
+      g.gain.setValueAtTime(this._seVolume * 0.22, ti + 0.20);
+      g.gain.linearRampToValueAtTime(0, ti + 0.26);
+      o.connect(ws); ws.connect(g); g.connect(ctx.destination);
+      o.start(ti); o.stop(ti + 0.28);
+    });
+  }
+
+  /** Heavy door slam: low thud + structural boom */
+  _se_door_slam(ctx) {
+    const t = ctx.currentTime;
+    // Low thud
+    const n1 = this._noise(ctx, 0.18);
+    const lp = this._bpf(ctx, 'lowpass', 120, 0.8);
+    const g1 = ctx.createGain();
+    g1.gain.setValueAtTime(0, t);
+    g1.gain.linearRampToValueAtTime(this._seVolume * 0.95, t + 0.008);
+    g1.gain.exponentialRampToValueAtTime(0.001, t + 0.16);
+    n1.connect(lp); lp.connect(g1); g1.connect(ctx.destination);
+    n1.start(t); n1.stop(t + 0.18);
+    // Structural resonance boom
+    const n2 = this._noise(ctx, 0.45);
+    const bp  = this._bpf(ctx, 'bandpass', 65, 1.5);
+    const g2  = ctx.createGain();
+    g2.gain.setValueAtTime(this._seVolume * 0.55, t + 0.01);
+    g2.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
+    n2.connect(bp); bp.connect(g2); g2.connect(ctx.destination);
+    n2.start(t + 0.01); n2.stop(t + 0.46);
+  }
+
+  /** Eerie child voice: formant sweep, distant and flat in pitch */
+  _se_child_voice(ctx) {
+    const t = ctx.currentTime;
+    const n  = this._noise(ctx, 0.9);
+    const bp = this._bpf(ctx, 'bandpass', 600, 3.5);
+    // Flat, lifeless pitch movement (not joyful like child_laugh)
+    bp.frequency.setValueAtTime(580, t);
+    bp.frequency.linearRampToValueAtTime(620, t + 0.3);
+    bp.frequency.linearRampToValueAtTime(560, t + 0.7);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.14, t + 0.12);
+    g.gain.setValueAtTime(this._seVolume * 0.11, t + 0.55);
+    g.gain.linearRampToValueAtTime(0, t + 0.85);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.9);
   }
 
   // ── Chapter 3 SE ──────────────────────────────────────────────────────────

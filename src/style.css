@@ -591,6 +591,89 @@ button:focus-visible {
   background: #000;
 }
 
+/* ── Episode 4 background gradients (CSS fallback while SVG loads) ───────── */
+
+/* Abandoned house exterior — moonlit night, dark silhouette */
+.bg-ruin_exterior {
+  background:
+    radial-gradient(ellipse 25% 30% at 72% 18%, rgba(180, 170, 120, 0.35) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #060810 0%,
+      #0a0c18 30%,
+      #080c14 55%,
+      #0e1018 70%,
+      #0a0c10 100%
+    );
+}
+
+/* Dark genkan entrance — rotting floor, shoe silhouettes */
+.bg-ruin_entrance {
+  background:
+    radial-gradient(ellipse 20% 25% at 50% 80%, rgba(20, 16, 10, 0.6) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #0a0808 0%,
+      #0e0c0a 40%,
+      #100e0c 70%,
+      #0c0a08 100%
+    );
+}
+
+/* Long dark corridor — peeling wallpaper, moonlight from end */
+.bg-ruin_corridor {
+  background:
+    radial-gradient(ellipse 15% 30% at 50% 55%, rgba(50, 40, 28, 0.5) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #080808 0%,
+      #0e0c0c 40%,
+      #100e0c 70%,
+      #0c0a08 100%
+    );
+}
+
+/* Tatami room — broken furniture, single candle */
+.bg-ruin_tatami {
+  background:
+    radial-gradient(ellipse 20% 20% at 50% 55%, rgba(80, 55, 12, 0.55) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      #0a0806 0%,
+      #100e08 50%,
+      #0c0a06 100%
+    );
+}
+
+/* Child's room — toys, moonlight, wrong atmosphere */
+.bg-ruin_child_room {
+  background:
+    radial-gradient(ellipse 30% 35% at 68% 38%, rgba(28, 24, 40, 0.5) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #080810 0%,
+      #0c0c18 45%,
+      #0a0a14 100%
+    );
+}
+
+/* Antique mirror — cracked, wrong reflection */
+.bg-ruin_mirror {
+  background:
+    radial-gradient(ellipse 35% 55% at 50% 50%, rgba(20, 18, 28, 0.7) 0%, transparent 80%),
+    linear-gradient(to bottom,
+      #060608 0%,
+      #0a0a10 50%,
+      #060608 100%
+    );
+}
+
+/* Lived-in room — warmth, food laid out, occupied */
+.bg-ruin_lived_in {
+  background:
+    radial-gradient(ellipse 45% 40% at 50% 55%, rgba(70, 50, 12, 0.65) 0%, transparent 75%),
+    linear-gradient(to bottom,
+      #0c0a06 0%,
+      #141008 45%,
+      #100e06 100%
+    );
+}
+
 /* ── Episode 3 background gradients (CSS fallback while SVG loads) ───────── */
 
 /* Sunny beach — bright sky, blue ocean, warm sand */

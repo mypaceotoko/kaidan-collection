@@ -1,0 +1,305 @@
+{
+  "id":       "chapter4",
+  "title":    "ここに住んでいた",
+  "subtitle": "玄関の灯りが、まだついていた",
+
+  "scenes": [
+
+    {
+      "id":   "s01",
+      "bg":   "ruin_exterior",
+      "bgm":  "ambient_ruin",
+      "text": "夏の終わり。深夜。\n\n「心霊スポット」として噂になっていた廃墟に来た。\n昔は普通の一軒家だったらしい。人が住まなくなって、もう十年以上経つという。\n\n月明かりの中に、黒い家が立っていた。",
+      "next": "s02"
+    },
+
+    {
+      "id":   "s02",
+      "bg":   "ruin_exterior",
+      "text": "錆びたフェンス越しに、家を眺めた。\n\n窓は全部、暗い。\n当然だ。誰も住んでいないんだから。\n\nでも——玄関の灯りだけが、微かに光っていた。",
+      "next": "s03"
+    },
+
+    {
+      "id":   "s03",
+      "bg":   "ruin_entrance",
+      "bgm":  "ambient_ruin",
+      "se":   "floor_creak",
+      "text": "玄関に入った。床が鳴る。軋む。一歩ごとに。\n\n上がり框に、靴が揃えてあった。\n誰かが最後に脱いで、きちんと揃えたまま——そのまま。\n\n靴は、子どもの靴だった。",
+      "next": "s04"
+    },
+
+    {
+      "id":   "s04",
+      "bg":   "ruin_entrance",
+      "bgm":  "ambient_ruin_dark",
+      "text": "廊下に進んだ。壁にびっしりと写真が飾ってある。\n\nスマートフォンのライトで照らすと——\n家族写真。父、母、子ども。\n全員の顔が、こちらを向いていた。",
+      "next": "s05"
+    },
+
+    {
+      "id":   "s05",
+      "bg":   "ruin_corridor",
+      "se":   "floor_creak",
+      "text": "廊下の奥に、光が見えた。\n\nドアの隙間から、何かが光っている。\n「あっちに何かあるよ」と誰かが言った。\n\n足が、一歩後ろに引いた。",
+      "next": "s06"
+    },
+
+    {
+      "id":   "s06",
+      "bg":   "ruin_corridor",
+      "bgm":  "ambient_ruin_dark",
+      "se":   "child_voice",
+      "text": "そのとき——声がした。\n\n天井の上から。子どもの声。歌うような、低い声。\n\n歌詞はわからない。でも繰り返している。同じ節を、ずっと。",
+      "next": "s07"
+    },
+
+    {
+      "id":   "s07",
+      "bg":   "ruin_tatami",
+      "se":   "floor_creak",
+      "text": "光の出所は、奥の和室だった。\n\nふすまを開けると——畳の上の卓袱台に、蝋燭が一本立っていた。\nまだ、燃えている。\n\n溶けた蝋が固まって、台の上に垂れている。",
+      "next": "s08"
+    },
+
+    {
+      "id":   "s08",
+      "bg":   "ruin_tatami",
+      "bgm":  "tension_ruin",
+      "text": "蝋燭は、ついている。\n\n今もここで誰かが過ごしている——か、\nつい最近までいた。\n\n声がまた聞こえた。奥から。\n\n——どうする。",
+      "choices": [
+        { "label": "奥の部屋を調べる",    "next": "a01" },
+        { "label": "帰ろうと引き返す",    "next": "b01" }
+      ]
+    },
+
+
+    {
+      "id":   "a01",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_ruin",
+      "se":   "floor_creak",
+      "text": "廊下の奥へ進んだ。\n\n左右にドアが並んでいる。全部閉まっている。\nただひとつ——一番奥のドアだけが、細く開いていた。\n\n隙間から、何も見えない。",
+      "next": "a02"
+    },
+
+    {
+      "id":   "a02",
+      "bg":   "ruin_child_room",
+      "bgm":  "tension_ruin",
+      "text": "子ども部屋だった。\n\n布団が敷きっぱなし。おもちゃが床に散らばっている。\n壁に子どもの描いた絵が貼ってある。\n\nぬいぐるみが一つ、こちらを向いて座っていた。目が、開いていた。",
+      "next": "a03"
+    },
+
+    {
+      "id":   "a03",
+      "bg":   "ruin_child_room",
+      "bgm":  "dread",
+      "se":   "toy_sound",
+      "text": "ぬいぐるみが——鳴いた。\n\n音楽が鳴った。歪んだメロディー。電池のはずがない。\n仲間の一人が「もう帰ろう」と言った。\nドアに手をかけた。開かない。",
+      "next": "a04"
+    },
+
+    {
+      "id":   "a04",
+      "bg":   "ruin_mirror",
+      "bgm":  "dread",
+      "text": "部屋の壁際に、大きな鏡があった。\n全身鏡。縁に細工のある、古いもの。\n\n鏡の中に、こちらが映っていた——\n人数が、一人多い。",
+      "next": "a05"
+    },
+
+    {
+      "id":   "a05",
+      "bg":   "ruin_mirror",
+      "bgm":  "dread",
+      "text": "余分な一人が、ゆっくりと手を上げた。\n\n手招きをしている。\nこちらへ。鏡の中から、こちらへ。\n\n——どうする。",
+      "choices": [
+        { "label": "鏡を調べる",        "next": "aa01" },
+        { "label": "その場から逃げる",  "next": "ab01" }
+      ]
+    },
+
+
+    {
+      "id":   "aa01",
+      "bg":   "ruin_mirror",
+      "bgm":  "dread",
+      "se":   "glass_break",
+      "text": "鏡に近づいた。\n\n手を伸ばした。鏡面に触れた瞬間——\n冷たい。水のように冷たい。\nそして、引き込まれる感覚がした。",
+      "next": "aa02"
+    },
+
+    {
+      "id":   "aa02",
+      "bg":   "ruin_mirror",
+      "se":   "heartbeat",
+      "text": "暗い。\n\n女の人の声が聞こえる。\n\n「ここにいなさい」\n「ここが、あなたの家だから」",
+      "next": "aa03"
+    },
+
+    {
+      "id":   "aa03",
+      "bg":   "ruin_mirror",
+      "se":   "heartbeat",
+      "effects": [{ "type": "shake" }],
+      "text": "外の世界が、鏡の向こうに見える。\n\n仲間が鏡を覗き込んでいる。\nこちらが見えていない。\n声が出ない。叩いても、音がしない。",
+      "next": "aa04"
+    },
+
+    {
+      "id":   "aa04",
+      "bg":   "ruin_mirror",
+      "bgm":  "dread",
+      "effects": [{ "type": "static", "duration": 2000 }],
+      "text": "「帰りたい」と思った。\n\n声が答えた。\n\n「もう帰っているのよ。\nここが、あなたの家になったの」",
+      "ending": { "label": "END A ── 家に帰れない", "type": "bad" }
+    },
+
+
+    {
+      "id":   "ab01",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_a",
+      "text": "走った。\n\n廊下を。振り返らずに。玄関へ。\n外へ。",
+      "next": "ab02"
+    },
+
+    {
+      "id":   "ab02",
+      "bg":   "ruin_exterior",
+      "bgm":  "ending_relief",
+      "se":   "glass_break",
+      "text": "外に出た。冷たい夜の空気。\n\n全員いる。揃っている。走って、フェンスの外まで出た。\n振り返ったら——玄関の灯りが、まだついていた。\n\nそして、窓の一つに——人影が見えた。",
+      "next": "ab03"
+    },
+
+    {
+      "id":   "ab03",
+      "bg":   "ruin_exterior",
+      "text": "写真を撮っていたのを、後で見返した。\n\n廃墟の前で全員で撮ったはずの写真。\nちゃんと人数分の人が写っている。\n\nでも——ひとりだけ顔がない。",
+      "next": "ab04"
+    },
+
+    {
+      "id":   "ab04",
+      "bg":   "ruin_exterior",
+      "text": "顔のない人物は——写真の端に映っている。\n\nこちらを、向いていた。\n\n最初から一緒にいた。",
+      "ending": { "label": "END B ── 顔のない人", "type": "ambiguous" }
+    },
+
+
+    {
+      "id":   "b01",
+      "bg":   "ruin_tatami",
+      "bgm":  "ambient_ruin_dark",
+      "text": "帰ろう。\n\n来た道を戻れば、玄関に出られる。\n仲間も頷いた。\n廊下を引き返し始めた。",
+      "next": "b02"
+    },
+
+    {
+      "id":   "b02",
+      "bg":   "ruin_corridor",
+      "se":   "floor_creak",
+      "text": "廊下が——長い。\n\n来たときより、明らかに長い。\n曲がり角が多い気がする。\n\nそんなはずはない。一本道だったはずだ。",
+      "next": "b03"
+    },
+
+    {
+      "id":   "b03",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_ruin",
+      "text": "同じ曲がり角を、二度通った気がする。\n\n壁の写真が変わっている。\nさっきは家族写真だったのに——\n今は、知らない子どもの顔が、一枚だけ飾ってある。\nこちらを見ている。",
+      "next": "b04"
+    },
+
+    {
+      "id":   "b04",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_ruin",
+      "se":   "child_voice",
+      "text": "声がした。\n\n廊下の奥から、子どもの声。\n「こっちだよ」\n\n声のする方に、ドアが見えた。",
+      "next": "b05"
+    },
+
+    {
+      "id":   "b05",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_ruin",
+      "text": "声のするドアを開ければ、出口かもしれない。\n\nでも——なぜ子どもの声がするんだ。\nここには、誰もいないはずだ。\n\n——どうする。",
+      "choices": [
+        { "label": "声のするドアを開ける",  "next": "ba01" },
+        { "label": "無視して廊下を進む",    "next": "bb01" }
+      ]
+    },
+
+
+    {
+      "id":   "ba01",
+      "bg":   "ruin_lived_in",
+      "bgm":  "dread",
+      "text": "ドアを開けた。\n\nそこは——生活感のある部屋だった。\n卓袱台に食事が並んでいる。まだ、湯気が立っていた。",
+      "next": "ba02"
+    },
+
+    {
+      "id":   "ba02",
+      "bg":   "ruin_lived_in",
+      "bgm":  "dread",
+      "se":   "door_slam",
+      "text": "誰かが住んでいる。今も。\n\n振り返ろうとした瞬間——\nドアが閉まった。\n\n鍵のかかる音がした。",
+      "next": "ba03"
+    },
+
+    {
+      "id":   "ba03",
+      "bg":   "ruin_lived_in",
+      "se":   "heartbeat",
+      "effects": [{ "type": "shake" }],
+      "text": "ドアノブを回した。開かない。\n窓も固い。割れそうにない。\n\n部屋の奥——卓袱台の向こうの座布団に、誰かが座っていた。",
+      "next": "ba04"
+    },
+
+    {
+      "id":   "ba04",
+      "bg":   "ruin_lived_in",
+      "se":   "heartbeat",
+      "effects": [{ "type": "flash", "color": "#000008" }],
+      "text": "「よく来たね」\n\n卓袱台に、自分の分の食器も置かれていた。\n最初から、席が用意されていた。\n\n「ずっと待ってたよ」",
+      "ending": { "label": "END C ── 席が用意されていた", "type": "bad" }
+    },
+
+
+    {
+      "id":   "bb01",
+      "bg":   "ruin_corridor",
+      "bgm":  "tension_b",
+      "se":   "floor_creak",
+      "text": "声を無視した。\n\nまっすぐ歩いた。壁を見ない。写真を見ない。\nドアを見ない。ただ、前だけ見て歩いた。\n\n玄関の灯りが——見えた。",
+      "next": "bb02"
+    },
+
+    {
+      "id":   "bb02",
+      "bg":   "ruin_entrance",
+      "bgm":  "ending_relief",
+      "text": "玄関に出た。\n\n靴が揃えてある。子どもの靴が。\n外に出て、扉を閉めた。振り返らなかった。",
+      "next": "bb03"
+    },
+
+    {
+      "id":   "bb03",
+      "bg":   "ruin_exterior",
+      "bgm":  "ending_relief",
+      "text": "外に出た。\n\n走った。全員で。フェンスを越えて、車まで。\nエンジンをかけた。走り出した。\n\nだいじょうぶだ。出られた。",
+      "next": "bb04"
+    },
+
+    {
+      "id":   "bb04",
+      "bg":   "ruin_exterior",
+      "text": "翌日の朝。\n\n干してあった服を取り込もうとしたら、自分の部屋の床に——見知らぬ泥の足跡が続いていた。\n\n玄関から、部屋まで。\n\n子どものサイズだった。",
+      "ending": { "label": "END D ── ついてきたもの", "type": "ambiguous" }
+    }
+
+  ]
+}
