@@ -1,158 +1,210 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-  <!-- Japanese genkan (entrance) at night — front door closed -->
   <defs>
-    <linearGradient id="doorG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#1c1410"/>
-      <stop offset="100%" stop-color="#140e0c"/>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1a28"/>
+      <stop offset="100%" stop-color="#201e2c"/>
     </linearGradient>
-    <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#141018"/>
-      <stop offset="100%" stop-color="#100e14"/>
+    <linearGradient id="doorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26201a"/>
+      <stop offset="100%" stop-color="#1c1610"/>
     </linearGradient>
-    <radialGradient id="intercomGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#880808" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="transparent"/>
-    </radialGradient>
+    <linearGradient id="doorFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e2a24"/>
+      <stop offset="100%" stop-color="#282420"/>
+    </linearGradient>
+    <linearGradient id="woodFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#242018"/>
+      <stop offset="100%" stop-color="#1a1c14"/>
+    </linearGradient>
+    <linearGradient id="tileFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1828"/>
+      <stop offset="100%" stop-color="#161422"/>
+    </linearGradient>
+    <!-- Frosted glass outside glow -->
     <linearGradient id="frostedGlass" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#14142e"/>
-      <stop offset="50%"  stop-color="#101028"/>
-      <stop offset="100%" stop-color="#0c0c22"/>
+      <stop offset="0%" stop-color="#1a1a32"/>
+      <stop offset="50%" stop-color="#141430"/>
+      <stop offset="100%" stop-color="#10102a"/>
     </linearGradient>
+    <!-- Intercom red dot glow -->
+    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#cc1010" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#880808" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#880808" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
   </defs>
 
-  <!-- Base walls -->
-  <rect width="1920" height="1080" fill="url(#wallG)"/>
+  <!-- BASE WALLS -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
 
-  <!-- Ceiling -->
-  <rect x="0" y="0" width="1920" height="80" fill="#0c0a10"/>
-  <rect x="0" y="78" width="1920" height="4" fill="#181420"/>
+  <!-- CEILING -->
+  <rect x="0" y="0" width="1920" height="100" fill="#141220"/>
+  <rect x="0" y="97" width="1920" height="4"  fill="#1a1828"/>
 
-  <!-- FLOOR (genkan — two levels: lower tile + upper wood) -->
-  <!-- Upper wood floor -->
-  <rect x="0" y="820" width="1920" height="260" fill="#161210"/>
-  <!-- Lower tile (genkan step) -->
-  <rect x="560" y="870" width="800" height="210" fill="#131016"/>
-  <!-- Step edge -->
-  <rect x="560" y="866" width="800" height="8" fill="#1e1c24"/>
-  <!-- Tile grid on lower level -->
-  <line x1="560" y1="940" x2="1360" y2="940" stroke="#181620" stroke-width="1.5"/>
-  <line x1="560" y1="1010" x2="1360" y2="1010" stroke="#161420" stroke-width="1"/>
-  <line x1="720" y1="870" x2="720" y2="1080" stroke="#181620" stroke-width="1"/>
-  <line x1="960" y1="870" x2="960" y2="1080" stroke="#181620" stroke-width="1"/>
-  <line x1="1200" y1="870" x2="1200" y2="1080" stroke="#181620" stroke-width="1"/>
-  <!-- Wood floor boards upper level -->
-  <line x1="0" y1="850" x2="560" y2="850" stroke="#1c1810" stroke-width="2"/>
-  <line x1="1360" y1="850" x2="1920" y2="850" stroke="#1c1810" stroke-width="2"/>
-  <line x1="0" y1="900" x2="560" y2="900" stroke="#1a1610" stroke-width="1.5"/>
-  <line x1="1360" y1="900" x2="1920" y2="900" stroke="#1a1610" stroke-width="1.5"/>
-  <line x1="0" y1="950" x2="560" y2="950" stroke="#1c1810" stroke-width="1"/>
-  <line x1="1360" y1="950" x2="1920" y2="950" stroke="#1c1810" stroke-width="1"/>
+  <!-- FAR WALL (behind door) -->
+  <rect x="540" y="100" width="840" height="790" fill="#181628"/>
 
-  <!-- BASEBOARD -->
-  <rect x="0" y="818" width="1920" height="6" fill="#1e1c26"/>
+  <!-- UPPER FLOOR (inside hall) — wood planks -->
+  <rect x="0" y="870" width="1920" height="210" fill="url(#woodFloor)"/>
+  <!-- Wood plank lines -->
+  <rect x="0"    y="870" width="540"  height="12" fill="#262018"/>
+  <rect x="1380" y="870" width="540"  height="12" fill="#262018"/>
+  <rect x="0"    y="882" width="540"  height="12" fill="#201c14"/>
+  <rect x="1380" y="882" width="540"  height="12" fill="#201c14"/>
+  <rect x="0"    y="894" width="540"  height="12" fill="#262018"/>
+  <rect x="1380" y="894" width="540"  height="12" fill="#262018"/>
+  <rect x="0"    y="906" width="540"  height="12" fill="#201c14"/>
+  <rect x="1380" y="906" width="540"  height="12" fill="#201c14"/>
+  <rect x="0"    y="918" width="540"  height="12" fill="#262018"/>
+  <rect x="1380" y="918" width="540"  height="12" fill="#262018"/>
+  <rect x="0"    y="930" width="540"  height="12" fill="#201c14"/>
+  <rect x="1380" y="930" width="540"  height="12" fill="#201c14"/>
+  <rect x="0"    y="942" width="540"  height="14" fill="#262018"/>
+  <rect x="1380" y="942" width="540"  height="14" fill="#262018"/>
+  <rect x="0"    y="956" width="540"  height="124" fill="#201c14"/>
+  <rect x="1380" y="956" width="540"  height="124" fill="#201c14"/>
 
-  <!-- FAR WALL behind the door area -->
-  <rect x="560" y="80" width="800" height="790" fill="#121020"/>
+  <!-- GENKAN STEP (lower tile level) -->
+  <!-- Tile floor is ~5cm lower, so step down at y=890 for the genkan area -->
+  <rect x="540" y="890" width="840" height="190" fill="url(#tileFloor)"/>
+  <!-- Step edge (the height difference) -->
+  <rect x="540" y="884" width="840" height="10" fill="#2a2838"/>
+  <rect x="540" y="884" width="840" height="3"  fill="#38364a"/>
+  <!-- Tile grid on genkan floor -->
+  <line x1="540" y1="960" x2="1380" y2="960" stroke="#1e1c30" stroke-width="2"/>
+  <line x1="540" y1="1030" x2="1380" y2="1030" stroke="#1c1a2e" stroke-width="1.5"/>
+  <line x1="700" y1="890" x2="700" y2="1080" stroke="#1e1c30" stroke-width="1.5"/>
+  <line x1="960" y1="890" x2="960" y2="1080" stroke="#1e1c30" stroke-width="1.5"/>
+  <line x1="1220" y1="890" x2="1220" y2="1080" stroke="#1e1c30" stroke-width="1.5"/>
 
-  <!-- THE FRONT DOOR (center, large) -->
-  <!-- Door frame -->
-  <rect x="650" y="95"  width="620" height="730" fill="#1e1818" rx="2"/>
-  <rect x="658" y="103" width="604" height="722" fill="url(#doorG)" rx="2"/>
-  <!-- Door frame sides -->
-  <rect x="648" y="92"  width="14"  height="740" fill="#242028"/>
-  <rect x="1258" y="92" width="14"  height="740" fill="#242028"/>
-  <rect x="648" y="88"  width="628" height="10"  fill="#242028"/>
-  <!-- Door panels -->
-  <rect x="668" y="114" width="264" height="340" fill="#181410" rx="2"/>
-  <rect x="948" y="114" width="264" height="340" fill="#181410" rx="2"/>
-  <!-- Lower panels -->
-  <rect x="668" y="472" width="264" height="260" fill="#181410" rx="2"/>
-  <rect x="948" y="472" width="264" height="260" fill="#181410" rx="2"/>
-  <!-- FROSTED GLASS panel (top center) -->
-  <rect x="668" y="114" width="544" height="200" fill="url(#frostedGlass)" rx="2"/>
-  <!-- Frosted glass texture (horizontal bands) -->
-  <rect x="672" y="120" width="536" height="3"  fill="#181838" opacity="0.5"/>
-  <rect x="672" y="134" width="536" height="2"  fill="#161636" opacity="0.4"/>
-  <rect x="672" y="148" width="536" height="2"  fill="#181838" opacity="0.4"/>
-  <rect x="672" y="162" width="536" height="3"  fill="#161636" opacity="0.35"/>
-  <rect x="672" y="178" width="536" height="2"  fill="#181838" opacity="0.35"/>
-  <rect x="672" y="192" width="536" height="2"  fill="#161636" opacity="0.3"/>
-  <rect x="672" y="206" width="536" height="2"  fill="#181838" opacity="0.3"/>
-  <rect x="672" y="220" width="536" height="2"  fill="#161636" opacity="0.25"/>
-  <rect x="672" y="236" width="536" height="2"  fill="#181838" opacity="0.25"/>
-  <rect x="672" y="252" width="536" height="2"  fill="#161636" opacity="0.2"/>
-  <rect x="672" y="266" width="536" height="2"  fill="#181838" opacity="0.2"/>
-  <rect x="672" y="280" width="536" height="2"  fill="#161636" opacity="0.2"/>
-  <rect x="672" y="295" width="536" height="2"  fill="#181838" opacity="0.15"/>
-  <rect x="672" y="308" width="536" height="2"  fill="#161636" opacity="0.15"/>
-  <!-- Subtle outside light through frosted glass — murky dark blue -->
-  <rect x="674" y="118" width="532" height="192" fill="#0c0c28" opacity="0.5"/>
-  <!-- DOOR CENTER DIVIDER -->
-  <rect x="952" y="92"  width="16"  height="740" fill="#1c1a20"/>
-  <!-- DOOR LEVER HANDLE (right side of left panel) -->
-  <rect x="906" y="530" width="44"  height="10"  fill="#2a2838" rx="4"/>
-  <ellipse cx="910" cy="535" rx="10" ry="9" fill="#252430"/>
-  <!-- DOOR LEVER HANDLE (left side of right panel) -->
-  <rect x="970" y="530" width="44"  height="10"  fill="#2a2838" rx="4"/>
-  <ellipse cx="1010" cy="535" rx="10" ry="9" fill="#252430"/>
-  <!-- Door lock cylinder -->
-  <rect x="934" y="528" width="18"  height="14"  fill="#1e1c28" rx="3"/>
+  <!-- BASEBOARD (upper level) -->
+  <rect x="0" y="856" width="542" height="16" fill="#262430"/>
+  <rect x="1378" y="856" width="542" height="16" fill="#262430"/>
+  <rect x="0" y="854" width="542" height="4"  fill="#302e3c"/>
+  <rect x="1378" y="854" width="542" height="4"  fill="#302e3c"/>
 
-  <!-- LEFT WALL — coat hooks + umbrellas -->
-  <!-- Wall -->
-  <rect x="0" y="80" width="650" height="740" fill="#141018"/>
-  <!-- Coat hooks (3) -->
-  <rect x="80"  y="200" width="6"  height="30" fill="#2a2838"/>
-  <ellipse cx="83" cy="196" rx="8" ry="6" fill="#2a2838"/>
-  <rect x="140" y="200" width="6"  height="30" fill="#2a2838"/>
-  <ellipse cx="143" cy="196" rx="8" ry="6" fill="#2a2838"/>
-  <rect x="200" y="200" width="6"  height="30" fill="#2a2838"/>
-  <ellipse cx="203" cy="196" rx="8" ry="6" fill="#2a2838"/>
-  <!-- Hook rail -->
-  <rect x="68" y="192" width="152" height="8" fill="#222030" rx="3"/>
-  <!-- Coat hanging on first hook (dark shape) -->
-  <path d="M 68,230 Q 83,225 100,270 L 95,470 L 65,470 L 62,280 Z" fill="#1a1824" opacity="0.9"/>
-  <!-- Coat on second hook -->
-  <path d="M 126,230 Q 143,225 158,265 L 154,380 L 128,380 L 120,268 Z" fill="#181420" opacity="0.9"/>
-  <!-- INTERCOM panel (on left wall) -->
-  <rect x="440" y="320" width="120" height="180" fill="#242230" rx="4"/>
-  <rect x="446" y="326" width="108" height="168" fill="#1e1c28" rx="3"/>
-  <!-- Camera lens (intercom) -->
-  <ellipse cx="500" cy="360" rx="20" ry="20" fill="#161420"/>
-  <ellipse cx="500" cy="360" rx="14" ry="14" fill="#101018"/>
+  <!-- THE FRONT DOOR (center, large, CLOSED) -->
+  <!-- Door frame (outer) -->
+  <rect x="640" y="108" width="640" height="778" fill="url(#doorFrameGrad)" rx="2"/>
+  <!-- Door surface -->
+  <rect x="652" y="120" width="616" height="766" fill="url(#doorGrad)" rx="2"/>
+  <!-- Door frame sides (thicker visible frames) -->
+  <rect x="638" y="106" width="16"  height="784" fill="#2e2a24"/>
+  <rect x="1266" y="106" width="16" height="784" fill="#2e2a24"/>
+  <rect x="638" y="104" width="644" height="14"  fill="#2e2a24"/>
+  <!-- Door center vertical divider -->
+  <rect x="952" y="106" width="18" height="784" fill="#242018"/>
+  <!-- Left door panels -->
+  <rect x="662" y="134" width="276" height="320" fill="#221c16" rx="2"/>
+  <rect x="670" y="142" width="260" height="304" fill="#1e1810" rx="1"/>
+  <rect x="662" y="468" width="276" height="260" fill="#221c16" rx="2"/>
+  <rect x="670" y="476" width="260" height="244" fill="#1e1810" rx="1"/>
+  <!-- Right door panels -->
+  <rect x="982" y="134" width="276" height="320" fill="#221c16" rx="2"/>
+  <rect x="990" y="142" width="260" height="304" fill="#1e1810" rx="1"/>
+  <rect x="982" y="468" width="276" height="260" fill="#221c16" rx="2"/>
+  <rect x="990" y="476" width="260" height="244" fill="#1e1810" rx="1"/>
+  <!-- FROSTED GLASS panel (top strip across full door width) -->
+  <rect x="662" y="134" width="596" height="180" fill="url(#frostedGlass)" rx="2"/>
+  <!-- Frosted glass texture lines (horizontal) -->
+  <rect x="666" y="142" width="588" height="2" fill="#202040" opacity="0.45"/>
+  <rect x="666" y="152" width="588" height="2" fill="#1e1e3e" opacity="0.4"/>
+  <rect x="666" y="162" width="588" height="2" fill="#202040" opacity="0.4"/>
+  <rect x="666" y="172" width="588" height="2" fill="#1e1e3e" opacity="0.35"/>
+  <rect x="666" y="184" width="588" height="2" fill="#202040" opacity="0.35"/>
+  <rect x="666" y="196" width="588" height="2" fill="#1e1e3e" opacity="0.3"/>
+  <rect x="666" y="208" width="588" height="2" fill="#202040" opacity="0.3"/>
+  <rect x="666" y="220" width="588" height="2" fill="#1e1e3e" opacity="0.25"/>
+  <rect x="666" y="232" width="588" height="2" fill="#202040" opacity="0.25"/>
+  <rect x="666" y="244" width="588" height="2" fill="#1e1e3e" opacity="0.2"/>
+  <rect x="666" y="258" width="588" height="2" fill="#202040" opacity="0.2"/>
+  <rect x="666" y="272" width="588" height="2" fill="#1e1e3e" opacity="0.18"/>
+  <rect x="666" y="288" width="588" height="2" fill="#202040" opacity="0.15"/>
+  <rect x="666" y="304" width="588" height="2" fill="#1e1e3e" opacity="0.12"/>
+  <!-- Murky outside light behind glass -->
+  <rect x="664" y="136" width="590" height="176" fill="#0e0e28" opacity="0.55"/>
+  <!-- DOOR HANDLES (lever type) -->
+  <!-- Left door handle -->
+  <rect x="894" y="520" width="56"  height="12"  fill="#34303e" rx="5"/>
+  <ellipse cx="898" cy="526" rx="12" ry="10" fill="#302c3a"/>
+  <!-- Right door handle -->
+  <rect x="970" y="520" width="56"  height="12"  fill="#34303e" rx="5"/>
+  <ellipse cx="1022" cy="526" rx="12" ry="10" fill="#302c3a"/>
+  <!-- Lock cylinder (center) -->
+  <rect x="943" y="518" width="20"  height="16"  fill="#282434" rx="3"/>
+
+  <!-- LEFT WALL -->
+  <rect x="0" y="100" width="640" height="760" fill="#181628"/>
+  <!-- Coat hook rail -->
+  <rect x="64" y="210" width="180" height="10" fill="#28263c" rx="4"/>
+  <!-- Coat hooks (3 hooks on rail) -->
+  <ellipse cx="80"  cy="210" rx="10" ry="7" fill="#2c2a3e"/>
+  <rect x="76"  y="217" width="8" height="28" fill="#2c2a3e"/>
+  <ellipse cx="144" cy="210" rx="10" ry="7" fill="#2c2a3e"/>
+  <rect x="140" y="217" width="8" height="28" fill="#2c2a3e"/>
+  <ellipse cx="208" cy="210" rx="10" ry="7" fill="#2c2a3e"/>
+  <rect x="204" y="217" width="8" height="28" fill="#2c2a3e"/>
+  <!-- Coat on hook 1 (dark heavy coat shape) -->
+  <path d="M 68,244 Q 80,238 96,244 L 100,450 Q 80,455 62,450 Z" fill="#1c1a2a" opacity="0.9"/>
+  <!-- Coat fold/collar detail -->
+  <path d="M 68,244 Q 80,250 96,244" stroke="#242232" stroke-width="3" fill="none"/>
+  <!-- Lighter coat / jacket on hook 2 -->
+  <path d="M 132,244 Q 144,240 158,244 L 162,380 Q 144,386 128,380 Z" fill="#181626" opacity="0.9"/>
+  <!-- Bag hanging on hook 3 -->
+  <rect x="196" y="248" width="40" height="60" fill="#1c1a28" rx="4"/>
+  <path d="M 206,248 Q 216,238 226,248" stroke="#242232" stroke-width="3" fill="none"/>
+
+  <!-- INTERCOM panel (left wall, nearer to door) -->
+  <rect x="450" y="310" width="130" height="200" fill="#28263e" rx="5"/>
+  <rect x="458" y="318" width="114" height="184" fill="#222038" rx="4"/>
+  <!-- Camera lens -->
+  <ellipse cx="515" cy="352" rx="22" ry="22" fill="#181628"/>
+  <ellipse cx="515" cy="352" rx="16" ry="16" fill="#0e0e20"/>
+  <ellipse cx="515" cy="352" rx="8"  ry="8"  fill="#121222"/>
+  <!-- Lens highlight -->
+  <circle cx="521" cy="346" r="3" fill="#242440" opacity="0.6"/>
   <!-- Call button -->
-  <rect x="476" y="398" width="48"  height="18"  fill="#282638" rx="4"/>
-  <!-- RED indicator dot (on) -->
-  <ellipse cx="500" cy="450" rx="6"  ry="6"  fill="url(#intercomGlow)"/>
-  <ellipse cx="500" cy="450" rx="4"  ry="4"  fill="#cc1010"/>
-  <!-- Speaker grille -->
-  <line x1="478" y1="468" x2="522" y2="468" stroke="#202030" stroke-width="2"/>
-  <line x1="478" y1="476" x2="522" y2="476" stroke="#202030" stroke-width="2"/>
-  <line x1="478" y1="484" x2="522" y2="484" stroke="#202030" stroke-width="2"/>
+  <rect x="490" y="390" width="50"  height="22"  fill="#2e2c44" rx="5"/>
+  <rect x="494" y="394" width="42"  height="14"  fill="#262440" rx="3"/>
+  <!-- RED indicator light (on) -->
+  <ellipse cx="515" cy="462" rx="8"  ry="8"  fill="url(#redGlow)"/>
+  <ellipse cx="515" cy="462" rx="5"  ry="5"  fill="#cc1010"/>
+  <!-- Speaker grille lines -->
+  <line x1="492" y1="480" x2="538" y2="480" stroke="#282640" stroke-width="2"/>
+  <line x1="492" y1="490" x2="538" y2="490" stroke="#282640" stroke-width="2"/>
+  <line x1="492" y1="500" x2="538" y2="500" stroke="#282640" stroke-width="2"/>
 
-  <!-- Umbrella stand (near door, left side) -->
-  <rect x="600" y="640" width="44"  height="180" fill="#181620" rx="4"/>
-  <rect x="604" y="644" width="36"  height="172" fill="#141418" rx="3"/>
+  <!-- UMBRELLA STAND (near door, left side) -->
+  <rect x="608" y="660" width="50" height="220" fill="#1c1a28" rx="5"/>
+  <rect x="614" y="666" width="38" height="210" fill="#181624" rx="4"/>
   <!-- Umbrella handles sticking up -->
-  <path d="M 614,640 Q 620,625 626,640" stroke="#2a2838" stroke-width="4" fill="none"/>
-  <path d="M 628,640 Q 634,622 640,640" stroke="#242030" stroke-width="3" fill="none"/>
-  <path d="M 620,640 Q 616,618 610,612" stroke="#282438" stroke-width="3" fill="none"/>
+  <path d="M 622,660 Q 628,640 634,660" stroke="#2c2a40" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 636,660 Q 643,637 650,660" stroke="#26243a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 618,660 Q 614,634 608,624" stroke="#2a283c" stroke-width="4" fill="none" stroke-linecap="round"/>
 
-  <!-- RIGHT WALL — shoe rack -->
-  <rect x="1270" y="80" width="650" height="740" fill="#141018"/>
-  <!-- Shoe rack (low) -->
-  <rect x="1320" y="660" width="360" height="160" fill="#181620" rx="3"/>
-  <rect x="1324" y="664" width="352" height="152" fill="#141418" rx="2"/>
+  <!-- RIGHT WALL -->
+  <rect x="1280" y="100" width="640" height="760" fill="#181628"/>
+
+  <!-- SHOE RACK (right side) -->
+  <rect x="1340" y="680" width="380" height="190" fill="#201e2e" rx="4"/>
+  <rect x="1348" y="688" width="364" height="174" fill="#1c1a2a" rx="3"/>
   <!-- Shelf dividers -->
-  <rect x="1324" y="710" width="352" height="4"  fill="#1e1c28"/>
-  <rect x="1324" y="756" width="352" height="4"  fill="#1e1c28"/>
-  <!-- Shoes (dark shapes on shelves) -->
-  <rect x="1330" y="672" width="60"  height="36" fill="#161420" rx="2"/>
-  <rect x="1400" y="672" width="60"  height="36" fill="#181420" rx="2"/>
-  <rect x="1470" y="672" width="58"  height="36" fill="#161418" rx="2"/>
-  <rect x="1340" y="716" width="55"  height="38" fill="#181620" rx="2"/>
-  <rect x="1410" y="716" width="55"  height="38" fill="#161420" rx="2"/>
+  <rect x="1350" y="740" width="360" height="5"  fill="#282638"/>
+  <rect x="1350" y="796" width="360" height="5"  fill="#282638"/>
+  <!-- Shoes / items on shelves -->
+  <rect x="1356" y="694" width="68" height="42"  fill="#181626" rx="2"/>
+  <rect x="1430" y="694" width="68" height="42"  fill="#1a1828" rx="2"/>
+  <rect x="1504" y="696" width="64" height="40"  fill="#161424" rx="2"/>
+  <rect x="1358" y="748" width="64" height="44"  fill="#1a1828" rx="2"/>
+  <rect x="1428" y="750" width="62" height="42"  fill="#181626" rx="2"/>
+  <rect x="1496" y="748" width="66" height="44"  fill="#1c1a28" rx="2"/>
+  <rect x="1362" y="802" width="60" height="46"  fill="#181626" rx="2"/>
+  <rect x="1432" y="804" width="58" height="44"  fill="#1a1828" rx="2"/>
 
-  <!-- Overall darkness -->
-  <rect width="1920" height="1080" fill="#000008" opacity="0.22"/>
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
 </svg>
