@@ -601,7 +601,13 @@ button:focus-visible {
    CHOICE AREA
    =================================================== */
 .choice-area {
-  width: min(820px, 100%);
+  position: absolute;
+  /* Sit in the image area — centred between top of screen and the text box */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(640px, 90%);
+  z-index: 120;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -614,7 +620,6 @@ button:focus-visible {
   flex-direction: column;
   gap: 0.7rem;
   width: 100%;
-  max-width: 500px;
 }
 
 .choice-btn {
@@ -623,13 +628,14 @@ button:focus-visible {
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   letter-spacing: 0.1em;
   color: var(--color-text);
-  background: var(--color-panel-light);
-  border: 1px solid var(--color-border);
+  background: rgba(4, 3, 8, 0.92);
+  border: 1px solid var(--color-border-glow);
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: all 0.25s ease;
   animation: choiceAppear 0.3s ease backwards;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .choice-btn:nth-child(2) { animation-delay: 0.1s; }
