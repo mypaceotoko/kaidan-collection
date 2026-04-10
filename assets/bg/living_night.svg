@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16141a"/>
+      <stop offset="100%" stop-color="#18161c"/>
+    </linearGradient>
+    <linearGradient id="floorNight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1a10"/>
+      <stop offset="100%" stop-color="#14120c"/>
+    </linearGradient>
+    <linearGradient id="plankA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#201c12"/>
+      <stop offset="100%" stop-color="#1c1810"/>
+    </linearGradient>
+    <linearGradient id="plankB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181410"/>
+      <stop offset="100%" stop-color="#14100c"/>
+    </linearGradient>
+    <!-- Floor lamp amber glow pool on floor -->
+    <radialGradient id="lampFloor" cx="83%" cy="92%" r="55%">
+      <stop offset="0%"  stop-color="#c89040" stop-opacity="0.55"/>
+      <stop offset="25%" stop-color="#a07028" stop-opacity="0.38"/>
+      <stop offset="60%" stop-color="#804c10" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#804c10" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Ambient warm glow on right side of room/sofa -->
+    <radialGradient id="lampAmbient" cx="83%" cy="55%" r="50%">
+      <stop offset="0%"  stop-color="#c89040" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#c89040" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#c89040" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Bulb glow itself -->
+    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#f0d060" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#e0b848" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#c89040" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.72"/>
+    </radialGradient>
+  </defs>
+
+  <!-- CEILING (very dark but not pure black) -->
+  <rect x="0" y="0" width="1920" height="140" fill="#14121a"/>
+  <!-- Ceiling fixture (off) -->
+  <ellipse cx="960" cy="140" rx="52" ry="12" fill="#1e1c24"/>
+  <rect x="956" y="128" width="8" height="14" fill="#1a1820"/>
+  <rect x="136" width="1920" height="4" fill="#0e0e18"/>
+
+  <!-- BACK WALL -->
+  <rect x="0" y="140" width="1920" height="700" fill="url(#wallDark)"/>
+
+  <!-- FLOOR base -->
+  <rect x="0" y="840" width="1920" height="240" fill="url(#floorNight)"/>
+  <!-- Floor wood planks alternating dark -->
+  <rect x="0" y="840" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="855" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="870" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="885" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="900" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="915" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="930" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="945" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="960" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="975" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="990" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="1005" width="1920" height="15" fill="url(#plankB)"/>
+  <rect x="0" y="1020" width="1920" height="15" fill="url(#plankA)"/>
+  <rect x="0" y="1035" width="1920" height="45" fill="url(#plankB)"/>
+  <!-- Plank seams -->
+  <line x1="320"  y1="840" x2="320"  y2="1080" stroke="#0a0808" stroke-width="1.5" opacity="0.5"/>
+  <line x1="640"  y1="840" x2="640"  y2="1080" stroke="#0a0808" stroke-width="1.5" opacity="0.5"/>
+  <line x1="960"  y1="840" x2="960"  y2="1080" stroke="#0a0808" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1280" y1="840" x2="1280" y2="1080" stroke="#0a0808" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1600" y1="840" x2="1600" y2="1080" stroke="#0a0808" stroke-width="1.5" opacity="0.5"/>
+  <!-- floor/wall join -->
+  <rect x="0" y="838" width="1920" height="4" fill="#0e0e18"/>
+  <!-- Baseboard -->
+  <rect x="0" y="822" width="1920" height="18" fill="#222030"/>
+  <rect x="0" y="820" width="1920" height="4" fill="#2c2a38"/>
+
+  <!-- WINDOW (right side, night, dark blue-black) -->
+  <rect x="1340" y="190" width="470" height="580" fill="#201e28" rx="2"/>
+  <rect x="1356" y="206" width="438" height="548" fill="#08081a"/>
+  <!-- Cross dividers -->
+  <rect x="1568" y="206" width="10" height="548" fill="#201e28"/>
+  <rect x="1356" y="478" width="438" height="10" fill="#201e28"/>
+  <!-- Window sill -->
+  <rect x="1326" y="752" width="494" height="20" fill="#201e28" rx="2"/>
+
+  <!-- LAMP GLOW (overlays on floor and wall) -->
+  <rect x="0" y="840" width="1920" height="240" fill="url(#lampFloor)"/>
+  <rect x="0" y="140" width="1920" height="700" fill="url(#lampAmbient)"/>
+  <!-- Warm ellipse on floor directly under lamp -->
+  <ellipse cx="1582" cy="944" rx="300" ry="100" fill="#c89040" opacity="0.22"/>
+  <ellipse cx="1582" cy="950" rx="170" ry="56" fill="#c89040" opacity="0.3"/>
+
+  <!-- FLOOR LAMP (right side) -->
+  <!-- Base -->
+  <ellipse cx="1582" cy="848" rx="38" ry="10" fill="#2c2a38"/>
+  <rect x="1568" y="838" width="28" height="12" fill="#282636" rx="2"/>
+  <!-- Pole -->
+  <rect x="1578" y="330" width="8" height="510" fill="#282636"/>
+  <!-- Shade arm -->
+  <rect x="1562" y="325" width="36" height="8" fill="#302e3c" rx="2"/>
+  <!-- Shade (trapezoid) -->
+  <polygon points="1538,270 1626,270 1648,330 1516,330" fill="#2a2840"/>
+  <!-- Inner shade — warm lit -->
+  <polygon points="1546,275 1618,275 1638,326 1526,326" fill="#c89040" opacity="0.9"/>
+  <!-- Bulb glow -->
+  <ellipse cx="1582" cy="305" rx="34" ry="24" fill="url(#bulbGlow)"/>
+  <!-- Shade top cap (dark) -->
+  <rect x="1536" y="265" width="92" height="8" fill="#1e1c2c" rx="2"/>
+  <!-- Halo above shade -->
+  <ellipse cx="1582" cy="265" rx="100" ry="30" fill="#c89040" opacity="0.08"/>
+
+  <!-- TV (off — left wall) -->
+  <rect x="70" y="650" width="390" height="185" fill="#1a1620" rx="4"/>
+  <rect x="110" y="832" width="22" height="42" fill="#181420"/>
+  <rect x="428" y="832" width="22" height="42" fill="#181420"/>
+  <!-- TV body -->
+  <rect x="88" y="408" width="372" height="248" fill="#161220" rx="6"/>
+  <rect x="98" y="418" width="352" height="228" fill="#100e1a" rx="4"/>
+  <!-- TV screen (off, very dark) -->
+  <rect x="106" y="426" width="336" height="212" fill="#0a0a0e" rx="2"/>
+  <!-- Faint static noise suggestion (horizontal bands) -->
+  <rect x="106" y="440" width="336" height="1" fill="#181820" opacity="0.35"/>
+  <rect x="106" y="452" width="200" height="1" fill="#161620" opacity="0.3"/>
+  <rect x="200" y="464" width="240" height="1" fill="#181820" opacity="0.3"/>
+  <rect x="106" y="478" width="336" height="1" fill="#161620" opacity="0.25"/>
+  <rect x="150" y="490" width="260" height="1" fill="#181820" opacity="0.25"/>
+  <rect x="106" y="504" width="180" height="1" fill="#161620" opacity="0.25"/>
+  <rect x="280" y="516" width="160" height="1" fill="#181820" opacity="0.25"/>
+  <rect x="106" y="530" width="336" height="1" fill="#161620" opacity="0.2"/>
+  <rect x="106" y="546" width="220" height="1" fill="#181820" opacity="0.2"/>
+  <rect x="240" y="558" width="200" height="1" fill="#161620" opacity="0.2"/>
+  <rect x="106" y="574" width="336" height="1" fill="#181820" opacity="0.2"/>
+  <rect x="106" y="590" width="150" height="1" fill="#161620" opacity="0.2"/>
+  <!-- Standby indicator (dim) -->
+  <circle cx="274" cy="648" r="3" fill="#320808" opacity="0.7"/>
+  <!-- Items on stand -->
+  <rect x="100" y="660" width="72" height="26" fill="#1c1820" rx="2"/>
+  <rect x="308" y="660" width="52" height="26" fill="#181620" rx="2"/>
+
+  <!-- SOFA (barely visible in shadow) -->
+  <rect x="520" y="570" width="760" height="265" fill="#201e14" rx="8"/>
+  <rect x="520" y="570" width="760" height="7" fill="#2a2818"/>
+  <!-- Sofa seat -->
+  <rect x="520" y="790" width="760" height="92" fill="#1e1c12" rx="4"/>
+  <!-- Cushion divisions -->
+  <line x1="773" y1="578" x2="773" y2="786" stroke="#181610" stroke-width="2" opacity="0.5"/>
+  <line x1="1027" y1="578" x2="1027" y2="786" stroke="#181610" stroke-width="2" opacity="0.5"/>
+  <!-- Arm rests -->
+  <rect x="498" y="578" width="44" height="260" fill="#221e14" rx="6"/>
+  <rect x="1238" y="578" width="44" height="260" fill="#221e14" rx="6"/>
+  <!-- Lamp warmth on right sofa edge -->
+  <rect x="1100" y="578" width="182" height="272" fill="#c89040" opacity="0.05" rx="4"/>
+
+  <!-- COFFEE TABLE (dark shadow shape) -->
+  <rect x="610" y="800" width="620" height="22" fill="#1a1810" rx="3"/>
+  <rect x="628" y="822" width="22" height="46" fill="#141208"/>
+  <rect x="1190" y="822" width="22" height="46" fill="#141208"/>
+
+  <!-- Vignette — strong dark edges -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

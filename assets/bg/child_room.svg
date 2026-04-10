@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Middle-school girl's bedroom at night — moonlight through curtains -->
+  <defs>
+    <radialGradient id="moonGlow" cx="75%" cy="40%" r="45%">
+      <stop offset="0%"   stop-color="#9090c0" stop-opacity="0.18"/>
+      <stop offset="60%"  stop-color="#5050a0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a1820"/>
+      <stop offset="100%" stop-color="#121018"/>
+    </linearGradient>
+    <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#141224"/>
+      <stop offset="100%" stop-color="#161428"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Walls (lavender-grey) -->
+  <rect width="1920" height="1080" fill="url(#wallG)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="100" fill="#0e0c18"/>
+  <rect x="0" y="98" width="1920" height="4"  fill="#181626"/>
+
+  <!-- Floor -->
+  <rect x="0" y="720" width="1920" height="360" fill="url(#floorG)"/>
+  <!-- Wood floor boards -->
+  <line x1="0" y1="760" x2="1920" y2="760" stroke="#1e1c26" stroke-width="1.5"/>
+  <line x1="0" y1="800" x2="1920" y2="800" stroke="#1c1a24" stroke-width="1.2"/>
+  <line x1="0" y1="840" x2="1920" y2="840" stroke="#1e1c26" stroke-width="1"/>
+  <line x1="0" y1="890" x2="1920" y2="890" stroke="#1c1a24" stroke-width="1"/>
+  <line x1="0" y1="950" x2="1920" y2="950" stroke="#1e1c26" stroke-width="1"/>
+
+  <!-- Moonlight glow from right window -->
+  <ellipse cx="1440" cy="400" rx="480" ry="360" fill="url(#moonGlow)"/>
+  <!-- Moonlight on floor -->
+  <polygon points="1280,720 1760,720 1920,900 1050,1080"
+           fill="#10103a" opacity="0.12"/>
+
+  <!-- RIGHT WALL: WINDOW WITH CURTAINS -->
+  <!-- Window opening -->
+  <rect x="1360" y="140" width="420" height="500" fill="#060616"/>
+  <rect x="1365" y="145" width="410" height="490" fill="#060614"/>
+  <!-- Moon outside (pale) -->
+  <circle cx="1760" cy="200" r="34" fill="#8080b0"/>
+  <circle cx="1760" cy="200" r="28" fill="#9090c0"/>
+  <!-- Stars -->
+  <circle cx="1380" cy="180" r="1.5" fill="#c0b8e8" opacity="0.7"/>
+  <circle cx="1500" cy="160" r="1.5" fill="#c0b8e8" opacity="0.65"/>
+  <circle cx="1620" cy="195" r="1.5" fill="#c0b8e8" opacity="0.6"/>
+  <!-- Window frame -->
+  <rect x="1358" y="138" width="8"   height="508" fill="#221e30"/>
+  <rect x="1776" y="138" width="8"   height="508" fill="#221e30"/>
+  <rect x="1358" y="138" width="428" height="8"   fill="#221e30"/>
+  <rect x="1358" y="638" width="428" height="8"   fill="#221e30"/>
+  <!-- Crossbars -->
+  <rect x="1358" y="390" width="428" height="5"   fill="#1e1a2c"/>
+  <rect x="1566" y="138" width="5"   height="508" fill="#1e1a2c"/>
+  <!-- Window sill -->
+  <rect x="1350" y="644" width="440" height="16"  fill="#201e30"/>
+  <!-- Curtains (dark fabric, slightly transparent edges showing moonlight) -->
+  <rect x="1358" y="138" width="90"  height="506" fill="#201830" opacity="0.92"/>
+  <rect x="1694" y="138" width="90"  height="506" fill="#201830" opacity="0.92"/>
+  <!-- Curtain highlight edges (moonlight rim) -->
+  <rect x="1446" y="138" width="6"   height="506" fill="#5050a0" opacity="0.3"/>
+  <rect x="1692" y="138" width="6"   height="506" fill="#5050a0" opacity="0.3"/>
+
+  <!-- LEFT: BED (against left wall) -->
+  <!-- Bed frame headboard -->
+  <rect x="30"  y="240" width="520" height="110" fill="#221e2c" rx="3"/>
+  <rect x="36"  y="246" width="508" height="98"  fill="#1e1a28" rx="2"/>
+  <!-- Bed frame -->
+  <rect x="30"  y="340" width="520" height="380" fill="#201c2a" rx="3"/>
+  <!-- Mattress/sheet (rumpled, slightly lighter) -->
+  <rect x="38"  y="348" width="504" height="366" fill="#242030" rx="2"/>
+  <!-- Pillow -->
+  <rect x="60"  y="354" width="240" height="70"  fill="#2a2838" rx="4"/>
+  <rect x="64"  y="358" width="232" height="62"  fill="#2e2c3c" rx="3"/>
+  <!-- Blanket/duvet (rumpled) -->
+  <rect x="38"  y="430" width="504" height="284" fill="#201c30" rx="2"/>
+  <!-- Blanket fold details -->
+  <line x1="38"  y1="500" x2="542" y2="500" stroke="#242038" stroke-width="3"/>
+  <line x1="38"  y1="560" x2="380" y2="560" stroke="#221e36" stroke-width="2"/>
+  <!-- Stuffed animal on bed -->
+  <ellipse cx="400" cy="395" rx="30" ry="26" fill="#2a2438"/>
+  <ellipse cx="378" cy="378" rx="14" ry="13" fill="#2a2438"/>
+  <ellipse cx="422" cy="378" rx="14" ry="13" fill="#2a2438"/>
+  <!-- Bed legs -->
+  <rect x="46"  y="720" width="16" height="40" fill="#1a1622"/>
+  <rect x="528" y="720" width="16" height="40" fill="#1a1622"/>
+
+  <!-- CENTER-RIGHT: DESK -->
+  <!-- Desk surface -->
+  <rect x="800" y="480" width="560" height="28" fill="#1c1a20" rx="2"/>
+  <!-- Desk legs -->
+  <rect x="812" y="508" width="14" height="212" fill="#181620"/>
+  <rect x="1332" y="508" width="14" height="212" fill="#181620"/>
+  <!-- Desk back panel -->
+  <rect x="800" y="270" width="560" height="212" fill="#161418"/>
+  <!-- Books on desk -->
+  <rect x="820" y="350" width="28"  height="130" fill="#282038"/>
+  <rect x="850" y="370" width="22"  height="110" fill="#203028"/>
+  <rect x="874" y="360" width="25"  height="120" fill="#302028"/>
+  <rect x="901" y="355" width="20"  height="125" fill="#282830"/>
+  <!-- Book end -->
+  <rect x="923" y="350" width="12"  height="130" fill="#1c1820"/>
+  <!-- Notebooks stacked -->
+  <rect x="960" y="440" width="180" height="6"   fill="#202028" rx="1"/>
+  <rect x="960" y="434" width="175" height="6"   fill="#22202a" rx="1"/>
+  <rect x="960" y="428" width="170" height="6"   fill="#201e28" rx="1"/>
+  <!-- Desk lamp (off) -->
+  <rect x="1250" y="400" width="8"  height="80"  fill="#181620"/><!-- pole -->
+  <rect x="1218" y="390" width="42" height="8"   fill="#181620"/><!-- arm -->
+  <ellipse cx="1230" cy="395" rx="28" ry="10" fill="#1c1a22"/><!-- shade -->
+  <rect x="1244" y="475" width="12" height="10"  fill="#161418"/><!-- base -->
+
+  <!-- Desk DRAWER UNIT (beside desk, with one drawer OPEN) -->
+  <rect x="1380" y="480" width="200" height="240" fill="#1a1820" rx="2"/>
+  <!-- Drawer divisions -->
+  <rect x="1385" y="532" width="190" height="4"  fill="#242030"/>
+  <rect x="1385" y="584" width="190" height="4"  fill="#242030"/>
+  <rect x="1385" y="636" width="190" height="4"  fill="#242030"/>
+  <rect x="1385" y="688" width="190" height="4"  fill="#242030"/>
+  <!-- Drawer handles -->
+  <rect x="1464" y="510" width="32" height="6"   fill="#2a2838" rx="2"/>
+  <rect x="1464" y="562" width="32" height="6"   fill="#2a2838" rx="2"/>
+  <rect x="1464" y="614" width="32" height="6"   fill="#2a2838" rx="2"/>
+  <rect x="1464" y="666" width="32" height="6"   fill="#2a2838" rx="2"/>
+  <!-- THE OPEN DRAWER (horror element) — 3rd drawer from top -->
+  <rect x="1380" y="584" width="190" height="52" fill="#1a1820"/><!-- drawer body -->
+  <rect x="1380" y="584" width="200" height="52" fill="#1c1a22" rx="1"/><!-- front panel pulled out -->
+  <!-- Interior of open drawer (dark gap showing inside) -->
+  <rect x="1385" y="588" width="184" height="44" fill="#100e16"/>
+  <!-- Papers inside drawer (homework) -->
+  <rect x="1390" y="592" width="170" height="36" fill="#181620"/>
+  <!-- THE SLIP OF PAPER — a small square of paper on top, wrong color -->
+  <rect x="1420" y="592" width="80"  height="56" fill="#1e2018"/><!-- slightly lighter, slightly warm — not the right color -->
+
+  <!-- Floor shadow under bed -->
+  <rect x="30" y="760" width="520" height="16" fill="#0e0c14" opacity="0.5"/>
+
+  <!-- Baseboard -->
+  <rect x="0" y="718" width="1920" height="6" fill="#1c1a28"/>
+
+  <!-- Overall darkness -->
+  <rect width="1920" height="1080" fill="#000008" opacity="0.2"/>
+</svg>

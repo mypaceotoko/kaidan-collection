@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e1c24"/>
+      <stop offset="100%" stop-color="#161420"/>
+    </linearGradient>
+    <linearGradient id="wallRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#161420"/>
+      <stop offset="100%" stop-color="#1e1c24"/>
+    </linearGradient>
+    <linearGradient id="ceilGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e18"/>
+      <stop offset="100%" stop-color="#141220"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1a14"/>
+      <stop offset="100%" stop-color="#141210"/>
+    </linearGradient>
+    <!-- Upstairs light seeping down from staircase -->
+    <radialGradient id="stairLight" cx="50%" cy="50%" r="30%">
+      <stop offset="0%"  stop-color="#1e1c2e" stop-opacity="0.75"/>
+      <stop offset="60%" stop-color="#181628" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#141220" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Floor runner gradient (subtle dark stripe) -->
+    <linearGradient id="runner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141018"/>
+      <stop offset="100%" stop-color="#100e14"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BASE FILL -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#0e0e18"/>
+
+  <!-- CEILING (perspective trapezoid) -->
+  <polygon points="0,0 1920,0 1440,200 480,200" fill="url(#ceilGrad)"/>
+  <!-- Ceiling/wall cornice line -->
+  <line x1="480" y1="200" x2="1440" y2="200" stroke="#1e1c28" stroke-width="3"/>
+
+  <!-- LEFT WALL (perspective) -->
+  <polygon points="0,0 480,200 480,900 0,1080" fill="url(#wallLeft)"/>
+  <!-- Left wall baseboard -->
+  <polygon points="0,1080 480,900 480,916 0,1080" fill="#242230"/>
+  <!-- Baseboard highlight line -->
+  <line x1="0" y1="1080" x2="480" y2="900" stroke="#2e2c38" stroke-width="2"/>
+
+  <!-- RIGHT WALL (perspective) -->
+  <polygon points="1920,0 1440,200 1440,900 1920,1080" fill="url(#wallRight)"/>
+  <!-- Right wall baseboard -->
+  <polygon points="1920,1080 1440,900 1440,916 1920,1080" fill="#242230"/>
+  <line x1="1440" y1="900" x2="1920" y2="1080" stroke="#2e2c38" stroke-width="2"/>
+
+  <!-- FAR WALL (end of hallway, staircase area) -->
+  <polygon points="480,200 1440,200 1440,900 480,900" fill="#161420"/>
+  <!-- Staircase dark void at far end -->
+  <rect x="740" y="200" width="440" height="700" fill="#080810"/>
+  <!-- Stair treads (converging perspective) -->
+  <rect x="740" y="840" width="440" height="22" fill="#1e1c28"/>
+  <rect x="750" y="818" width="420" height="22" fill="#1c1a26"/>
+  <rect x="762" y="796" width="396" height="22" fill="#1a1824"/>
+  <rect x="776" y="774" width="368" height="22" fill="#181622"/>
+  <rect x="792" y="752" width="336" height="22" fill="#161420"/>
+  <rect x="810" y="730" width="300" height="22" fill="#141220"/>
+  <rect x="830" y="708" width="260" height="22" fill="#12101e"/>
+  <rect x="852" y="686" width="216" height="22" fill="#100e1c"/>
+  <rect x="876" y="664" width="168" height="22" fill="#0e0c1a"/>
+  <rect x="900" y="642" width="120" height="22" fill="#0c0a18"/>
+  <rect x="922" y="620" width="76" height="22"  fill="#0a0816"/>
+  <rect x="938" y="598" width="44" height="22"  fill="#080614"/>
+  <!-- Step edges (lighter line) -->
+  <line x1="740" y1="840" x2="1180" y2="840" stroke="#282638" stroke-width="2.5"/>
+  <line x1="750" y1="818" x2="1170" y2="818" stroke="#262436" stroke-width="2"/>
+  <line x1="762" y1="796" x2="1158" y2="796" stroke="#242234" stroke-width="2"/>
+  <line x1="776" y1="774" x2="1144" y2="774" stroke="#222032" stroke-width="1.5"/>
+  <line x1="792" y1="752" x2="1128" y2="752" stroke="#201e30" stroke-width="1.5"/>
+  <line x1="810" y1="730" x2="1110" y2="730" stroke="#1e1c2e" stroke-width="1"/>
+  <!-- Stair banister left -->
+  <line x1="740" y1="830" x2="940" y2="590" stroke="#2a2840" stroke-width="7"/>
+  <!-- Stair banister right -->
+  <line x1="1180" y1="830" x2="980" y2="590" stroke="#282638" stroke-width="7"/>
+  <!-- Newel posts at bottom -->
+  <rect x="733" y="800" width="16" height="80" fill="#302e40"/>
+  <rect x="1171" y="800" width="16" height="80" fill="#2e2c3e"/>
+  <!-- Upstairs glow (light seeping down) -->
+  <ellipse cx="960" cy="550" rx="280" ry="200" fill="url(#stairLight)"/>
+
+  <!-- FLOOR (perspective) -->
+  <polygon points="0,1080 1920,1080 1440,900 480,900" fill="url(#floorGrad)"/>
+  <!-- Floor perspective wood plank lines -->
+  <line x1="960" y1="540" x2="0"    y2="1080" stroke="#1c1a14" stroke-width="2.5"/>
+  <line x1="960" y1="540" x2="480"  y2="1080" stroke="#1a1812" stroke-width="2"/>
+  <line x1="960" y1="540" x2="960"  y2="1080" stroke="#1e1c16" stroke-width="2.5"/>
+  <line x1="960" y1="540" x2="1440" y2="1080" stroke="#1a1812" stroke-width="2"/>
+  <line x1="960" y1="540" x2="1920" y2="1080" stroke="#1c1a14" stroke-width="2.5"/>
+  <!-- Additional plank lines -->
+  <line x1="960" y1="650" x2="240"  y2="1080" stroke="#181610" stroke-width="1.5" opacity="0.7"/>
+  <line x1="960" y1="650" x2="720"  y2="1080" stroke="#181610" stroke-width="1.5" opacity="0.7"/>
+  <line x1="960" y1="650" x2="1200" y2="1080" stroke="#181610" stroke-width="1.5" opacity="0.7"/>
+  <line x1="960" y1="650" x2="1680" y2="1080" stroke="#181610" stroke-width="1.5" opacity="0.7"/>
+  <!-- Horizontal plank cross lines -->
+  <line x1="200"  y1="960" x2="1720" y2="960" stroke="#181610" stroke-width="1.5" opacity="0.6"/>
+  <line x1="310"  y1="920" x2="1610" y2="920" stroke="#161410" stroke-width="1" opacity="0.5"/>
+
+  <!-- Floor runner (darker stripe down center) -->
+  <polygon points="800,900 1120,900 1920,1080 0,1080" fill="url(#runner)" opacity="0.5"/>
+
+  <!-- LEFT WALL: Closed door with frame -->
+  <!-- Door frame -->
+  <rect x="82"  y="288" width="10" height="516" fill="#242232"/>
+  <rect x="318" y="288" width="10" height="516" fill="#242232"/>
+  <rect x="82"  y="282" width="248" height="10" fill="#242232"/>
+  <!-- Door panel -->
+  <rect x="92"  y="292" width="226" height="512" fill="#181622" rx="2"/>
+  <!-- Door raised panels -->
+  <rect x="104" y="308" width="202" height="218" fill="#141220" rx="2"/>
+  <rect x="114" y="318" width="182" height="198" fill="#12101e" rx="1"/>
+  <rect x="104" y="544" width="202" height="246" fill="#141220" rx="2"/>
+  <rect x="114" y="554" width="182" height="226" fill="#12101e" rx="1"/>
+  <!-- Door handle -->
+  <rect x="296" y="450" width="28" height="8" fill="#2c2a3a" rx="3"/>
+  <ellipse cx="298" cy="454" rx="8" ry="8" fill="#282638"/>
+  <!-- Door gap shadow (door/frame junction) -->
+  <rect x="318" y="292" width="3" height="512" fill="#0a0812" opacity="0.6"/>
+
+  <!-- RIGHT WALL: Small framed picture or mirror -->
+  <rect x="1592" y="320" width="8"   height="124" fill="#242232"/>
+  <rect x="1736" y="320" width="8"   height="124" fill="#242232"/>
+  <rect x="1592" y="316" width="152" height="8"   fill="#242232"/>
+  <rect x="1592" y="440" width="152" height="8"   fill="#242232"/>
+  <!-- Frame inner surface -->
+  <rect x="1600" y="324" width="136" height="116" fill="#161424"/>
+  <!-- Mirror/picture content (dark, reflective suggestion) -->
+  <rect x="1604" y="328" width="128" height="108" fill="#121020"/>
+  <!-- Very faint reflection in mirror -->
+  <rect x="1610" y="340" width="40" height="60" fill="#1a1828" opacity="0.4"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

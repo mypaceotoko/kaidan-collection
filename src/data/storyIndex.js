@@ -36,15 +36,22 @@ export const STORY_INDEX = [
     available: true,
   },
 
+  {
+    id:        'chapter2',
+    chapter:   'Episode 2',
+    title:     '留守番',
+    subtitle:  '六時になったら帰るから',
+    path:      './stories/chapter2.json',
+    available: true,
+  },
+
   // ── Placeholder for future episodes ─────────────────────────────────────
-  // Uncomment and fill in when the story is ready:
-  //
   // {
-  //   id:        'chapter2',
-  //   chapter:   'Episode 2',
+  //   id:        'chapter3',
+  //   chapter:   'Episode 3',
   //   title:     '新しい話のタイトル',
   //   subtitle:  'サブタイトル',
-  //   path:      './stories/chapter2.json',
-  //   available: false,  // false = shown as locked / coming soon
+  //   path:      './stories/chapter3.json',
+  //   available: false,
   // },
 ];

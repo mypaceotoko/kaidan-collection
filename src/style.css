@@ -497,6 +497,95 @@ button:focus-visible {
     );
 }
 
+/* ── Chapter 2 backgrounds ─────────────────────────────────────────────── */
+
+/* Daytime/evening living room — warm amber tones */
+.bg-living_evening {
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(80, 55, 10, 0.4) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #1a1610 0%,
+      #1e1c14 40%,
+      #16140e 100%
+    );
+}
+
+/* Night living room — deep shadow, single lamp */
+.bg-living_night {
+  background:
+    radial-gradient(ellipse 35% 50% at 85% 55%, rgba(70, 48, 8, 0.5) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      #0e0c08 0%,
+      #121008 50%,
+      #0a0806 100%
+    );
+}
+
+/* Interior hallway — narrow, dark, staircase at end */
+.bg-hallway {
+  background:
+    radial-gradient(ellipse 15% 30% at 50% 60%, rgba(24, 20, 32, 0.6) 0%, transparent 100%),
+    linear-gradient(to bottom,
+      #0e0e14 0%,
+      #121018 50%,
+      #0a0a10 100%
+    );
+}
+
+/* Looking up the staircase — darkness above */
+.bg-stairs_up {
+  background:
+    radial-gradient(ellipse 30% 50% at 50% 10%, rgba(6, 6, 14, 0.9) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #040410 0%,
+      #0c0c16 50%,
+      #161418 100%
+    );
+}
+
+/* 2nd-floor hallway — extremely dark */
+.bg-upstairs {
+  background:
+    linear-gradient(to bottom,
+      #060610 0%,
+      #080812 50%,
+      #0a0a14 100%
+    );
+}
+
+/* Child's bedroom — slight moonlight, lavender-grey */
+.bg-child_room {
+  background:
+    radial-gradient(ellipse 40% 60% at 75% 40%, rgba(30, 28, 48, 0.5) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #101018 0%,
+      #141220 50%,
+      #0e0e18 100%
+    );
+}
+
+/* Japanese entrance (genkan) — dark, closed door */
+.bg-entrance_hall {
+  background:
+    radial-gradient(ellipse 30% 40% at 50% 35%, rgba(20, 16, 12, 0.6) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #0e0c0a 0%,
+      #121008 60%,
+      #0a0806 100%
+    );
+}
+
+/* TV static / noise — cold blue-grey glow */
+.bg-tv_noise {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(40, 40, 70, 0.7) 0%, transparent 80%),
+    linear-gradient(to bottom,
+      #060610 0%,
+      #08080e 50%,
+      #060608 100%
+    );
+}
+
 /* Pure black — silence */
 .bg-black {
   background: #000;

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e1c2c"/>
+      <stop offset="100%" stop-color="#181628"/>
+    </linearGradient>
+    <linearGradient id="wallRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#181628"/>
+      <stop offset="100%" stop-color="#1e1c2c"/>
+    </linearGradient>
+    <linearGradient id="ceilGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e1c"/>
+      <stop offset="100%" stop-color="#12101e"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1a14"/>
+      <stop offset="100%" stop-color="#141210"/>
+    </linearGradient>
+    <!-- Very faint light from staircase area (near end of hallway) -->
+    <radialGradient id="nearGlow" cx="50%" cy="100%" r="60%">
+      <stop offset="0%"  stop-color="#201e30" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#201e30" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Sliver of light behind ajar door -->
+    <linearGradient id="doorGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#2e2848" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1c1830" stop-opacity="0.4"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BASE (deep dark) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#0c0c18"/>
+
+  <!-- CEILING (perspective) -->
+  <polygon points="0,0 1920,0 1560,180 360,180" fill="url(#ceilGrad)"/>
+  <!-- Ceiling trim line -->
+  <line x1="360" y1="180" x2="1560" y2="180" stroke="#1a1828" stroke-width="3"/>
+
+  <!-- LEFT WALL (perspective, far left) -->
+  <polygon points="0,0 360,180 360,820 0,1080" fill="url(#wallLeft)"/>
+  <!-- Left baseboard -->
+  <polygon points="0,1080 360,820 360,836 0,1080" fill="#242234"/>
+  <line x1="360" y1="820" x2="0" y2="1080" stroke="#2e2c3e" stroke-width="2"/>
+
+  <!-- RIGHT WALL WITH DOORS -->
+  <polygon points="1920,0 1560,180 1560,820 1920,1080" fill="url(#wallRight)"/>
+  <!-- Right baseboard -->
+  <polygon points="1920,1080 1560,820 1560,836 1920,1080" fill="#242234"/>
+  <line x1="1560" y1="820" x2="1920" y2="1080" stroke="#2e2c3e" stroke-width="2"/>
+
+  <!-- FAR WALL (end of hallway) -->
+  <polygon points="360,180 1560,180 1560,820 360,820" fill="#14121e"/>
+  <!-- Far wall baseboard -->
+  <rect x="360" y="808" width="1200" height="14" fill="#1e1c2c"/>
+
+  <!-- FLOOR (perspective) -->
+  <polygon points="0,1080 1920,1080 1560,820 360,820" fill="url(#floorGrad)"/>
+  <!-- Floor wood planks (perspective lines) -->
+  <line x1="960" y1="490" x2="0"    y2="1080" stroke="#1a1812" stroke-width="2"/>
+  <line x1="960" y1="490" x2="480"  y2="1080" stroke="#181610" stroke-width="1.5"/>
+  <line x1="960" y1="490" x2="960"  y2="1080" stroke="#1c1a14" stroke-width="2"/>
+  <line x1="960" y1="490" x2="1440" y2="1080" stroke="#181610" stroke-width="1.5"/>
+  <line x1="960" y1="490" x2="1920" y2="1080" stroke="#1a1812" stroke-width="2"/>
+  <!-- Horizontal plank cross lines -->
+  <line x1="200"  y1="960" x2="1720" y2="960" stroke="#181610" stroke-width="1" opacity="0.6"/>
+  <line x1="340"  y1="900" x2="1580" y2="900" stroke="#161410" stroke-width="1" opacity="0.5"/>
+  <!-- Faint light from below (staircase) near bottom of frame -->
+  <rect x="0" y="820" width="1920" height="260" fill="url(#nearGlow)"/>
+
+  <!-- CEILING FIXTURE (off) -->
+  <rect x="880" y="165" width="160" height="14" fill="#181626" rx="3"/>
+  <rect x="888" y="169" width="144" height="8"  fill="#141220" rx="2"/>
+
+  <!-- DOOR 1 — far left of far wall (closed, perspective-shrunk) -->
+  <!-- Frame -->
+  <rect x="388" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="552" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="388" y="192" width="174" height="8"   fill="#242234"/>
+  <!-- Door panel -->
+  <rect x="396" y="200" width="156" height="522" fill="#181626" rx="2"/>
+  <!-- Raised panels on door -->
+  <rect x="406" y="214" width="136" height="236" fill="#141220" rx="2"/>
+  <rect x="414" y="222" width="120" height="220" fill="#121020" rx="1"/>
+  <rect x="406" y="464" width="136" height="246" fill="#141220" rx="2"/>
+  <rect x="414" y="472" width="120" height="230" fill="#121020" rx="1"/>
+  <!-- Handle -->
+  <rect x="534" y="450" width="24" height="8" fill="#2c2a3c" rx="3"/>
+
+  <!-- DOOR 2 — center-left (closed) -->
+  <rect x="634" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="836" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="634" y="192" width="212" height="8"   fill="#242234"/>
+  <rect x="642" y="200" width="194" height="522" fill="#191728" rx="2"/>
+  <rect x="652" y="214" width="174" height="236" fill="#151322" rx="2"/>
+  <rect x="660" y="222" width="158" height="220" fill="#131120" rx="1"/>
+  <rect x="652" y="464" width="174" height="246" fill="#151322" rx="2"/>
+  <rect x="660" y="472" width="158" height="230" fill="#131120" rx="1"/>
+  <rect x="816" y="452" width="24" height="8" fill="#2c2a3c" rx="3"/>
+
+  <!-- DOOR 3 — center-right (AJAR — THE HORROR ELEMENT) -->
+  <!-- Frame -->
+  <rect x="900" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="900" y="192" width="224" height="8"   fill="#242234"/>
+  <!-- Door panel itself (slightly open, showing an angle) -->
+  <rect x="908" y="200" width="196" height="522" fill="#191728" rx="2"/>
+  <rect x="918" y="214" width="176" height="236" fill="#151322" rx="2"/>
+  <rect x="918" y="464" width="176" height="246" fill="#151322" rx="2"/>
+  <!-- The gap (door is open a sliver — ~4cm at eye level — the door frame right side) -->
+  <rect x="1098" y="196" width="8"   height="526" fill="#242234"/>
+  <!-- The opening gap (between door edge and frame) — slightly lighter inside room -->
+  <rect x="1100" y="200" width="28" height="522" fill="url(#doorGlow)"/>
+  <!-- Inner room suggestion (thin sliver) -->
+  <rect x="1104" y="204" width="16" height="514" fill="#2a2444"/>
+  <!-- Handle (door side) -->
+  <rect x="1076" y="454" width="24" height="8" fill="#2c2a3c" rx="3"/>
+
+  <!-- DOOR 4 — far right (closed, perspective-shrunk) -->
+  <rect x="1300" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="1468" y="196" width="8"   height="526" fill="#242234"/>
+  <rect x="1300" y="192" width="178" height="8"   fill="#242234"/>
+  <rect x="1308" y="200" width="160" height="522" fill="#181626" rx="2"/>
+  <rect x="1318" y="214" width="140" height="236" fill="#141220" rx="2"/>
+  <rect x="1326" y="222" width="124" height="220" fill="#121020" rx="1"/>
+  <rect x="1318" y="464" width="140" height="246" fill="#141220" rx="2"/>
+  <rect x="1326" y="472" width="124" height="230" fill="#121020" rx="1"/>
+  <rect x="1446" y="452" width="24" height="8" fill="#2c2a3c" rx="3"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

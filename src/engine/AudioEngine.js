@@ -163,6 +163,46 @@ export class AudioEngine {
     return nodes;
   }
 
+  // ── Chapter 2 BGM ─────────────────────────────────────────────────────────
+
+  /** Quiet home ambiance: fridge hum + barely-there noise floor */
+  _bgm_ambient_room(ctx, out) {
+    const nodes = [];
+    // Fridge motor hum: two slightly detuned low oscillators
+    [48, 49.2].forEach(freq => {
+      const osc = this._osc(ctx, 'sine', freq);
+      const g   = ctx.createGain(); g.gain.value = 0.28;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Very faint noise floor (room tone)
+    const noise = this._noise(ctx, 10);
+    const lp = this._bpf(ctx, 'lowpass', 200, 0.8);
+    const g2 = ctx.createGain(); g2.gain.value = 0.018;
+    noise.connect(lp); lp.connect(g2); g2.connect(out);
+    noise.loop = true; noise.start(); nodes.push(noise);
+    return nodes;
+  }
+
+  /** Rainy evening: broadband rain wash + low room drone */
+  _bgm_ambient_rain(ctx, out) {
+    const nodes = [];
+    // Rain: white noise through a bandpass sweep
+    const rain = this._noise(ctx, 12);
+    const bp   = this._bpf(ctx, 'bandpass', 1200, 0.4);
+    const gr   = ctx.createGain(); gr.gain.value = 0.22;
+    rain.connect(bp); bp.connect(gr); gr.connect(out);
+    rain.loop = true; rain.start(); nodes.push(rain);
+    // Low drone underneath
+    const osc = this._osc(ctx, 'sine', 52);
+    const g   = ctx.createGain(); g.gain.value = 0.20;
+    osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    // Slow breath LFO
+    const lfo  = this._osc(ctx, 'sine', 0.06);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.14;
+    lfo.connect(lfoG); lfoG.connect(gr.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
   /** Post-escape: single unresolved drone — alive but not safe */
   _bgm_ending_relief(ctx, out) {
     const nodes = [];
@@ -281,6 +321,125 @@ export class AudioEngine {
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
     n.connect(f); f.connect(g); g.connect(ctx.destination);
     n.start(t); n.stop(t + 0.22);
+  }
+
+  // ── Chapter 2 SE ──────────────────────────────────────────────────────────
+
+  /** Wall clock tick — dry, sharp */
+  _se_clock_tick(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 0.06);
+    const f = this._bpf(ctx, 'bandpass', 2800, 4);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(this._seVolume * 0.45, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.055);
+    n.connect(f); f.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.07);
+  }
+
+  /** Landline telephone ring — two-burst warble */
+  _se_phone_ring(ctx) {
+    const t = ctx.currentTime;
+    const ring = (start) => {
+      const o = this._osc(ctx, 'sine', 480);
+      const o2 = this._osc(ctx, 'sine', 620);
+      const g  = ctx.createGain();
+      g.gain.setValueAtTime(0, start);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.4, start + 0.02);
+      g.gain.setValueAtTime(this._seVolume * 0.4, start + 0.3);
+      g.gain.linearRampToValueAtTime(0, start + 0.34);
+      o.connect(g); o2.connect(g); g.connect(ctx.destination);
+      o.start(start); o.stop(start + 0.35);
+      o2.start(start); o2.stop(start + 0.35);
+    };
+    ring(t);
+    ring(t + 0.45);
+  }
+
+  /** Intercom doorbell — two-tone chime */
+  _se_doorbell(ctx) {
+    const t = ctx.currentTime;
+    const chime = (start, freq, dur) => {
+      const o = this._osc(ctx, 'sine', freq);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(this._seVolume * 0.5, start);
+      g.gain.exponentialRampToValueAtTime(0.001, start + dur);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(start); o.stop(start + dur + 0.05);
+    };
+    chime(t,        523.3, 0.55); // C5
+    chime(t + 0.55, 392.0, 0.65); // G4
+  }
+
+  /** Heavy footstep from the floor above — muffled thud */
+  _se_footstep_upstairs(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 0.35);
+    const lp = this._bpf(ctx, 'lowpass', 90, 0.8);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.9, t + 0.018);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.30);
+    n.connect(lp); lp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.36);
+    // Wood creak overtone
+    const o = this._osc(ctx, 'sawtooth', 180);
+    const ws = ctx.createWaveShaper(); ws.curve = this._distCurve(60);
+    const g2 = ctx.createGain();
+    g2.gain.setValueAtTime(this._seVolume * 0.08, t + 0.02);
+    g2.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
+    o.connect(ws); ws.connect(g2); g2.connect(ctx.destination);
+    o.start(t + 0.02); o.stop(t + 0.26);
+  }
+
+  /** TV switching to static — broadband burst */
+  _se_tv_static(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 1.5);
+    const lp = this._bpf(ctx, 'lowpass', 8000, 0.5);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(this._seVolume * 0.6, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.35, t + 0.5);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 1.4);
+    n.connect(lp); lp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 1.5);
+  }
+
+  /** Door handle being tried — metal click */
+  _se_door_handle(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 0.12);
+    const f = this._bpf(ctx, 'bandpass', 1800, 3);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(this._seVolume * 0.35, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.10);
+    n.connect(f); f.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.13);
+    // Second metallic click (return of handle)
+    const t2 = t + 0.55;
+    const n2 = this._noise(ctx, 0.10);
+    const f2 = this._bpf(ctx, 'bandpass', 2000, 3.5);
+    const g2 = ctx.createGain();
+    g2.gain.setValueAtTime(this._seVolume * 0.25, t2);
+    g2.gain.exponentialRampToValueAtTime(0.001, t2 + 0.09);
+    n2.connect(f2); f2.connect(g2); g2.connect(ctx.destination);
+    n2.start(t2); n2.stop(t2 + 0.11);
+  }
+
+  /** Barely-audible whisper — breathy high-frequency exhale */
+  _se_whisper(ctx) {
+    const t = ctx.currentTime;
+    const n = this._noise(ctx, 0.8);
+    const bp = this._bpf(ctx, 'bandpass', 3200, 1.5);
+    bp.frequency.setValueAtTime(3200, t);
+    bp.frequency.linearRampToValueAtTime(2600, t + 0.6);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.18, t + 0.12);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.08, t + 0.55);
+    g.gain.linearRampToValueAtTime(0, t + 0.80);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.82);
   }
 
   _se_run_footstep(ctx) {

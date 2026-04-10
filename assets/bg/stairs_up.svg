@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1828"/>
+      <stop offset="100%" stop-color="#201e30"/>
+    </linearGradient>
+    <linearGradient id="treadGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2620"/>
+      <stop offset="100%" stop-color="#201c16"/>
+    </linearGradient>
+    <linearGradient id="riserGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161412"/>
+      <stop offset="100%" stop-color="#10100e"/>
+    </linearGradient>
+    <linearGradient id="topVoid" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0c0a18"/>
+      <stop offset="100%" stop-color="#060610"/>
+    </linearGradient>
+    <radialGradient id="landingGlow" cx="50%" cy="15%" r="55%">
+      <stop offset="0%"  stop-color="#22203a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#22203a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <!-- BASE -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#12101e"/>
+
+  <!-- LEFT WALL beside stairs -->
+  <rect x="0" y="0" width="540" height="1080" fill="url(#wallSide)"/>
+  <!-- Left wall baseboard -->
+  <rect x="496" y="0" width="48" height="1080" fill="#14121e"/>
+
+  <!-- RIGHT WALL beside stairs -->
+  <rect x="1380" y="0" width="540" height="1080" fill="url(#wallSide)"/>
+  <!-- Right wall baseboard -->
+  <rect x="1376" y="0" width="48" height="1080" fill="#14121e"/>
+
+  <!-- DARK VOID AT TOP -->
+  <rect x="540" y="0" width="840" height="220" fill="url(#topVoid)"/>
+  <!-- Landing dim glow -->
+  <rect x="540" y="180" width="840" height="55" fill="url(#landingGlow)"/>
+  <!-- Landing surface (upstairs floor, barely visible) -->
+  <rect x="540" y="210" width="840" height="28" fill="#1e1c2e"/>
+
+  <!-- STAIR STEPS — 12 steps, bottom to top, narrowing toward vanishing point -->
+
+  <!-- Step 1 (bottom, widest, closest) -->
+  <rect x="180" y="1000" width="1560" height="80" fill="url(#riserGrad)"/>
+  <rect x="180" y="970"  width="1560" height="32" fill="url(#treadGrad)"/>
+  <rect x="180" y="970"  width="1560" height="5"  fill="#38321e"/>
+
+  <!-- Step 2 -->
+  <rect x="248" y="914" width="1424" height="58" fill="url(#riserGrad)"/>
+  <rect x="248" y="886" width="1424" height="30" fill="url(#treadGrad)"/>
+  <rect x="248" y="886" width="1424" height="5"  fill="#342e1c"/>
+
+  <!-- Step 3 -->
+  <rect x="318" y="832" width="1284" height="56" fill="url(#riserGrad)"/>
+  <rect x="318" y="806" width="1284" height="28" fill="url(#treadGrad)"/>
+  <rect x="318" y="806" width="1284" height="4"  fill="#30281a"/>
+
+  <!-- Step 4 -->
+  <rect x="386" y="754" width="1148" height="54" fill="url(#riserGrad)"/>
+  <rect x="386" y="728" width="1148" height="28" fill="url(#treadGrad)"/>
+  <rect x="386" y="728" width="1148" height="4"  fill="#2e2618"/>
+
+  <!-- Step 5 -->
+  <rect x="454" y="680" width="1012" height="50" fill="url(#riserGrad)"/>
+  <rect x="454" y="654" width="1012" height="28" fill="url(#treadGrad)"/>
+  <rect x="454" y="654" width="1012" height="4"  fill="#2c2416"/>
+
+  <!-- Step 6 -->
+  <rect x="520" y="610" width="880"  height="46" fill="url(#riserGrad)"/>
+  <rect x="520" y="584" width="880"  height="28" fill="url(#treadGrad)"/>
+  <rect x="520" y="584" width="880"  height="4"  fill="#2a2214"/>
+
+  <!-- Step 7 -->
+  <rect x="582" y="544" width="756"  height="42" fill="url(#riserGrad)"/>
+  <rect x="582" y="518" width="756"  height="28" fill="url(#treadGrad)"/>
+  <rect x="582" y="518" width="756"  height="3"  fill="#282012"/>
+
+  <!-- Step 8 -->
+  <rect x="642" y="482" width="636"  height="38" fill="url(#riserGrad)"/>
+  <rect x="642" y="456" width="636"  height="28" fill="url(#treadGrad)"/>
+  <rect x="642" y="456" width="636"  height="3"  fill="#261e10"/>
+
+  <!-- Step 9 -->
+  <rect x="700" y="424" width="520"  height="34" fill="url(#riserGrad)"/>
+  <rect x="700" y="398" width="520"  height="28" fill="url(#treadGrad)"/>
+  <rect x="700" y="398" width="520"  height="3"  fill="#241c10"/>
+
+  <!-- Step 10 -->
+  <rect x="754" y="370" width="412"  height="30" fill="url(#riserGrad)"/>
+  <rect x="754" y="344" width="412"  height="28" fill="url(#treadGrad)"/>
+  <rect x="754" y="344" width="412"  height="3"  fill="#221c0e"/>
+
+  <!-- Step 11 -->
+  <rect x="806" y="318" width="308"  height="28" fill="url(#riserGrad)"/>
+  <rect x="806" y="292" width="308"  height="28" fill="url(#treadGrad)"/>
+  <rect x="806" y="292" width="308"  height="3"  fill="#201a0e"/>
+
+  <!-- Step 12 (top, narrowest visible) -->
+  <rect x="852" y="270" width="216"  height="24" fill="url(#riserGrad)"/>
+  <rect x="852" y="244" width="216"  height="28" fill="url(#treadGrad)"/>
+  <rect x="852" y="244" width="216"  height="3"  fill="#1e180c"/>
+
+  <!-- BANISTER POSTS LEFT -->
+  <rect x="186"  y="964"  width="12" height="100" fill="#2e2c44"/>
+  <rect x="254"  y="880"  width="11" height="92"  fill="#2c2a42"/>
+  <rect x="324"  y="800"  width="10" height="82"  fill="#2a2840"/>
+  <rect x="392"  y="722"  width="10" height="74"  fill="#282640"/>
+  <rect x="460"  y="648"  width="9"  height="68"  fill="#26243e"/>
+  <rect x="526"  y="578"  width="9"  height="62"  fill="#24223c"/>
+  <rect x="588"  y="512"  width="8"  height="56"  fill="#22203a"/>
+  <rect x="648"  y="450"  width="8"  height="50"  fill="#201e38"/>
+  <rect x="706"  y="392"  width="7"  height="44"  fill="#1e1c36"/>
+  <rect x="760"  y="338"  width="7"  height="38"  fill="#1c1a34"/>
+  <rect x="812"  y="286"  width="6"  height="34"  fill="#1a1832"/>
+  <rect x="858"  y="238"  width="6"  height="30"  fill="#181630"/>
+  <!-- LEFT HANDRAIL -->
+  <line x1="192" y1="962" x2="864" y2="236" stroke="#34324c" stroke-width="11" stroke-linecap="round"/>
+  <line x1="192" y1="959" x2="864" y2="233" stroke="#3e3c58" stroke-width="3" opacity="0.5"/>
+
+  <!-- BANISTER POSTS RIGHT -->
+  <rect x="1722" y="964"  width="12" height="100" fill="#2e2c44"/>
+  <rect x="1655" y="880"  width="11" height="92"  fill="#2c2a42"/>
+  <rect x="1586" y="800"  width="10" height="82"  fill="#2a2840"/>
+  <rect x="1518" y="722"  width="10" height="74"  fill="#282640"/>
+  <rect x="1451" y="648"  width="9"  height="68"  fill="#26243e"/>
+  <rect x="1385" y="578"  width="9"  height="62"  fill="#24223c"/>
+  <rect x="1320" y="512"  width="8"  height="56"  fill="#22203a"/>
+  <rect x="1260" y="450"  width="8"  height="50"  fill="#201e38"/>
+  <rect x="1200" y="392"  width="7"  height="44"  fill="#1e1c36"/>
+  <rect x="1148" y="338"  width="7"  height="38"  fill="#1c1a34"/>
+  <rect x="1096" y="286"  width="6"  height="34"  fill="#1a1832"/>
+  <rect x="1050" y="238"  width="6"  height="30"  fill="#181630"/>
+  <!-- RIGHT HANDRAIL -->
+  <line x1="1728" y1="962" x2="1056" y2="236" stroke="#34324c" stroke-width="11" stroke-linecap="round"/>
+  <line x1="1728" y1="959" x2="1056" y2="233" stroke="#3e3c58" stroke-width="3" opacity="0.5"/>
+
+  <!-- Shadow shape at top landing (subtle — ambiguous figure) -->
+  <ellipse cx="960" cy="220" rx="32" ry="20" fill="#0a0818" opacity="0.65"/>
+  <rect x="944" y="180" width="32" height="42" fill="#0a0818" opacity="0.5"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>
