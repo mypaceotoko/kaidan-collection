@@ -249,6 +249,14 @@ export class UIManager {
     btn.classList.toggle('active', active);
   }
 
+  // ── Skip-mode indicator ───────────────────────────────────────────────────
+
+  /** @param {boolean} active */
+  setSkipIndicator(active) {
+    const btn = document.getElementById('btn-skip');
+    btn.classList.toggle('active', active);
+  }
+
   // ── Save/load notification ────────────────────────────────────────────────
 
   /**

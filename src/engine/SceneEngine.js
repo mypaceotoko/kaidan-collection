@@ -49,6 +49,9 @@ export class SceneEngine {
     this._isAuto    = false;
     this._autoTimer = null;
     this._autoDelay = 3200; // ms to wait before auto-advance
+
+    // Skip mode — fast-forward until next choice
+    this._isSkipping = false;
   }
 
   // ── Story loading ─────────────────────────────────────────────────────────
@@ -130,6 +133,8 @@ export class SceneEngine {
     // ── Render text then decide what comes next ───────────────────────────
     if (scene.text) {
       this._ui.showText(scene.text, () => this._onTextComplete(scene));
+      // In skip mode, bypass the typewriter immediately
+      if (this._isSkipping) this._ui.skipTypeWriter();
     } else {
       // No text — go straight to choices or ending
       this._onTextComplete(scene);
@@ -139,14 +144,16 @@ export class SceneEngine {
   /** Called when the TypeWriter finishes (or there is no text). */
   _onTextComplete(scene) {
     if (scene.choices?.length) {
-      // Show branching choices
+      // Reached a choice — stop skipping and show buttons
+      this._stopSkip();
       this._atChoice = true;
       this._ui.showChoices(scene.choices, (nextId) => {
         this._atChoice = false;
         this._goToScene(nextId);
       });
     } else if (scene.ending) {
-      // Show ending card
+      // Reached an ending — stop skipping
+      this._stopSkip();
       this._atEnding = true;
       this._ui.showEndingScreen(
         scene.ending,
@@ -161,10 +168,15 @@ export class SceneEngine {
         }
       );
     } else if (scene.next) {
-      // Wait for player input to continue
-      this._waitInput = true;
-      if (this._isAuto) {
-        this._startAutoTimer();
+      if (this._isSkipping) {
+        // Skip mode: auto-advance to next scene with a tiny gap
+        setTimeout(() => {
+          if (this._isSkipping) this._goToScene(scene.next);
+        }, 80);
+      } else {
+        // Normal: wait for player input
+        this._waitInput = true;
+        if (this._isAuto) this._startAutoTimer();
       }
     }
     // If no choices, ending, or next — story ends silently
@@ -193,21 +205,44 @@ export class SceneEngine {
   }
 
   /**
-   * Skip button: fast-forward if typing, else advance immediately.
+   * Skip button: toggle fast-forward mode.
+   * Advances scene-by-scene at speed until the next choice is reached.
+   * Pressing again cancels skip mode.
    */
   skip() {
-    if (this._atChoice || this._atEnding) return;
+    if (this._atEnding) return;
 
+    // Cancel if already skipping
+    if (this._isSkipping) {
+      this._stopSkip();
+      return;
+    }
+
+    // Already at a choice — nothing to skip to
+    if (this._atChoice) return;
+
+    // Engage skip mode
+    this._isSkipping = true;
+    this._ui.setSkipIndicator(true);
+
+    // If typewriter is mid-animation, skip it (onComplete fires → chain continues)
     if (!this._ui.isTypeWriterDone()) {
       this._ui.skipTypeWriter();
       return;
     }
 
+    // If waiting for input, advance immediately to kick off the chain
     if (this._waitInput && this._current?.next) {
       this._clearAutoTimer();
       this._waitInput = false;
       this._goToScene(this._current.next);
     }
+  }
+
+  /** @private — end skip mode and update button indicator */
+  _stopSkip() {
+    this._isSkipping = false;
+    this._ui.setSkipIndicator(false);
   }
 
   // ── Auto mode ─────────────────────────────────────────────────────────────
