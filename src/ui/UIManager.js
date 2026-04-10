@@ -76,36 +76,38 @@ export class UIManager {
   setBackground(bgId) {
     if (!bgId || bgId === this._currentBg) return;
 
-    // Remove old CSS class (only when previous bg was a plain name)
-    if (this._currentBg && !this._currentBg.startsWith('.') && !this._currentBg.startsWith('/')) {
-      this._bgLayer.classList.remove(`bg-${this._currentBg}`);
-    }
-
+    const prev = this._currentBg;
     this._currentBg = bgId;
 
-    // Explicit file path → use directly
+    // Clear ALL previous state (class + inline image)
+    if (prev) {
+      if (!prev.startsWith('.') && !prev.startsWith('/')) {
+        this._bgLayer.classList.remove(`bg-${prev}`);
+      }
+      this._bgLayer.style.backgroundImage = '';
+    }
+
+    // Direct file path → apply immediately
     if (bgId.startsWith('./') || bgId.startsWith('/') || bgId.startsWith('http')) {
       this._applyBgImage(bgId);
       return;
     }
 
-    // Plain name → try assets/bg/<name>.svg first, then CSS class fallback
-    const svgPath = `./assets/bg/${bgId}.svg`;
-    const probe = new Image();
-    probe.onload  = () => { if (this._currentBg === bgId) this._applyBgImage(svgPath); };
-    probe.onerror = () => {
-      if (this._currentBg === bgId) {
-        this._bgLayer.style.backgroundImage = '';
-        this._bgLayer.classList.add(`bg-${bgId}`);
-      }
-    };
-    probe.src = svgPath;
-
-    // Apply CSS class immediately as a placeholder while the probe loads
+    // 1) Apply CSS gradient class right away (always visible, works offline)
     this._bgLayer.classList.add(`bg-${bgId}`);
+
+    // 2) Load SVG via <img> — fires onload when file exists and is valid
+    const svgPath = `./assets/bg/${bgId}.svg`;
+    const img     = new Image();
+    img.onload = () => {
+      // Only apply if this bg is still the current one
+      if (this._currentBg === bgId) this._applyBgImage(svgPath);
+    };
+    // onerror: CSS gradient stays — no action needed
+    img.src = svgPath;
   }
 
-  /** @private */
+  /** @private — set element style to show an image as cover background */
   _applyBgImage(url) {
     this._bgLayer.style.backgroundImage    = `url('${url}')`;
     this._bgLayer.style.backgroundSize     = 'cover';

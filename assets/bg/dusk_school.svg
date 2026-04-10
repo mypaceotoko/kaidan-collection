@@ -1,140 +1,129 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#010108"/>
-      <stop offset="35%"  stop-color="#02020f"/>
-      <stop offset="65%"  stop-color="#060310"/>
-      <stop offset="100%" stop-color="#090305"/>
+      <stop offset="0%"   stop-color="#0c0b22"/>
+      <stop offset="35%"  stop-color="#1e0f30"/>
+      <stop offset="65%"  stop-color="#2e1215"/>
+      <stop offset="100%" stop-color="#140c0c"/>
     </linearGradient>
-    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#12122a" stop-opacity="0.5"/>
-      <stop offset="60%"  stop-color="#08081a" stop-opacity="0.2"/>
+    <radialGradient id="moonHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#c8b060" stop-opacity="0.5"/>
+      <stop offset="50%"  stop-color="#6a5020" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="transparent"/>
     </radialGradient>
-    <radialGradient id="winGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#2a1e06" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#100a02" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#040302"/>
-      <stop offset="100%" stop-color="#010101"/>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#120e0e"/>
+      <stop offset="100%" stop-color="#0a0808"/>
     </linearGradient>
   </defs>
 
   <!-- Sky -->
   <rect width="1920" height="1080" fill="url(#sky)"/>
 
-  <!-- Moon (dim, behind thin clouds) -->
-  <ellipse cx="340" cy="175" rx="220" ry="160" fill="url(#moonGlow)"/>
-  <circle  cx="340" cy="175" r="32"  fill="#0c0c1e"/>
-  <circle  cx="340" cy="175" r="26"  fill="#0f0f22"/>
-  <!-- Cloud wisps -->
-  <ellipse cx="255" cy="190" rx="130" ry="38" fill="#06060f" opacity="0.85"/>
-  <ellipse cx="450" cy="168" rx="110" ry="32" fill="#05050e" opacity="0.90"/>
-  <ellipse cx="340" cy="155" rx="90"  ry="26" fill="#04040c" opacity="0.75"/>
+  <!-- Stars (visible pale white/blue) -->
+  <circle cx="180"  cy="80"  r="1.8" fill="#d0c8e8" opacity="0.8"/>
+  <circle cx="350"  cy="45"  r="1.4" fill="#c8c0e0" opacity="0.7"/>
+  <circle cx="520"  cy="110" r="2.0" fill="#e0d8f8" opacity="0.85"/>
+  <circle cx="700"  cy="55"  r="1.5" fill="#d0c8e8" opacity="0.75"/>
+  <circle cx="900"  cy="35"  r="1.8" fill="#c8c0e0" opacity="0.8"/>
+  <circle cx="1100" cy="90"  r="1.4" fill="#e0d8f8" opacity="0.7"/>
+  <circle cx="1280" cy="50"  r="2.0" fill="#d0c8e8" opacity="0.8"/>
+  <circle cx="1450" cy="120" r="1.5" fill="#c8c0e0" opacity="0.7"/>
+  <circle cx="1650" cy="65"  r="1.8" fill="#e0d8f8" opacity="0.75"/>
+  <circle cx="1820" cy="95"  r="1.4" fill="#d0c8e8" opacity="0.7"/>
+  <circle cx="440"  cy="160" r="1.2" fill="#b8b0d0" opacity="0.6"/>
+  <circle cx="1050" cy="170" r="1.3" fill="#b8b0d0" opacity="0.6"/>
+  <circle cx="1540" cy="145" r="1.2" fill="#b8b0d0" opacity="0.6"/>
+  <circle cx="240"  cy="210" r="1.0" fill="#a8a0c0" opacity="0.5"/>
+  <circle cx="820"  cy="195" r="1.0" fill="#a8a0c0" opacity="0.5"/>
 
-  <!-- Stars (handful of barely-visible dots) -->
-  <circle cx="820"  cy="80"  r="1.2" fill="#0d0d20" opacity="0.6"/>
-  <circle cx="1100" cy="55"  r="1.0" fill="#0c0c1e" opacity="0.5"/>
-  <circle cx="1350" cy="110" r="1.4" fill="#0e0e22" opacity="0.6"/>
-  <circle cx="650"  cy="140" r="1.0" fill="#0d0d1e" opacity="0.4"/>
-  <circle cx="1580" cy="70"  r="1.2" fill="#0c0c20" opacity="0.5"/>
-  <circle cx="1760" cy="130" r="1.0" fill="#0d0d1e" opacity="0.4"/>
-  <circle cx="480"  cy="60"  r="0.8" fill="#0e0e20" opacity="0.5"/>
-  <circle cx="1680" cy="200" r="1.0" fill="#0c0c1c" opacity="0.4"/>
+  <!-- Moon glow halo -->
+  <ellipse cx="1460" cy="185" rx="240" ry="145" fill="url(#moonHalo)"/>
+  <!-- Moon -->
+  <circle cx="1460" cy="185" r="55"  fill="#d0b860"/>
+  <circle cx="1460" cy="185" r="48"  fill="#e0c870"/>
+  <!-- Craters (subtle) -->
+  <circle cx="1445" cy="175" r="8"   fill="#c8b060" opacity="0.5"/>
+  <circle cx="1470" cy="195" r="5"   fill="#c8b060" opacity="0.4"/>
+  <!-- Cloud across moon -->
+  <ellipse cx="1350" cy="198" rx="180" ry="44" fill="#221828" opacity="0.88"/>
+  <ellipse cx="1540" cy="178" rx="140" ry="36" fill="#1c1424" opacity="0.82"/>
 
-  <!-- Ground / pavement -->
-  <rect x="0" y="790" width="1920" height="290" fill="url(#groundG)"/>
-  <!-- Ground seam (road/path) -->
-  <rect x="0" y="788" width="1920" height="4" fill="#030302"/>
+  <!-- Ground -->
+  <rect x="0" y="760" width="1920" height="320" fill="url(#ground)"/>
+  <!-- Ground fog -->
+  <ellipse cx="960" cy="768" rx="960" ry="55" fill="#2a1818" opacity="0.4"/>
+  <ellipse cx="960" cy="780" rx="700" ry="35" fill="#1e1010" opacity="0.3"/>
 
-  <!-- Left trees -->
-  <path d="M 30,790  L 75,370  L 125,790 Z" fill="#020204"/>
-  <path d="M 55,790  L 95,440  L 148,790 Z" fill="#030305"/>
-  <path d="M 135,790 L 185,395 L 240,790 Z" fill="#020204"/>
-  <path d="M 168,790 L 205,500 L 255,790 Z" fill="#030305"/>
-  <rect x="71"  y="730" width="9" height="60" fill="#030304"/>
-  <rect x="186" y="740" width="8" height="50" fill="#030304"/>
+  <!-- SCHOOL BUILDING — dark slate, clearly visible -->
+  <rect x="180" y="210" width="1560" height="555" fill="#181828"/>
+  <!-- Roof line -->
+  <rect x="155" y="192" width="1610" height="22"  fill="#20203a"/>
+  <rect x="130" y="178" width="1660" height="18"  fill="#28283e"/>
+  <!-- Floor division lines -->
+  <rect x="180" y="390" width="1560" height="6"   fill="#101020"/>
+  <rect x="180" y="572" width="1560" height="6"   fill="#101020"/>
+  <!-- Corner columns -->
+  <rect x="180"  y="210" width="26"  height="555" fill="#101018"/>
+  <rect x="1714" y="210" width="26"  height="555" fill="#101018"/>
 
-  <!-- Right trees -->
-  <path d="M 1680,790 L 1730,380 L 1780,790 Z" fill="#020204"/>
-  <path d="M 1718,790 L 1758,455 L 1805,790 Z" fill="#030305"/>
-  <path d="M 1812,790 L 1858,370 L 1905,790 Z" fill="#020204"/>
-  <path d="M 1850,790 L 1880,490 L 1918,790 Z" fill="#030305"/>
-  <rect x="1727" y="730" width="9"  height="60" fill="#030304"/>
-  <rect x="1855" y="740" width="8"  height="50" fill="#030304"/>
+  <!-- 3rd-floor windows (dark) -->
+  <rect x="290"  y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="432"  y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="574"  y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="716"  y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="858"  y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="1000" y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="1142" y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="1284" y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="1426" y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
+  <rect x="1568" y="228" width="72" height="122" fill="#0c0c1e" rx="2"/>
 
-  <!-- ── SCHOOL BUILDING ───────────────────────────────────────────────── -->
-  <!-- Main body -->
-  <rect x="295" y="290" width="1330" height="500" fill="#040408"/>
+  <!-- ONE LIT WINDOW — the haunted room, 3rd floor, second from left -->
+  <rect x="432" y="228" width="72" height="122" fill="#3a2808" rx="2"/>
+  <rect x="436" y="232" width="64" height="114" fill="#503818"/>
+  <!-- Amber glow around lit window -->
+  <ellipse cx="468" cy="290" rx="80" ry="95" fill="#4a2c08" opacity="0.35"/>
+  <!-- FIGURE silhouette in the lit window -->
+  <ellipse cx="468" cy="254" rx="13" ry="15" fill="#0e0a06"/>
+  <rect    x="461" y="268" width="14" height="48" fill="#0e0a06"/>
+  <rect    x="452" y="272" width="10" height="30" fill="#0e0a06"/>
+  <rect    x="475" y="272" width="10" height="30" fill="#0e0a06"/>
+  <rect    x="462" y="314" width="8"  height="32" fill="#0e0a06"/>
+  <rect    x="474" y="314" width="8"  height="32" fill="#0e0a06"/>
 
-  <!-- Floor dividers (structural lines) -->
-  <rect x="295" y="455" width="1330" height="5"  fill="#020206"/>
-  <rect x="295" y="620" width="1330" height="5"  fill="#020205"/>
+  <!-- 2nd-floor windows -->
+  <rect x="290"  y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="432"  y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="574"  y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="716"  y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="858"  y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="1000" y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="1142" y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="1284" y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="1426" y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
+  <rect x="1568" y="408" width="72" height="120" fill="#0c0c1e" rx="2"/>
 
-  <!-- Roof overhang -->
-  <rect x="270" y="272" width="1380" height="22" fill="#03030a"/>
-  <rect x="252" y="260" width="1416" height="14" fill="#020208"/>
-  <!-- Roof railing/parapet detail -->
-  <rect x="295" y="258" width="1330" height="6"  fill="#030308"/>
+  <!-- 1st-floor windows -->
+  <rect x="290"  y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
+  <rect x="432"  y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
+  <rect x="574"  y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
+  <rect x="1284" y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
+  <rect x="1426" y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
+  <rect x="1568" y="592" width="72" height="112" fill="#0c0c1e" rx="2"/>
 
-  <!-- Side depth shadows -->
-  <rect x="295"  y="290" width="18"  height="500" fill="#020206"/>
-  <rect x="1607" y="290" width="18"  height="500" fill="#020206"/>
+  <!-- Main entrance -->
+  <rect x="874" y="590" width="172" height="175" fill="#0a0a16" rx="2"/>
 
-  <!-- ── WINDOWS 3rd floor ─────────────────────────────────────────────── -->
-  <!-- Lit: faint amber glow -->
-  <rect x="408" y="318" width="74" height="110" fill="#090702"/>
-  <ellipse cx="445" cy="373" rx="37" ry="55" fill="url(#winGlow)"/>
-  <rect x="410" y="320" width="70" height="106" fill="#0b0803" opacity="0.6"/>
+  <!-- Foreground trees -->
+  <path d="M 250,760 L 305,440 L 360,760 Z"  fill="#0e0e18"/>
+  <rect x="298" y="680" width="14" height="80" fill="#181818"/>
+  <ellipse cx="306" cy="458" rx="52" ry="46" fill="#121218" opacity="0.9"/>
 
-  <rect x="872" y="318" width="74" height="110" fill="#0b0904"/>
-  <ellipse cx="909" cy="373" rx="37" ry="55" fill="url(#winGlow)"/>
+  <path d="M 1545,760 L 1598,450 L 1650,760 Z" fill="#0e0e18"/>
+  <rect x="1591" y="685" width="14" height="75" fill="#181818"/>
+  <ellipse cx="1598" cy="468" rx="50" ry="44" fill="#121218" opacity="0.9"/>
 
-  <!-- Dark windows -->
-  <rect x="556"  y="318" width="74" height="110" fill="#020206"/>
-  <rect x="704"  y="318" width="74" height="110" fill="#020206"/>
-  <rect x="1020" y="318" width="74" height="110" fill="#020206"/>
-  <rect x="1168" y="318" width="74" height="110" fill="#020206"/>
-  <rect x="1316" y="318" width="74" height="110" fill="#020206"/>
-  <rect x="1464" y="318" width="74" height="110" fill="#020206"/>
-
-  <!-- ── WINDOWS 2nd floor (all dark) ─────────────────────────────────── -->
-  <rect x="408"  y="484" width="74" height="108" fill="#020206"/>
-  <rect x="556"  y="484" width="74" height="108" fill="#020206"/>
-  <rect x="704"  y="484" width="74" height="108" fill="#020206"/>
-  <rect x="852"  y="484" width="74" height="108" fill="#020206"/>
-  <rect x="1000" y="484" width="74" height="108" fill="#030207"/>
-  <rect x="1148" y="484" width="74" height="108" fill="#020206"/>
-  <rect x="1296" y="484" width="74" height="108" fill="#020206"/>
-  <rect x="1444" y="484" width="74" height="108" fill="#020206"/>
-
-  <!-- ── WINDOWS 1st floor ─────────────────────────────────────────────── -->
-  <rect x="408"  y="648" width="74" height="95" fill="#020205"/>
-  <rect x="556"  y="648" width="74" height="95" fill="#020205"/>
-  <rect x="704"  y="648" width="74" height="95" fill="#020205"/>
-  <rect x="1148" y="648" width="74" height="95" fill="#020205"/>
-  <rect x="1296" y="648" width="74" height="95" fill="#020205"/>
-  <rect x="1444" y="648" width="74" height="95" fill="#020205"/>
-
-  <!-- ── MAIN ENTRANCE ─────────────────────────────────────────────────── -->
-  <rect x="862"  y="648" width="196" height="142" fill="#010103"/>
-  <rect x="862"  y="648" width="96"  height="142" fill="#020204"/>
-  <rect x="958"  y="648" width="4"   height="142" fill="#030307"/>
-  <rect x="962"  y="648" width="96"  height="142" fill="#020204"/>
-  <!-- Entrance overhang -->
-  <rect x="845"  y="638" width="230" height="14"  fill="#030308"/>
-
-  <!-- ── FENCE / FRONT WALL ────────────────────────────────────────────── -->
-  <rect x="0"    y="785" width="295"  height="16" fill="#060608"/>
-  <rect x="1625" y="785" width="295"  height="16" fill="#060608"/>
-  <!-- Gate posts -->
-  <rect x="282"  y="740" width="18"   height="50" fill="#07070a"/>
-  <rect x="1620" y="740" width="18"   height="50" fill="#07070a"/>
-
-  <!-- Subtle ground mist -->
-  <ellipse cx="960" cy="810" rx="940" ry="70" fill="#030306" opacity="0.55"/>
-
-  <!-- Night vignette -->
-  <rect width="1920" height="1080" fill="#000004" opacity="0.30"/>
+  <!-- Vignette (gentle) -->
+  <rect width="1920" height="1080" fill="#000010" opacity="0.25"/>
 </svg>
