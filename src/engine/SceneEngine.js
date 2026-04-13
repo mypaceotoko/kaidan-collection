@@ -41,9 +41,10 @@ export class SceneEngine {
     this._storyInfo = null; // full entry from STORY_INDEX
 
     // State flags
-    this._waitInput = false; // waiting for click/key to advance
-    this._atChoice  = false; // choice menu open
-    this._atEnding  = false; // ending screen shown
+    this._waitInput    = false; // waiting for click/key to advance
+    this._atChoice     = false; // choice menu open
+    this._atEnding     = false; // ending screen shown
+    this._pendingEnding = null; // ending to show on next tap (waits for input)
 
     // Auto-advance
     this._isAuto    = false;
@@ -97,10 +98,11 @@ export class SceneEngine {
       return;
     }
 
-    this._current   = scene;
-    this._waitInput = false;
-    this._atChoice  = false;
-    this._atEnding  = false;
+    this._current       = scene;
+    this._waitInput     = false;
+    this._atChoice      = false;
+    this._atEnding      = false;
+    this._pendingEnding = null;
     this._clearAutoTimer();
 
     // Background
@@ -152,21 +154,11 @@ export class SceneEngine {
         this._goToScene(nextId);
       });
     } else if (scene.ending) {
-      // Reached an ending — stop skipping
+      // Text done — stop skipping, then wait for one more tap before ending screen
       this._stopSkip();
-      this._atEnding = true;
-      this._ui.showEndingScreen(
-        scene.ending,
-        () => { // replay
-          this._atEnding = false;
-          this.loadStory(this._storyInfo);
-        },
-        () => { // title
-          this._audio.stopBGM(true);
-          this._ui.showScreen('title');
-          this._atEnding = false;
-        }
-      );
+      this._pendingEnding = scene.ending;
+      this._waitInput = true;
+      if (this._isAuto) this._startAutoTimer();
     } else if (scene.next) {
       if (this._isSkipping) {
         // Skip mode: auto-advance to next scene with a tiny gap
@@ -197,10 +189,26 @@ export class SceneEngine {
       return;
     }
 
-    if (this._waitInput && this._current?.next) {
+    if (this._waitInput) {
       this._clearAutoTimer();
       this._waitInput = false;
-      this._goToScene(this._current.next);
+
+      if (this._pendingEnding) {
+        // Show ending only after player taps — they've read the last line
+        const ending = this._pendingEnding;
+        this._pendingEnding = null;
+        this._atEnding = true;
+        this._ui.showEndingScreen(
+          ending,
+          () => { this._atEnding = false; this.loadStory(this._storyInfo); },
+          () => { this._audio.stopBGM(true); this._ui.showScreen('title'); this._atEnding = false; }
+        );
+        return;
+      }
+
+      if (this._current?.next) {
+        this._goToScene(this._current.next);
+      }
     }
   }
 
@@ -231,8 +239,9 @@ export class SceneEngine {
       return;
     }
 
-    // If waiting for input, advance immediately to kick off the chain
-    if (this._waitInput && this._current?.next) {
+    // If waiting for input on a normal next scene, advance to kick off the chain.
+    // Do NOT auto-fire a pending ending — the player must tap to see it.
+    if (this._waitInput && this._current?.next && !this._pendingEnding) {
       this._clearAutoTimer();
       this._waitInput = false;
       this._goToScene(this._current.next);
