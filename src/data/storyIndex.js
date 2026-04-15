@@ -63,13 +63,12 @@ export const STORY_INDEX = [
     available: true,
   },
 
-  // ── Placeholder for future episodes ─────────────────────────────────────
-  // {
-  //   id:        'chapter5',
-  //   chapter:   'Episode 5',
-  //   title:     '新しい話のタイトル',
-  //   subtitle:  'サブタイトル',
-  //   path:      './stories/chapter5.json',
-  //   available: false,
-  // },
+  {
+    id:        'chapter5',
+    chapter:   'Episode 5',
+    title:     '巡回中',
+    subtitle:  '最後の記録は、誰が書いたのか',
+    path:      './stories/chapter5.json',
+    available: true,
+  },
 ];

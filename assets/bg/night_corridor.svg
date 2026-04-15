@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a0c10"/>
+      <stop offset="100%" stop-color="#080a0c"/>
+    </linearGradient>
+    <!-- Emergency exit glow: red -->
+    <radialGradient id="exitGlow" cx="50%" cy="35%" r="15%">
+      <stop offset="0%"   stop-color="#602020" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#602020" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Distant corridor glow: cold fluorescent -->
+    <radialGradient id="endGlow" cx="50%" cy="48%" r="12%">
+      <stop offset="0%"   stop-color="#384858" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#384858" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Flickering light pool on floor -->
+    <radialGradient id="lightPool" cx="50%" cy="62%" r="20%">
+      <stop offset="0%"   stop-color="#606878" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#606878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="62%">
+      <stop offset="18%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
+
+  <!-- Exit glow -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#exitGlow)"/>
+  <!-- End-of-corridor glow -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#endGlow)"/>
+  <!-- Light pool (one working fluorescent above center) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#lightPool)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="140" fill="#060809"/>
+
+  <!-- Ceiling tiles -->
+  <rect x="0"   y="120" width="1920" height="20" fill="#0a0c10"/>
+  <!-- Ceiling tile grid -->
+  <line x1="320"  y1="120" x2="320"  y2="140" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+  <line x1="640"  y1="120" x2="640"  y2="140" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+  <line x1="960"  y1="120" x2="960"  y2="140" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+  <line x1="1280" y1="120" x2="1280" y2="140" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+  <line x1="1600" y1="120" x2="1600" y2="140" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+
+  <!-- Left wall -->
+  <rect x="0"   y="140" width="480" height="740" fill="#0c0e12"/>
+  <!-- Right wall -->
+  <rect x="1440" y="140" width="480" height="740" fill="#0c0e12"/>
+  <!-- Back wall (far end of corridor) -->
+  <rect x="480" y="140" width="960" height="740" fill="#0a0c10"/>
+
+  <!-- CORRIDOR PERSPECTIVE — vanishing point center -->
+  <!-- Left wall perspective line (ceiling-wall junction) -->
+  <line x1="0"    y1="140" x2="960" y2="380" stroke="#0e1216" stroke-width="2" opacity="0.6"/>
+  <!-- Right wall perspective line -->
+  <line x1="1920" y1="140" x2="960" y2="380" stroke="#0e1216" stroke-width="2" opacity="0.6"/>
+  <!-- Left baseboard perspective -->
+  <line x1="0"    y1="880" x2="960" y2="700" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+  <!-- Right baseboard perspective -->
+  <line x1="1920" y1="880" x2="960" y2="700" stroke="#0e1014" stroke-width="2" opacity="0.5"/>
+
+  <!-- Corridor floor tile (perspective) -->
+  <rect x="0" y="880" width="1920" height="200" fill="#090b0f"/>
+  <!-- Floor tile lines converging -->
+  <line x1="480"  y1="880" x2="800"  y2="1080" stroke="#0d0f13" stroke-width="2" opacity="0.4"/>
+  <line x1="640"  y1="880" x2="860"  y2="1080" stroke="#0d0f13" stroke-width="2" opacity="0.35"/>
+  <line x1="960"  y1="880" x2="960"  y2="1080" stroke="#0d0f13" stroke-width="2" opacity="0.4"/>
+  <line x1="1280" y1="880" x2="1060" y2="1080" stroke="#0d0f13" stroke-width="2" opacity="0.35"/>
+  <line x1="1440" y1="880" x2="1120" y2="1080" stroke="#0d0f13" stroke-width="2" opacity="0.4"/>
+  <!-- Floor reflection (polished linoleum) -->
+  <rect x="0" y="880" width="1920" height="4" fill="#141820" opacity="0.5"/>
+
+  <!-- LEFT WALL: Doors (closed office doors) -->
+  <!-- Door 1 (near left) -->
+  <rect x="60"  y="240" width="200" height="580" fill="#0d0f13"/>
+  <rect x="68"  y="248" width="184" height="564" fill="#0b0d11"/>
+  <!-- Door handle -->
+  <ellipse cx="240" cy="540" rx="8" ry="16" fill="#141820" opacity="0.8"/>
+  <!-- Door 1 frame highlight -->
+  <rect x="60"  y="240" width="4" height="580" fill="#141820" opacity="0.4"/>
+
+  <!-- Door 2 (mid left) -->
+  <rect x="300" y="280" width="160" height="520" fill="#0d0f13"/>
+  <rect x="308" y="288" width="144" height="504" fill="#0b0d11"/>
+  <ellipse cx="432" cy="540" rx="7" ry="14" fill="#141820" opacity="0.7"/>
+
+  <!-- RIGHT WALL: Doors -->
+  <!-- Door 3 (near right) -->
+  <rect x="1660" y="240" width="200" height="580" fill="#0d0f13"/>
+  <rect x="1668" y="248" width="184" height="564" fill="#0b0d11"/>
+  <ellipse cx="1680" cy="540" rx="8" ry="16" fill="#141820" opacity="0.8"/>
+
+  <!-- Door 4 (mid right) -->
+  <rect x="1460" y="280" width="160" height="520" fill="#0d0f13"/>
+  <rect x="1468" y="288" width="144" height="504" fill="#0b0d11"/>
+  <ellipse cx="1476" cy="540" rx="7" ry="14" fill="#141820" opacity="0.7"/>
+
+  <!-- EMERGENCY EXIT SIGN (top center) -->
+  <rect x="880" y="148" width="160" height="44" fill="#601818" rx="2"/>
+  <rect x="888" y="152" width="144" height="36" fill="#701e1e" rx="1"/>
+  <!-- EXIT text suggestion (horizontal lines) -->
+  <rect x="896" y="162" width="126" height="5" fill="#902020" opacity="0.8"/>
+  <rect x="896" y="172" width="100" height="4" fill="#902020" opacity="0.6"/>
+  <!-- Exit glow -->
+  <ellipse cx="960" cy="170" rx="90" ry="30" fill="#801818" opacity="0.25"/>
+
+  <!-- FLUORESCENT LIGHTS on ceiling -->
+  <!-- Light 1 (near left) — OFF -->
+  <rect x="200"  y="130" width="200" height="12" fill="#141820" rx="2"/>
+  <!-- Light 2 (center-left) — DIM/FLICKERING -->
+  <rect x="600"  y="130" width="200" height="12" fill="#2a3040" rx="2"/>
+  <rect x="600"  y="130" width="200" height="12" fill="#7080a0" opacity="0.12"/>
+  <!-- Light 3 (center) — WORKING -->
+  <rect x="860"  y="130" width="200" height="12" fill="#344050" rx="2"/>
+  <rect x="860"  y="130" width="200" height="12" fill="#a0b0c0" opacity="0.18"/>
+  <!-- Floor pool below light 3 -->
+  <ellipse cx="960" cy="880" rx="280" ry="60" fill="#4050608" opacity="0.15"/>
+  <!-- Light 4 (center-right) — WORKING -->
+  <rect x="1120" y="130" width="200" height="12" fill="#344050" rx="2"/>
+  <!-- Light 5 (far right) — OFF -->
+  <rect x="1520" y="130" width="200" height="12" fill="#141820" rx="2"/>
+
+  <!-- WALL PANELS (left side) -->
+  <rect x="0"   y="800" width="480" height="80" fill="#0d0f13"/>
+  <rect x="0"   y="800" width="480" height="3" fill="#141820" opacity="0.5"/>
+  <!-- RIGHT BASEBOARD -->
+  <rect x="1440" y="800" width="480" height="80" fill="#0d0f13"/>
+  <rect x="1440" y="800" width="480" height="3" fill="#141820" opacity="0.5"/>
+
+  <!-- FAR DOOR (end of corridor) — lit from beneath -->
+  <rect x="820" y="380" width="280" height="600" fill="#0c0e14"/>
+  <rect x="828" y="388" width="264" height="492" fill="#0a0c12"/>
+  <!-- Light leaking under far door -->
+  <rect x="820" y="870" width="280" height="10" fill="#485868" opacity="0.35"/>
+  <!-- Door handle far end -->
+  <rect x="820"  y="600" width="12" height="40" fill="#141a22" rx="2"/>
+
+  <!-- SURVEILLANCE CAMERA (on left wall) -->
+  <rect x="440" y="260" width="30" height="16" fill="#0e1016" rx="3"/>
+  <ellipse cx="440" cy="268" rx="12" ry="10" fill="#101418"/>
+  <!-- Camera LED (red = recording) -->
+  <ellipse cx="464" cy="264" rx="3" ry="3" fill="#c02020" opacity="0.7"/>
+
+  <!-- Floor reflection of exit sign -->
+  <ellipse cx="960" cy="900" rx="80" ry="20" fill="#601818" opacity="0.06"/>
+
+  <!-- Vignette (heavy) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0c0d12"/>
+      <stop offset="100%" stop-color="#090a0e"/>
+    </linearGradient>
+    <linearGradient id="doorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a1c22"/>
+      <stop offset="50%"  stop-color="#161820"/>
+      <stop offset="100%" stop-color="#12141a"/>
+    </linearGradient>
+    <!-- Floor indicator glow (amber) -->
+    <radialGradient id="indGlow" cx="50%" cy="25%" r="18%">
+      <stop offset="0%"   stop-color="#806020" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#806020" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Open door gap glow — inside elevator (very faint) -->
+    <linearGradient id="innerGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#202830" stop-opacity="0.8"/>
+      <stop offset="50%"  stop-color="#283040" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#202830" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#indGlow)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="120" fill="#08090e"/>
+  <!-- Ceiling strip light -->
+  <rect x="600" y="100" width="720" height="10" fill="#222830" rx="2"/>
+  <rect x="600" y="100" width="720" height="10" fill="#8898a8" opacity="0.08"/>
+
+  <!-- Floor -->
+  <rect x="0" y="900" width="1920" height="180" fill="#0c0e14"/>
+  <!-- Polished floor reflection line -->
+  <rect x="0" y="900" width="1920" height="3" fill="#1a1e28" opacity="0.6"/>
+  <!-- Floor tile grid -->
+  <rect x="0" y="940" width="1920" height="1" fill="#14181e" opacity="0.4"/>
+  <rect x="0" y="980" width="1920" height="1" fill="#14181e" opacity="0.4"/>
+
+  <!-- LEFT WALL -->
+  <rect x="0"   y="120" width="460" height="780" fill="#0e1018"/>
+
+  <!-- RIGHT WALL -->
+  <rect x="1460" y="120" width="460" height="780" fill="#0e1018"/>
+
+  <!-- BACK WALL (between elevators) -->
+  <rect x="460" y="120" width="1000" height="780" fill="#0c0e14"/>
+
+  <!-- ELEVATOR SURROUND FRAME -->
+  <!-- Left elevator surround -->
+  <rect x="480" y="140" width="440" height="760" fill="#141620" rx="2"/>
+  <!-- Right elevator surround -->
+  <rect x="1000" y="140" width="440" height="760" fill="#141620" rx="2"/>
+
+  <!-- LEFT ELEVATOR DOORS — stainless steel finish -->
+  <!-- Left door (left panel) -->
+  <rect x="490" y="148" width="200" height="744" fill="url(#doorGrad)" rx="1"/>
+  <!-- Brushed steel texture lines -->
+  <line x1="490" y1="200" x2="690" y2="200" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="490" y1="300" x2="690" y2="300" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <line x1="490" y1="400" x2="690" y2="400" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="490" y1="500" x2="690" y2="500" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <line x1="490" y1="600" x2="690" y2="600" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="490" y1="700" x2="690" y2="700" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <!-- Left door inner edge (gap line) -->
+  <rect x="688" y="148" width="4" height="744" fill="#0c0d12"/>
+
+  <!-- Left door (right panel) -->
+  <rect x="692" y="148" width="200" height="744" fill="url(#doorGrad)" rx="1"/>
+  <line x1="692" y1="200" x2="892" y2="200" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="692" y1="350" x2="892" y2="350" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <line x1="692" y1="500" x2="892" y2="500" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="692" y1="650" x2="892" y2="650" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <!-- Right door inner edge -->
+  <rect x="890" y="148" width="4" height="744" fill="#0c0d12"/>
+  <!-- Door surround right -->
+  <rect x="894" y="140" width="26" height="760" fill="#14161c" rx="1"/>
+
+  <!-- RIGHT ELEVATOR DOORS — slightly open (horror) -->
+  <!-- Gap between doors (open a few centimeters) -->
+  <!-- Left panel of right elevator -->
+  <rect x="1010" y="148" width="196" height="744" fill="url(#doorGrad)" rx="1"/>
+  <line x1="1010" y1="250" x2="1206" y2="250" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="1010" y1="450" x2="1206" y2="450" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <line x1="1010" y1="650" x2="1206" y2="650" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <!-- Gap -->
+  <rect x="1206" y="148" width="28" height="744" fill="url(#innerGlow)"/>
+  <!-- Inside the elevator gap — darkness with faint interior -->
+  <rect x="1210" y="148" width="20" height="744" fill="#1a2030" opacity="0.9"/>
+  <!-- Right panel of right elevator -->
+  <rect x="1234" y="148" width="196" height="744" fill="url(#doorGrad)" rx="1"/>
+  <line x1="1234" y1="250" x2="1430" y2="250" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <line x1="1234" y1="450" x2="1430" y2="450" stroke="#1e2028" stroke-width="1" opacity="0.35"/>
+  <line x1="1234" y1="650" x2="1430" y2="650" stroke="#1e2028" stroke-width="1" opacity="0.4"/>
+  <rect x="1430" y="140" width="10" height="760" fill="#14161c"/>
+
+  <!-- FLOOR INDICATOR PANELS -->
+  <!-- Left elevator indicator -->
+  <rect x="640" y="108" width="100" height="32" fill="#0e1018" rx="3"/>
+  <rect x="646" y="112" width="88"  height="24" fill="#0c0d14" rx="2"/>
+  <!-- Number (showing B1 — basement, wrong floor) -->
+  <rect x="678" y="116" width="16" height="16" fill="#c08020" opacity="0.7"/>
+  <!-- Floor indicator digits (simple bars forming "B1") -->
+  <rect x="656" y="118" width="4"  height="12" fill="#c08020" opacity="0.5"/>
+  <rect x="660" y="118" width="8"  height="4"  fill="#c08020" opacity="0.5"/>
+  <rect x="660" y="124" width="8"  height="4"  fill="#c08020" opacity="0.5"/>
+  <rect x="660" y="130" width="8"  height="4"  fill="#c08020" opacity="0.5"/>
+
+  <!-- Right elevator indicator -->
+  <rect x="1180" y="108" width="100" height="32" fill="#0e1018" rx="3"/>
+  <rect x="1186" y="112" width="88"  height="24" fill="#0c0d14" rx="2"/>
+  <!-- Number showing movement: no display (blank/off) -->
+  <rect x="1190" y="116" width="78" height="16" fill="#080a0e" opacity="0.9"/>
+
+  <!-- CALL BUTTON PANELS (left wall of each elevator bay) -->
+  <!-- Left bay buttons -->
+  <rect x="940" y="440" width="50" height="100" fill="#0e1018" rx="4"/>
+  <ellipse cx="965" cy="463" rx="14" ry="14" fill="#101420"/>
+  <ellipse cx="965" cy="493" rx="14" ry="14" fill="#101420"/>
+  <ellipse cx="965" cy="523" rx="14" ry="14" fill="#101420"/>
+  <!-- Up button lit (someone pressed it) -->
+  <ellipse cx="965" cy="463" rx="10" ry="10" fill="#c08020" opacity="0.55"/>
+  <ellipse cx="965" cy="493" rx="10" ry="10" fill="#182030" opacity="0.4"/>
+
+  <!-- Right bay buttons -->
+  <rect x="1440" y="440" width="50" height="100" fill="#0e1018" rx="4"/>
+  <ellipse cx="1465" cy="463" rx="14" ry="14" fill="#101420"/>
+  <ellipse cx="1465" cy="493" rx="14" ry="14" fill="#101420"/>
+  <ellipse cx="1465" cy="523" rx="14" ry="14" fill="#101420"/>
+
+  <!-- FLOOR INDICATOR GLOW in ceiling -->
+  <ellipse cx="690" cy="124" rx="60" ry="16" fill="#c08020" opacity="0.08"/>
+
+  <!-- Floor reflection of elevator doors -->
+  <rect x="490" y="896" width="400" height="4" fill="#1a1e28" opacity="0.2"/>
+  <rect x="1010" y="896" width="420" height="4" fill="#1a1e28" opacity="0.2"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

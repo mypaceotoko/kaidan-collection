@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#08090e"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <!-- Monitor glow (blue-green, cold) -->
+    <radialGradient id="monGlow" cx="50%" cy="42%" r="52%">
+      <stop offset="0%"   stop-color="#102840" stop-opacity="0.75"/>
+      <stop offset="40%"  stop-color="#0a1828" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#0a1828" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Indicator light cluster glow -->
+    <radialGradient id="indGlow" cx="50%" cy="70%" r="30%">
+      <stop offset="0%"   stop-color="#102010" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#102010" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base room darkness -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#roomGrad)"/>
+
+  <!-- Monitor glow fill -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#monGlow)"/>
+
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="1920" height="100" fill="#060709"/>
+
+  <!-- Fluorescent strip (dim, barely on) -->
+  <rect x="400" y="82" width="1120" height="8" fill="#1a1e24" rx="2"/>
+  <rect x="400" y="82" width="1120" height="8" fill="#8090a0" opacity="0.06"/>
+
+  <!-- Back wall -->
+  <rect x="0" y="100" width="1920" height="780" fill="#080a0e"/>
+
+  <!-- Equipment rack (left) -->
+  <rect x="60"  y="160" width="280" height="720" fill="#0c0e12" rx="2"/>
+  <rect x="70"  y="170" width="260" height="700" fill="#0a0c10" rx="1"/>
+  <!-- Rack units -->
+  <rect x="76"  y="178" width="248" height="18" fill="#0e1016" rx="1"/>
+  <rect x="76"  y="202" width="248" height="18" fill="#101214" rx="1"/>
+  <rect x="76"  y="226" width="248" height="18" fill="#0e1016" rx="1"/>
+  <rect x="76"  y="250" width="248" height="18" fill="#0c0e12" rx="1"/>
+  <rect x="76"  y="274" width="248" height="18" fill="#101214" rx="1"/>
+  <rect x="76"  y="298" width="248" height="18" fill="#0e1016" rx="1"/>
+  <!-- Rack indicator lights (green = ok) -->
+  <ellipse cx="94"  cy="187" rx="3" ry="3" fill="#30c030" opacity="0.7"/>
+  <ellipse cx="94"  cy="211" rx="3" ry="3" fill="#30c030" opacity="0.65"/>
+  <ellipse cx="94"  cy="235" rx="3" ry="3" fill="#30c030" opacity="0.7"/>
+  <ellipse cx="94"  cy="259" rx="3" ry="3" fill="#c03030" opacity="0.6"/>
+  <ellipse cx="94"  cy="283" rx="3" ry="3" fill="#30c030" opacity="0.65"/>
+  <!-- Blinking LED (amber) -->
+  <ellipse cx="108" cy="187" rx="3" ry="3" fill="#c08000" opacity="0.5"/>
+  <ellipse cx="108" cy="211" rx="3" ry="3" fill="#c08000" opacity="0.4"/>
+
+  <!-- Equipment rack (right) -->
+  <rect x="1580" y="160" width="280" height="720" fill="#0c0e12" rx="2"/>
+  <rect x="1590" y="170" width="260" height="700" fill="#0a0c10" rx="1"/>
+  <rect x="1596" y="178" width="248" height="18" fill="#0e1016" rx="1"/>
+  <rect x="1596" y="202" width="248" height="18" fill="#101214" rx="1"/>
+  <rect x="1596" y="226" width="248" height="18" fill="#0e1016" rx="1"/>
+  <rect x="1596" y="250" width="248" height="18" fill="#0c0e12" rx="1"/>
+  <ellipse cx="1614" cy="187" rx="3" ry="3" fill="#30c030" opacity="0.7"/>
+  <ellipse cx="1614" cy="211" rx="3" ry="3" fill="#30c030" opacity="0.65"/>
+  <ellipse cx="1614" cy="235" rx="3" ry="3" fill="#c08000" opacity="0.5"/>
+  <ellipse cx="1614" cy="259" rx="3" ry="3" fill="#30c030" opacity="0.6"/>
+
+  <!-- MAIN MONITOR BANK — 3×2 grid of monitors -->
+  <!-- Monitor frame outer -->
+  <rect x="340" y="150" width="1240" height="680" fill="#0c0e14" rx="4"/>
+  <!-- Monitor frame inner shelf -->
+  <rect x="348" y="158" width="1224" height="664" fill="#080a0e" rx="3"/>
+
+  <!-- Monitor 1 (top-left) -->
+  <rect x="360"  y="168" width="370" height="290" fill="#0d1420" rx="2"/>
+  <rect x="366"  y="174" width="358" height="278" fill="#0e1828" rx="1"/>
+  <!-- Monitor 1 content: corridor view (lines suggesting perspective) -->
+  <line x1="545" y1="174" x2="545" y2="452" stroke="#182030" stroke-width="1" opacity="0.6"/>
+  <line x1="366" y1="313" x2="724" y2="313" stroke="#182030" stroke-width="1" opacity="0.5"/>
+  <!-- Corridor perspective lines in monitor -->
+  <line x1="545" y1="313" x2="420" y2="452" stroke="#1a2838" stroke-width="1.5" opacity="0.5"/>
+  <line x1="545" y1="313" x2="670" y2="452" stroke="#1a2838" stroke-width="1.5" opacity="0.5"/>
+  <line x1="545" y1="313" x2="500" y2="174" stroke="#1a2838" stroke-width="1" opacity="0.3"/>
+  <line x1="545" y1="313" x2="590" y2="174" stroke="#1a2838" stroke-width="1" opacity="0.3"/>
+
+  <!-- Monitor 2 (top-center) -->
+  <rect x="754"  y="168" width="412" height="290" fill="#0d1420" rx="2"/>
+  <rect x="760"  y="174" width="400" height="278" fill="#0e1828" rx="1"/>
+  <!-- Monitor 2 content: lobby view -->
+  <!-- Reception desk outline -->
+  <rect x="820" y="360" width="280" height="50" fill="#12202e" opacity="0.6"/>
+  <!-- Turnstile gates -->
+  <rect x="820" y="280" width="12" height="90" fill="#122030" opacity="0.5"/>
+  <rect x="960" y="280" width="12" height="90" fill="#122030" opacity="0.5"/>
+  <!-- TIMESTAMP watermark in monitor -->
+  <rect x="760" y="432" width="140" height="14" fill="#0a1018" opacity="0.8"/>
+  <rect x="768" y="435" width="120" height="8" fill="#1a3040" opacity="0.6"/>
+
+  <!-- Monitor 3 (top-right) -->
+  <rect x="1190" y="168" width="370" height="290" fill="#0d1420" rx="2"/>
+  <rect x="1196" y="174" width="358" height="278" fill="#0e1828" rx="1"/>
+  <!-- Monitor 3 content: elevator hall -->
+  <!-- Elevator doors outline -->
+  <rect x="1290" y="220" width="80" height="180" fill="#122030" opacity="0.5"/>
+  <rect x="1386" y="220" width="80" height="180" fill="#122030" opacity="0.5"/>
+  <!-- Floor indicator -->
+  <rect x="1326" y="200" width="40" height="18" fill="#12202e" opacity="0.7"/>
+
+  <!-- Monitor 4 (bottom-left) -->
+  <rect x="360"  y="482" width="370" height="290" fill="#0d1420" rx="2"/>
+  <rect x="366"  y="488" width="358" height="278" fill="#0e1828" rx="1"/>
+  <!-- Monitor 4: stairwell view -->
+  <!-- Stair steps outline -->
+  <line x1="366" y1="766" x2="724" y2="766" stroke="#182030" stroke-width="1" opacity="0.4"/>
+  <polygon points="450,766 500,700 550,766" fill="none" stroke="#1a2838" stroke-width="1.5" opacity="0.45"/>
+  <polygon points="520,766 570,710 620,766" fill="none" stroke="#1a2838" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Monitor 5 (bottom-center) — THIS IS THE KEY ONE: shows figure -->
+  <rect x="754"  y="482" width="412" height="290" fill="#101820" rx="2"/>
+  <rect x="760"  y="488" width="400" height="278" fill="#0f1a28" rx="1"/>
+  <!-- Slight blue-green tint on this monitor — more visible -->
+  <rect x="760"  y="488" width="400" height="278" fill="#103050" opacity="0.08"/>
+  <!-- Empty corridor in this monitor -->
+  <line x1="960" y1="488" x2="960" y2="766" stroke="#182838" stroke-width="1" opacity="0.5"/>
+  <line x1="760" y1="627" x2="1160" y2="627" stroke="#182838" stroke-width="1" opacity="0.4"/>
+  <!-- THE FIGURE (end of corridor) — static silhouette -->
+  <rect x="942"  y="544" width="36" height="108" fill="#182838" opacity="0.65"/>
+  <ellipse cx="960" cy="534" rx="20" ry="22" fill="#182838" opacity="0.65"/>
+
+  <!-- Monitor 6 (bottom-right) -->
+  <rect x="1190" y="482" width="370" height="290" fill="#0d1420" rx="2"/>
+  <rect x="1196" y="488" width="358" height="278" fill="#0e1828" rx="1"/>
+  <!-- Monitor 6: machine room view (barely visible) -->
+  <!-- Server racks outline faint -->
+  <rect x="1240" y="520" width="40" height="200" fill="#122030" opacity="0.3"/>
+  <rect x="1300" y="540" width="40" height="180" fill="#122030" opacity="0.25"/>
+  <rect x="1450" y="520" width="40" height="200" fill="#122030" opacity="0.3"/>
+
+  <!-- Control desk -->
+  <rect x="340" y="836" width="1240" height="44" fill="#0e1016" rx="3"/>
+  <rect x="348" y="840" width="1224" height="36" fill="#0c0e14" rx="2"/>
+  <!-- Desk controls: buttons, sliders -->
+  <!-- Button row -->
+  <ellipse cx="480"  cy="858" rx="10" ry="10" fill="#0e1620" rx="4"/>
+  <ellipse cx="520"  cy="858" rx="10" ry="10" fill="#0e1620" rx="4"/>
+  <ellipse cx="560"  cy="858" rx="10" ry="10" fill="#0e1620" rx="4"/>
+  <!-- Status lights on desk -->
+  <ellipse cx="680"  cy="858" rx="5" ry="5" fill="#30c030" opacity="0.8"/>
+  <ellipse cx="700"  cy="858" rx="5" ry="5" fill="#30c030" opacity="0.7"/>
+  <ellipse cx="720"  cy="858" rx="5" ry="5" fill="#c08000" opacity="0.6"/>
+  <ellipse cx="740"  cy="858" rx="5" ry="5" fill="#30c030" opacity="0.75"/>
+  <!-- Phone/intercom unit -->
+  <rect x="1340" y="840" width="120" height="36" fill="#0c1018" rx="3"/>
+  <rect x="1350" y="844" width="60"  height="28" fill="#0e1220" rx="2"/>
+  <!-- Intercom indicator -->
+  <ellipse cx="1430" cy="858" rx="7" ry="7" fill="#c03030" opacity="0.55"/>
+
+  <!-- Log clipboard on desk -->
+  <rect x="850"  y="836" width="80" height="44" fill="#0e1016" rx="1" opacity="0.9"/>
+  <rect x="856"  y="840" width="68" height="36" fill="#0c0e12" rx="1"/>
+  <!-- Lines on log -->
+  <line x1="860" y1="848" x2="920" y2="848" stroke="#141820" stroke-width="2" opacity="0.7"/>
+  <line x1="860" y1="856" x2="920" y2="856" stroke="#141820" stroke-width="2" opacity="0.6"/>
+  <line x1="860" y1="864" x2="900" y2="864" stroke="#141820" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Floor (linoleum tile) -->
+  <rect x="0" y="880" width="1920" height="200" fill="#080a0e"/>
+  <rect x="0" y="880" width="1920" height="2" fill="#0c0e12" opacity="0.6"/>
+  <!-- Tile lines -->
+  <rect x="0" y="900" width="1920" height="1" fill="#0c0e12" opacity="0.3"/>
+  <rect x="0" y="940" width="1920" height="1" fill="#0c0e12" opacity="0.3"/>
+  <!-- Chair -->
+  <rect x="880" y="870" width="160" height="10" fill="#0e1016" rx="3"/>
+  <rect x="896" y="878" width="128" height="6"  fill="#0c0e12" rx="2"/>
+  <!-- Chair legs -->
+  <rect x="900" y="882" width="8" height="60" fill="#0c0e12" rx="1"/>
+  <rect x="1012" y="882" width="8" height="60" fill="#0c0e12" rx="1"/>
+  <!-- Chair back -->
+  <rect x="880" y="820" width="160" height="52" fill="#0e1016" rx="3"/>
+
+  <!-- Indicator panel glow overlay -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#indGlow)"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

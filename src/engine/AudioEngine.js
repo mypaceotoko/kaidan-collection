@@ -203,6 +203,88 @@ export class AudioEngine {
     return nodes;
   }
 
+  // ── Chapter 5 BGM ─────────────────────────────────────────────────────────
+
+  /** Night facility: HVAC white hum + distant fluorescent buzz */
+  _bgm_ambient_hvac(ctx, out) {
+    const nodes = [];
+    // HVAC machine hum: broadband low-frequency noise
+    const hvac = this._noise(ctx, 12);
+    const lp   = this._bpf(ctx, 'lowpass', 320, 0.8);
+    const gh   = ctx.createGain(); gh.gain.value = 0.040;
+    hvac.connect(lp); lp.connect(gh); gh.connect(out);
+    hvac.loop = true; hvac.start(); nodes.push(hvac);
+    // 120 Hz electrical hum (fluorescent ballast)
+    const hum  = this._osc(ctx, 'sawtooth', 120);
+    const hpf  = this._bpf(ctx, 'highpass', 100, 2);
+    const gHum = ctx.createGain(); gHum.gain.value = 0.018;
+    hum.connect(hpf); hpf.connect(gHum); gHum.connect(out);
+    hum.start(); nodes.push(hum);
+    // Sub drone: building pressure
+    const sub  = this._osc(ctx, 'sine', 42);
+    const gSub = ctx.createGain(); gSub.gain.value = 0.14;
+    sub.connect(gSub); gSub.connect(out); sub.start(); nodes.push(sub);
+    // Very slow breathing LFO
+    const lfo  = this._osc(ctx, 'sine', 0.06);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.08;
+    lfo.connect(lfoG); lfoG.connect(gSub.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
+  /** Facility with wrongness: HVAC + psychoacoustic beating + cold harmonic */
+  _bgm_ambient_hvac_dark(ctx, out) {
+    const nodes = [];
+    // HVAC hum (slightly louder)
+    const hvac = this._noise(ctx, 12);
+    const lp   = this._bpf(ctx, 'lowpass', 300, 0.8);
+    const gh   = ctx.createGain(); gh.gain.value = 0.038;
+    hvac.connect(lp); lp.connect(gh); gh.connect(out);
+    hvac.loop = true; hvac.start(); nodes.push(hvac);
+    // Detuned pair → beating (42 Hz, 43.8 Hz = ~1.8 Hz beat rate)
+    [42, 43.8].forEach(f => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = 0.20;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Cold steel-pipe harmonic: 168 Hz (4th harmonic of 42)
+    const hi  = this._osc(ctx, 'sine', 168);
+    const ghi = ctx.createGain(); ghi.gain.value = 0.040;
+    hi.connect(ghi); ghi.connect(out); hi.start(); nodes.push(hi);
+    // 120 Hz flicker (electrical, wrong)
+    const hum  = this._osc(ctx, 'sawtooth', 120);
+    const hpf  = this._bpf(ctx, 'highpass', 100, 2);
+    const gHum = ctx.createGain(); gHum.gain.value = 0.014;
+    hum.connect(hpf); hpf.connect(gHum); gHum.connect(out);
+    hum.start(); nodes.push(hum);
+    // Uneasy slow LFO
+    const lfo  = this._osc(ctx, 'sine', 0.075);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.12;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
+  /** Facility tension: industrial dissonance + surveillance-pulse tremor */
+  _bgm_tension_facility(ctx, out) {
+    const nodes = [];
+    // HVAC still audible underneath
+    const hvac = this._noise(ctx, 12);
+    const lp   = this._bpf(ctx, 'lowpass', 280, 0.8);
+    const gh   = ctx.createGain(); gh.gain.value = 0.032;
+    hvac.connect(lp); lp.connect(gh); gh.connect(out);
+    hvac.loop = true; hvac.start(); nodes.push(hvac);
+    // Tritone-adjacent cluster: industrial grinding dissonance
+    [[48, 0.36], [67.9, 0.28], [96, 0.16], [135.8, 0.07]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Surveillance-pulse LFO: 0.28 Hz ≈ one pulse per 3.5 seconds (camera sweep)
+    const lfo  = this._osc(ctx, 'sine', 0.28);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.28;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
   // ── Chapter 4 BGM ─────────────────────────────────────────────────────────
 
   /** Abandoned house silence: wind through broken glass + oppressive sub drone */
@@ -585,6 +667,90 @@ export class AudioEngine {
     g.gain.linearRampToValueAtTime(0, t + 0.80);
     n.connect(bp); bp.connect(g); g.connect(ctx.destination);
     n.start(t); n.stop(t + 0.82);
+  }
+
+  // ── Chapter 5 SE ──────────────────────────────────────────────────────────
+
+  /** Metal key jingle: short burst of high metallic clicks */
+  _se_key_jingle(ctx) {
+    const t = ctx.currentTime;
+    for (let i = 0; i < 5; i++) {
+      const ti = t + i * 0.06 + Math.random() * 0.025;
+      const n  = this._noise(ctx, 0.08);
+      const bp = this._bpf(ctx, 'bandpass', 3800 + Math.random() * 1200, 4);
+      const g  = ctx.createGain();
+      g.gain.setValueAtTime(0, ti);
+      g.gain.linearRampToValueAtTime(this._seVolume * (0.35 + Math.random() * 0.2), ti + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.001, ti + 0.07);
+      n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+      n.start(ti); n.stop(ti + 0.09);
+    }
+  }
+
+  /** Electronic lock beep: two-tone access chime */
+  _se_door_beep(ctx) {
+    const t = ctx.currentTime;
+    [[880, 0], [1108, 0.14]].forEach(([freq, delay]) => {
+      const o = this._osc(ctx, 'sine', freq);
+      const g = ctx.createGain();
+      const ti = t + delay;
+      g.gain.setValueAtTime(0, ti);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.28, ti + 0.01);
+      g.gain.setValueAtTime(this._seVolume * 0.28, ti + 0.09);
+      g.gain.linearRampToValueAtTime(0, ti + 0.13);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(ti); o.stop(ti + 0.15);
+    });
+  }
+
+  /** Intercom / radio static burst: harsh broadband crackle */
+  _se_intercom_static(ctx) {
+    const t = ctx.currentTime;
+    const n  = this._noise(ctx, 0.55);
+    const hp = this._bpf(ctx, 'highpass', 800, 1);
+    const lp = this._bpf(ctx, 'lowpass', 3400, 1);
+    const g  = ctx.createGain();
+    g.gain.setValueAtTime(this._seVolume * 0.55, t);
+    g.gain.setValueAtTime(this._seVolume * 0.15, t + 0.08);
+    g.gain.setValueAtTime(this._seVolume * 0.45, t + 0.18);
+    g.gain.linearRampToValueAtTime(0, t + 0.50);
+    n.connect(hp); hp.connect(lp); lp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.6);
+  }
+
+  /** Elevator arrival chime: two-tone bell ding-dong */
+  _se_elevator_ding(ctx) {
+    const t = ctx.currentTime;
+    [[1047, 0, 0.6], [784, 0.22, 0.7]].forEach(([freq, delay, dur]) => {
+      const o  = this._osc(ctx, 'sine', freq);
+      const g  = ctx.createGain();
+      const ti = t + delay;
+      g.gain.setValueAtTime(0, ti);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.32, ti + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.001, ti + dur);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(ti); o.stop(ti + dur + 0.05);
+    });
+  }
+
+  /** Fluorescent light buzz flicker: 120 Hz burst with amplitude stutter */
+  _se_fluorescent_buzz(ctx) {
+    const t   = ctx.currentTime;
+    const osc = this._osc(ctx, 'sawtooth', 120);
+    const hp  = this._bpf(ctx, 'highpass', 80, 1);
+    const g   = ctx.createGain();
+    // Flicker pattern: on–off–on–off–on
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.22, t + 0.01);
+    g.gain.setValueAtTime(0, t + 0.06);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.18, t + 0.08);
+    g.gain.setValueAtTime(0, t + 0.14);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.20, t + 0.16);
+    g.gain.setValueAtTime(0, t + 0.20);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.16, t + 0.22);
+    g.gain.linearRampToValueAtTime(0, t + 0.38);
+    osc.connect(hp); hp.connect(g); g.connect(ctx.destination);
+    osc.start(t); osc.stop(t + 0.40);
   }
 
   // ── Chapter 4 SE ──────────────────────────────────────────────────────────

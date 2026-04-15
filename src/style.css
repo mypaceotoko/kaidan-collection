@@ -674,6 +674,88 @@ button:focus-visible {
     );
 }
 
+/* ── Episode 5 background gradients (CSS fallback while SVG loads) ───────── */
+
+/* Security room — monitor banks, cold blue glow */
+.bg-security_room {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(16, 40, 64, 0.75) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #06070a 0%,
+      #080a0e 50%,
+      #060708 100%
+    );
+}
+
+/* Night corridor — dark office hallway, emergency red */
+.bg-night_corridor {
+  background:
+    radial-gradient(ellipse 20% 30% at 50% 35%, rgba(60, 20, 20, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 20% at 50% 60%, rgba(50, 60, 80, 0.22) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #080a10 0%,
+      #0a0c12 50%,
+      #080a0c 100%
+    );
+}
+
+/* Elevator hall — stainless steel, cold metallic */
+.bg-elevator_hall {
+  background:
+    radial-gradient(ellipse 25% 20% at 36% 20%, rgba(80, 60, 20, 0.5) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #0a0c12 0%,
+      #0c0e16 40%,
+      #090b0f 100%
+    );
+}
+
+/* Emergency stairs — concrete, EXIT green above */
+.bg-emergency_stairs {
+  background:
+    radial-gradient(ellipse 30% 25% at 50% 20%, rgba(40, 16, 16, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 50% 42%, rgba(50, 58, 70, 0.3) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      #0e1014 0%,
+      #0c0e12 55%,
+      #0a0c10 100%
+    );
+}
+
+/* Empty lobby — night sky through glass facade */
+.bg-empty_lobby {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 20%, rgba(16, 32, 48, 0.4) 0%, transparent 70%),
+    linear-gradient(to bottom,
+      #080a12 0%,
+      #0a0c14 40%,
+      #080a10 100%
+    );
+}
+
+/* Machine room — server racks, amber warning glow */
+.bg-machine_room {
+  background:
+    radial-gradient(ellipse 40% 50% at 70% 50%, rgba(30, 20, 10, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 30% at 30% 30%, rgba(10, 24, 36, 0.5) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #060708 0%,
+      #070809 50%,
+      #050607 100%
+    );
+}
+
+/* Monitor static — extreme darkness, cold screen glow */
+.bg-monitor_static {
+  background:
+    radial-gradient(ellipse 55% 55% at 50% 50%, rgba(24, 36, 54, 0.7) 0%, transparent 65%),
+    linear-gradient(to bottom,
+      #050608 0%,
+      #060709 50%,
+      #040507 100%
+    );
+}
+
 /* ── Episode 3 background gradients (CSS fallback while SVG loads) ───────── */
 
 /* Sunny beach — bright sky, blue ocean, warm sand */

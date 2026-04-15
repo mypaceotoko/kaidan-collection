@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="concreteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0e1014"/>
+      <stop offset="100%" stop-color="#0a0c10"/>
+    </linearGradient>
+    <!-- Emergency exit sign glow -->
+    <radialGradient id="exitGlow" cx="50%" cy="22%" r="20%">
+      <stop offset="0%"   stop-color="#3a1010" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3a1010" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Stair overhead light pool -->
+    <radialGradient id="lightPool" cx="50%" cy="40%" r="30%">
+      <stop offset="0%"   stop-color="#505868" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#505868" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+      <stop offset="20%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base: raw concrete -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#concreteGrad)"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#exitGlow)"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#lightPool)"/>
+
+  <!-- Left concrete wall -->
+  <rect x="0"   y="0" width="480" height="1080" fill="#0c0e12"/>
+  <!-- Right concrete wall -->
+  <rect x="1440" y="0" width="480" height="1080" fill="#0c0e12"/>
+  <!-- Back wall -->
+  <rect x="480" y="0" width="960" height="1080" fill="#0e1016"/>
+
+  <!-- STAIRCASE — ascending from right to left perspective -->
+  <!-- Landing platform (current floor) -->
+  <rect x="480" y="750" width="960" height="200" fill="#101216"/>
+  <rect x="480" y="750" width="960" height="4" fill="#181c24" opacity="0.6"/>
+
+  <!-- Stairs going up (perspective) -->
+  <!-- Step 1 (closest, largest) -->
+  <rect x="480" y="680" width="960" height="72" fill="#0e1018"/>
+  <rect x="480" y="680" width="960" height="4" fill="#181c24" opacity="0.7"/>
+  <!-- Step 1 riser -->
+  <rect x="480" y="683" width="960" height="68" fill="#0c0e14" opacity="0.9"/>
+
+  <!-- Step 2 -->
+  <rect x="540" y="616" width="840" height="66" fill="#0e1018"/>
+  <rect x="540" y="616" width="840" height="4" fill="#181c24" opacity="0.65"/>
+
+  <!-- Step 3 -->
+  <rect x="600" y="558" width="720" height="60" fill="#0d0f16"/>
+  <rect x="600" y="558" width="720" height="4" fill="#16192"  opacity="0.6"/>
+
+  <!-- Step 4 -->
+  <rect x="656" y="504" width="608" height="56" fill="#0d0f16"/>
+  <rect x="656" y="504" width="608" height="4" fill="#16192" opacity="0.55"/>
+
+  <!-- Step 5 -->
+  <rect x="708" y="456" width="504" height="50" fill="#0c0e14"/>
+  <rect x="708" y="456" width="504" height="4" fill="#16192" opacity="0.5"/>
+
+  <!-- Step 6 -->
+  <rect x="756" y="412" width="408" height="46" fill="#0c0e14"/>
+  <rect x="756" y="412" width="408" height="3" fill="#14172" opacity="0.45"/>
+
+  <!-- Step 7 -->
+  <rect x="800" y="372" width="320" height="42" fill="#0b0d12"/>
+  <rect x="800" y="372" width="320" height="3" fill="#14172" opacity="0.4"/>
+
+  <!-- Step 8 (very small, near vanishing point) -->
+  <rect x="840" y="336" width="240" height="38" fill="#0b0d12"/>
+  <rect x="840" y="336" width="240" height="3" fill="#14172" opacity="0.35"/>
+
+  <!-- Step 9 -->
+  <rect x="876" y="304" width="168" height="34" fill="#0a0c10"/>
+
+  <!-- Step 10 — tiny, at top -->
+  <rect x="904" y="276" width="112" height="30" fill="#0a0c10"/>
+
+  <!-- Upper landing -->
+  <rect x="480" y="220" width="960" height="60" fill="#0c0e14"/>
+  <rect x="480" y="220" width="960" height="3" fill="#181c24" opacity="0.4"/>
+
+  <!-- METAL RAILINGS — left side -->
+  <!-- Railing post 1 (near) -->
+  <rect x="484" y="620" width="10" height="132" fill="#161820" rx="2"/>
+  <!-- Railing post 2 -->
+  <rect x="548" y="560" width="9" height="120" fill="#141620" rx="2"/>
+  <!-- Railing post 3 -->
+  <rect x="608" y="504" width="9" height="110" fill="#141620" rx="2"/>
+  <!-- Railing post 4 -->
+  <rect x="664" y="452" width="8" height="100" fill="#131518" rx="2"/>
+  <!-- Railing post 5 -->
+  <rect x="716" y="406" width="8" height="92"  fill="#131518" rx="2"/>
+  <!-- Horizontal rail bar (left) — top rail -->
+  <line x1="484" y1="620" x2="716" y2="406" stroke="#181c24" stroke-width="6" opacity="0.8"/>
+  <!-- Mid rail -->
+  <line x1="484" y1="680" x2="716" y2="452" stroke="#161a22" stroke-width="4" opacity="0.7"/>
+
+  <!-- METAL RAILINGS — right side -->
+  <rect x="1426" y="620" width="10" height="132" fill="#161820" rx="2"/>
+  <rect x="1363" y="560" width="9" height="120" fill="#141620" rx="2"/>
+  <rect x="1303" y="504" width="9" height="110" fill="#141620" rx="2"/>
+  <rect x="1248" y="452" width="8" height="100" fill="#131518" rx="2"/>
+  <rect x="1196" y="406" width="8" height="92"  fill="#131518" rx="2"/>
+  <line x1="1436" y1="620" x2="1204" y2="406" stroke="#181c24" stroke-width="6" opacity="0.8"/>
+  <line x1="1436" y1="680" x2="1204" y2="452" stroke="#161a22" stroke-width="4" opacity="0.7"/>
+
+  <!-- EMERGENCY EXIT SIGN (top, above upper landing) -->
+  <rect x="840" y="168" width="240" height="48" fill="#501414" rx="3"/>
+  <rect x="848" y="174" width="224" height="36" fill="#601818" rx="2"/>
+  <!-- EXIT letters (bar shapes) -->
+  <rect x="862" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <rect x="874" y="184" width="14" height="6"  fill="#802020" opacity="0.9"/>
+  <rect x="874" y="191" width="10" height="5"  fill="#802020" opacity="0.8"/>
+  <rect x="874" y="199" width="14" height="6"  fill="#802020" opacity="0.9"/>
+  <rect x="895" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <rect x="907" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <rect x="919" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <rect x="934" y="184" width="10" height="6"  fill="#802020" opacity="0.8"/>
+  <rect x="934" y="191" width="10" height="5"  fill="#802020" opacity="0.75"/>
+  <rect x="934" y="199" width="10" height="6"  fill="#802020" opacity="0.8"/>
+  <rect x="949" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <rect x="961" y="184" width="8"  height="16" fill="#802020" opacity="0.9"/>
+  <!-- Exit floor glow -->
+  <ellipse cx="960" cy="220" rx="120" ry="20" fill="#601818" opacity="0.15"/>
+
+  <!-- OVERHEAD LIGHT (cage-type industrial) -->
+  <rect x="920" y="0" width="80" height="28" fill="#0e1016" rx="3"/>
+  <rect x="928" y="28" width="64" height="16" fill="#141820" rx="2"/>
+  <!-- Wire -->
+  <line x1="960" y1="0" x2="960" y2="28" stroke="#141820" stroke-width="3"/>
+  <!-- Bulb glow -->
+  <ellipse cx="960" cy="36" rx="28" ry="14" fill="#606878" opacity="0.35"/>
+  <ellipse cx="960" cy="36" rx="14" ry="7" fill="#8090a0" opacity="0.2"/>
+
+  <!-- CONCRETE TEXTURE (cracks, roughness) -->
+  <!-- Left wall crack -->
+  <line x1="180" y1="300" x2="220" y2="480" stroke="#141820" stroke-width="2" opacity="0.4"/>
+  <line x1="220" y1="480" x2="190" y2="600" stroke="#141820" stroke-width="1.5" opacity="0.35"/>
+  <!-- Right wall crack -->
+  <line x1="1720" y1="400" x2="1680" y2="560" stroke="#141820" stroke-width="2" opacity="0.4"/>
+
+  <!-- FLOOR NUMBER PAINTED on landing -->
+  <rect x="680" y="780" width="80" height="60" fill="#12141a" opacity="0.4"/>
+  <!-- Number "3" suggestion (bars) -->
+  <rect x="696" y="788" width="40" height="7"  fill="#1a2030" opacity="0.6"/>
+  <rect x="724" y="796" width="16" height="7"  fill="#1a2030" opacity="0.5"/>
+  <rect x="696" y="803" width="40" height="7"  fill="#1a2030" opacity="0.6"/>
+  <rect x="724" y="810" width="16" height="7"  fill="#1a2030" opacity="0.5"/>
+  <rect x="696" y="817" width="40" height="7"  fill="#1a2030" opacity="0.6"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

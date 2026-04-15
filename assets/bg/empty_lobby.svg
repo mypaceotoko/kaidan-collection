@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a0d14"/>
+      <stop offset="100%" stop-color="#080a10"/>
+    </linearGradient>
+    <!-- Night sky through glass facade -->
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#04060c"/>
+      <stop offset="70%"  stop-color="#06080e"/>
+      <stop offset="100%" stop-color="#080a12"/>
+    </linearGradient>
+    <!-- Distant city glow (ambient through glass) -->
+    <radialGradient id="cityGlow" cx="50%" cy="90%" r="60%">
+      <stop offset="0%"   stop-color="#102030" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#102030" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Overhead lobby light -->
+    <radialGradient id="lobbyLight" cx="50%" cy="20%" r="45%">
+      <stop offset="0%"   stop-color="#304050" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#304050" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="18%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGrad)"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#lobbyLight)"/>
+
+  <!-- GLASS FACADE (full-height windows, back wall) -->
+  <!-- Window frame border -->
+  <rect x="240" y="0" width="1440" height="720" fill="#0c1018"/>
+  <!-- Glass panes: slight city reflection -->
+  <!-- Pane 1 -->
+  <rect x="248" y="8" width="290" height="704" fill="url(#nightSky)" opacity="0.95"/>
+  <!-- Pane 2 -->
+  <rect x="546" y="8" width="290" height="704" fill="url(#nightSky)" opacity="0.95"/>
+  <!-- Pane 3 (center) -->
+  <rect x="844" y="8" width="232" height="704" fill="url(#nightSky)" opacity="0.95"/>
+  <!-- Pane 4 -->
+  <rect x="1084" y="8" width="290" height="704" fill="url(#nightSky)" opacity="0.95"/>
+  <!-- Pane 5 -->
+  <rect x="1382" y="8" width="290" height="704" fill="url(#nightSky)" opacity="0.95"/>
+  <!-- City glow through glass -->
+  <rect x="248" y="8" width="1424" height="704" fill="url(#cityGlow)"/>
+  <!-- Frame mullions (vertical) -->
+  <rect x="536" y="0" width="10" height="720" fill="#0e1220" rx="1"/>
+  <rect x="834" y="0" width="10" height="720" fill="#0e1220" rx="1"/>
+  <rect x="1076" y="0" width="10" height="720" fill="#0e1220" rx="1"/>
+  <rect x="1374" y="0" width="10" height="720" fill="#0e1220" rx="1"/>
+  <!-- Horizontal transom -->
+  <rect x="240" y="400" width="1440" height="8" fill="#0e1220"/>
+
+  <!-- Distant city lights (tiny bright dots through glass) -->
+  <ellipse cx="320" cy="600" rx="2" ry="2" fill="#304060" opacity="0.5"/>
+  <ellipse cx="400" cy="560" rx="3" ry="2" fill="#304060" opacity="0.4"/>
+  <ellipse cx="500" cy="620" rx="2" ry="2" fill="#304060" opacity="0.45"/>
+  <ellipse cx="620" cy="580" rx="2" ry="2" fill="#304060" opacity="0.5"/>
+  <ellipse cx="720" cy="600" rx="3" ry="2" fill="#304060" opacity="0.4"/>
+  <ellipse cx="850" cy="560" rx="2" ry="2" fill="#304060" opacity="0.45"/>
+  <ellipse cx="1000" cy="590" rx="2" ry="2" fill="#304060" opacity="0.5"/>
+  <ellipse cx="1120" cy="570" rx="3" ry="2" fill="#304060" opacity="0.4"/>
+  <ellipse cx="1260" cy="600" rx="2" ry="2" fill="#304060" opacity="0.45"/>
+  <ellipse cx="1380" cy="565" rx="2" ry="2" fill="#304060" opacity="0.5"/>
+  <ellipse cx="1520" cy="580" rx="3" ry="2" fill="#304060" opacity="0.4"/>
+
+  <!-- LEFT WALL (solid) -->
+  <rect x="0"   y="0" width="240" height="1080" fill="#0c0e14"/>
+  <!-- RIGHT WALL -->
+  <rect x="1680" y="0" width="240" height="1080" fill="#0c0e14"/>
+
+  <!-- FLOOR: polished marble-look -->
+  <rect x="0" y="720" width="1920" height="360" fill="#0a0c12"/>
+  <rect x="0" y="720" width="1920" height="3" fill="#16202c" opacity="0.6"/>
+  <!-- Floor tiles -->
+  <rect x="0"   y="760" width="1920" height="2" fill="#0e1018" opacity="0.5"/>
+  <rect x="0"   y="800" width="1920" height="2" fill="#0e1018" opacity="0.45"/>
+  <rect x="0"   y="840" width="1920" height="2" fill="#0e1018" opacity="0.4"/>
+  <rect x="0"   y="880" width="1920" height="2" fill="#0e1018" opacity="0.4"/>
+  <rect x="0"   y="920" width="1920" height="2" fill="#0e1018" opacity="0.35"/>
+  <!-- Vertical tile lines -->
+  <rect x="480"  y="720" width="2" height="360" fill="#0e1018" opacity="0.4"/>
+  <rect x="960"  y="720" width="2" height="360" fill="#0e1018" opacity="0.45"/>
+  <rect x="1440" y="720" width="2" height="360" fill="#0e1018" opacity="0.4"/>
+  <!-- Floor glass reflection -->
+  <rect x="248" y="720" width="1424" height="12" fill="#16202c" opacity="0.25"/>
+
+  <!-- RECEPTION DESK (center-left, unmanned) -->
+  <rect x="400"  y="560" width="700" height="162" fill="#0e1018" rx="3"/>
+  <rect x="408"  y="568" width="684" height="146" fill="#0c0e16" rx="2"/>
+  <!-- Desk top surface -->
+  <rect x="400"  y="560" width="700" height="16"  fill="#141828" rx="3"/>
+  <!-- Computer monitor on desk (dark, off) -->
+  <rect x="520"  y="480" width="180" height="82" fill="#0e1018" rx="3"/>
+  <rect x="528"  y="488" width="164" height="66" fill="#0a0c12" rx="2"/>
+  <!-- Monitor stand -->
+  <rect x="596"  y="560" width="28" height="10" fill="#0e1018" rx="1"/>
+  <!-- Nameplate on desk -->
+  <rect x="760"  y="560" width="120" height="16" fill="#0e1018" rx="2"/>
+  <rect x="766"  y="563" width="108" height="10" fill="#0c0e14" rx="1"/>
+  <!-- Phone on desk (off-hook? hard to tell) -->
+  <rect x="900"  y="548" width="60"  height="26" fill="#0c0e14" rx="3"/>
+
+  <!-- "SECURITY" printed text on desk front (barely visible) -->
+  <rect x="680"  y="688" width="140" height="10" fill="#101620" opacity="0.5"/>
+
+  <!-- TURNSTILE GATES -->
+  <!-- Left turnstile frame -->
+  <rect x="1100" y="560" width="20" height="162" fill="#0e1018" rx="2"/>
+  <rect x="1220" y="560" width="20" height="162" fill="#0e1018" rx="2"/>
+  <!-- Turnstile arm (horizontal, blocking) -->
+  <rect x="1100" y="638" width="140" height="8" fill="#141820" rx="2"/>
+  <!-- Turnstile LED -->
+  <ellipse cx="1160" cy="574" rx="5" ry="5" fill="#c03030" opacity="0.55"/>
+
+  <!-- Right turnstile -->
+  <rect x="1360" y="560" width="20" height="162" fill="#0e1018" rx="2"/>
+  <rect x="1480" y="560" width="20" height="162" fill="#0e1018" rx="2"/>
+  <rect x="1360" y="638" width="140" height="8" fill="#141820" rx="2"/>
+  <ellipse cx="1420" cy="574" rx="5" ry="5" fill="#30c030" opacity="0.45"/>
+
+  <!-- CEILING -->
+  <!-- Left side ceiling -->
+  <rect x="0"   y="0" width="240" height="80" fill="#080a0e"/>
+  <!-- Right ceiling -->
+  <rect x="1680" y="0" width="240" height="80" fill="#080a0e"/>
+  <!-- Recessed ceiling lights (faint) -->
+  <ellipse cx="120"  cy="60" rx="30" ry="8" fill="#304050" opacity="0.12"/>
+  <ellipse cx="1800" cy="60" rx="30" ry="8" fill="#304050" opacity="0.12"/>
+
+  <!-- DIRECTORY/BUILDING SIGNAGE (left wall) -->
+  <rect x="20"  y="200" width="180" height="260" fill="#0c0e14" rx="2"/>
+  <rect x="28"  y="208" width="164" height="244" fill="#0a0c12" rx="1"/>
+  <!-- Directory lines -->
+  <rect x="36"  y="220" width="148" height="8" fill="#141c28" opacity="0.6"/>
+  <rect x="36"  y="236" width="120" height="6" fill="#121a24" opacity="0.5"/>
+  <rect x="36"  y="252" width="140" height="6" fill="#121a24" opacity="0.5"/>
+  <rect x="36"  y="268" width="100" height="6" fill="#121a24" opacity="0.45"/>
+  <rect x="36"  y="296" width="148" height="8" fill="#141c28" opacity="0.55"/>
+  <rect x="36"  y="312" width="130" height="6" fill="#121a24" opacity="0.5"/>
+  <rect x="36"  y="328" width="110" height="6" fill="#121a24" opacity="0.45"/>
+
+  <!-- SECURITY CAMERA (on column right) -->
+  <rect x="1640" y="220" width="28" height="16" fill="#0e1018" rx="3"/>
+  <ellipse cx="1640" cy="228" rx="12" ry="10" fill="#101418"/>
+  <ellipse cx="1660" cy="224" rx="3" ry="3" fill="#c02020" opacity="0.65"/>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

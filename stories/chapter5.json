@@ -1,0 +1,268 @@
+{
+  "title": "巡回中",
+  "scenes": [
+    {
+      "id": "s01",
+      "bg": "security_room",
+      "bgm": "ambient_hvac",
+      "se": "key_jingle",
+      "text": "午前二時。\nビルの警備は、静かな仕事だ。\n定時巡回の記録をつけ、鍵束を手に取った。",
+      "next": "s02"
+    },
+    {
+      "id": "s02",
+      "bg": "night_corridor",
+      "bgm": "ambient_hvac",
+      "text": "一階の廊下。蛍光灯が低くうなっている。\n非常口のサインが緑に光る。\n何も異常はない。",
+      "next": "s03"
+    },
+    {
+      "id": "s03",
+      "bg": "elevator_hall",
+      "bgm": "ambient_hvac",
+      "se": "elevator_ding",
+      "text": "エレベーターホールを通りかかったとき、\nランプが点灯した。\n呼んだ覚えはない。",
+      "next": "s04"
+    },
+    {
+      "id": "s04",
+      "bg": "elevator_hall",
+      "bgm": "ambient_hvac_dark",
+      "text": "扉が開いた。\nかごの中は空だった。\nしばらくして、扉は静かに閉まった。",
+      "next": "s05"
+    },
+    {
+      "id": "s05",
+      "bg": "security_room",
+      "bgm": "ambient_hvac_dark",
+      "se": "fluorescent_buzz",
+      "text": "監視室に戻ると、モニターに自分の姿が映っていた。\n廊下カメラ。コンマ数秒、映像がずれている。\n……それだけのことだ。",
+      "next": "s06"
+    },
+    {
+      "id": "s06",
+      "bg": "empty_lobby",
+      "bgm": "ambient_hvac_dark",
+      "se": "intercom_static",
+      "text": "ロビーを通るとき、インターコムが鳴った。\n「……確認しました。異常なし」\n自分の声だった。まだ、この場所を通っていないはずなのに。",
+      "next": "s07"
+    },
+    {
+      "id": "s07",
+      "bg": "security_room",
+      "bgm": "ambient_hvac_dark",
+      "text": "監視室に戻った。\n椅子が、さっきと向きが違う。\nうしろを向いていた。",
+      "next": "s08"
+    },
+    {
+      "id": "s08",
+      "bg": "security_room",
+      "bgm": "tension_facility",
+      "text": "モニターが一瞬、明るくなった。\n上の階のカメラ。誰かが、立っている。\n次の瞬間、何かが動く音が、上から聞こえた。",
+      "choices": [
+        { "label": "音がした階へ上がる", "next": "a01" },
+        { "label": "監視室に留まって確認する", "next": "b01" }
+      ]
+    },
+
+    {
+      "id": "a01",
+      "bg": "emergency_stairs",
+      "bgm": "tension_facility",
+      "se": "key_jingle",
+      "text": "非常階段を上る。\nコンクリートの壁に足音が反響する。\n自分の足音だけのはずなのに、一歩多い気がした。",
+      "next": "a02"
+    },
+    {
+      "id": "a02",
+      "bg": "night_corridor",
+      "bgm": "tension_facility",
+      "text": "三階の廊下。\n奥の扉の下に、光が漏れている。\nこのフロアは今夜、誰もいないはずだ。",
+      "next": "a03"
+    },
+    {
+      "id": "a03",
+      "bg": "machine_room",
+      "bgm": "tension_facility",
+      "se": "fluorescent_buzz",
+      "text": "機械室の扉の前に立った。\n設備の電子音が低くうなっている。\n光は、この扉の中から漏れている。",
+      "next": "a04"
+    },
+    {
+      "id": "a04",
+      "bg": "machine_room",
+      "bgm": "tension_facility",
+      "text": "ドアノブに手をかけた。\n熱い。そんなはずはない。\n扉の向こうから、ゆっくりとした呼吸音が聞こえた。",
+      "next": "a05"
+    },
+    {
+      "id": "a05",
+      "bg": "machine_room",
+      "bgm": "tension_facility",
+      "text": "三秒待った。\n呼吸音は続いている。\n誰かが、いる。",
+      "choices": [
+        { "label": "ドアを開ける", "next": "aa01" },
+        { "label": "記録だけ残して引き返す", "next": "ab01" }
+      ]
+    },
+
+    {
+      "id": "aa01",
+      "bg": "machine_room",
+      "bgm": "tension_facility",
+      "se": "door_beep",
+      "text": "ドアを開けた。\nサーバーラックが並ぶ、薄暗い部屋。\n誰もいない。呼吸音も、もう聞こえない。",
+      "next": "aa02"
+    },
+    {
+      "id": "aa02",
+      "bg": "machine_room",
+      "bgm": null,
+      "text": "奥の棚に、巡回記録のバインダーがあった。\n自動で転送されるはずのないものだ。\nページを開いた。",
+      "next": "aa03"
+    },
+    {
+      "id": "aa03",
+      "bg": "machine_room",
+      "se": "heartbeat",
+      "text": "今夜の記録が、すでに書かれていた。\n筆跡は自分のものだった。\nまだ書いていない時刻まで、正確に記されていた。",
+      "next": "aa04"
+    },
+    {
+      "id": "aa04",
+      "bg": "machine_room",
+      "bgm": "dread",
+      "text": "最後の行を読んだ。\n「午前四時三十二分　巡回完了　異常なし」\n腕時計を見た。午前四時三十一分だった。",
+      "ending": { "label": "ENDING A「引き継がれた巡回」", "type": "bad" }
+    },
+
+    {
+      "id": "ab01",
+      "bg": "emergency_stairs",
+      "bgm": "tension_a",
+      "text": "引き返した。記録用紙に手書きで書き残す。\n「三階　機械室前　異音あり　内部確認できず」\n手が震えていた。",
+      "next": "ab02"
+    },
+    {
+      "id": "ab02",
+      "bg": "night_corridor",
+      "bgm": "ending_relief",
+      "se": "door_beep",
+      "text": "一階に下りると、廊下の窓が白みはじめていた。\nいつの間にか時間が経っていた。\n夜が、終わりかけている。",
+      "next": "ab03"
+    },
+    {
+      "id": "ab03",
+      "bg": "empty_lobby",
+      "bgm": "ending_relief",
+      "text": "引継ぎの警備員が来た。記録を渡した。\n彼はしばらく、無言でそれを読んでいた。\nやがて、顔を上げた。",
+      "next": "ab04"
+    },
+    {
+      "id": "ab04",
+      "bg": "empty_lobby",
+      "bgm": null,
+      "text": "「……これ、三階の記録。なんで二重になってるんですか？」\n用紙には、同じ内容が二つ書かれていた。\n自分は、一度しか書いていない。",
+      "ending": { "label": "ENDING B「二枚の記録」", "type": "ambiguous" }
+    },
+
+    {
+      "id": "b01",
+      "bg": "security_room",
+      "bgm": "ambient_hvac_dark",
+      "text": "椅子を元の向きに戻した。\nモニターの前に座り、全カメラを切り替えながら確認する。\n三階が、気になった。",
+      "next": "b02"
+    },
+    {
+      "id": "b02",
+      "bg": "security_room",
+      "bgm": "ambient_hvac_dark",
+      "text": "三階のカメラに、人影が映っていた。\n廊下の端。動いていない。\nじっと、こちらを向いているようだった。",
+      "next": "b03"
+    },
+    {
+      "id": "b03",
+      "bg": "monitor_static",
+      "bgm": "tension_facility",
+      "se": "fluorescent_buzz",
+      "text": "次の瞬間、カメラがブレた。\n映像が戻ったとき、人影は消えていた。\n代わりに、カメラのすぐ前に立っていた。",
+      "next": "b04"
+    },
+    {
+      "id": "b04",
+      "bg": "monitor_static",
+      "bgm": "tension_facility",
+      "se": "intercom_static",
+      "text": "インターコムが鳴った。\n「まだいるの？」\n声には、聞き覚えがあった。\n自分の声だった。",
+      "next": "b05"
+    },
+    {
+      "id": "b05",
+      "bg": "security_room",
+      "bgm": "tension_facility",
+      "text": "一台ずつ、モニターが消えていった。\n最後の一台だけが残り、自分を映していた。\nモニターの中の自分が、ゆっくりと首を振った。",
+      "choices": [
+        { "label": "モニターを全部消す", "next": "ba01" },
+        { "label": "そのまま座って夜明けを待つ", "next": "bb01" }
+      ]
+    },
+
+    {
+      "id": "ba01",
+      "bg": "security_room",
+      "bgm": null,
+      "text": "スイッチを切った。\n部屋が、完全な暗闇になった。\nHVACの音だけが、低く続いている。",
+      "next": "ba02"
+    },
+    {
+      "id": "ba02",
+      "bg": "security_room",
+      "bgm": "dread",
+      "text": "扉が、開いた。\n音もなく、ゆっくりと。\nシルエットが入ってくる。",
+      "next": "ba03"
+    },
+    {
+      "id": "ba03",
+      "bg": "security_room",
+      "se": "heartbeat",
+      "text": "「ここには、いない」\nその声は、自分の声だった。\nシルエットは椅子に座った。こちらを向いて。",
+      "next": "ba04"
+    },
+    {
+      "id": "ba04",
+      "bg": "security_room",
+      "text": "最後に記録されたのは、午前二時十八分。\n巡回中、異常なし。\n筆跡は、自分のものだった。",
+      "ending": { "label": "ENDING C「入れ替わりの夜」", "type": "bad" }
+    },
+
+    {
+      "id": "bb01",
+      "bg": "security_room",
+      "bgm": "tension_b",
+      "text": "座ったまま、夜明けを待った。\nモニターは消えたまま。\n部屋の隅が、どこか遠く感じた。",
+      "next": "bb02"
+    },
+    {
+      "id": "bb02",
+      "bg": "empty_lobby",
+      "bgm": "ending_relief",
+      "se": "door_beep",
+      "text": "朝になった。\n引継ぎの警備員が来て、何事もなく業務を終えた。\n家に帰って、シャワーを浴びた。",
+      "next": "bb03"
+    },
+    {
+      "id": "bb03",
+      "bg": "empty_lobby",
+      "bgm": "ending_relief",
+      "text": "一時間後、会社から電話があった。\n昨夜の録画確認のための連絡だという。\n何でもないはずだった。",
+      "next": "bb04"
+    },
+    {
+      "id": "bb04",
+      "bg": "empty_lobby",
+      "bgm": null,
+      "text": "「昨夜の監視室の映像なんですが……ずっと、椅子に二人映ってるんですよ」\n自分は、ひとりだった。\nずっと、ひとりだったはずだ。",
+      "ending": { "label": "ENDING D「もう一人の夜勤」", "type": "ambiguous" }
+    }
+  ]
+}
