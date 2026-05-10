@@ -287,6 +287,34 @@ export class AudioEngine {
 
   // ── Chapter 6 BGM ─────────────────────────────────────────────────────────
 
+  /** Void chant: reversed-harmonic drone suggesting unseen watchers */
+  _bgm_void_chant(ctx, out) {
+    const nodes = [];
+    // Fundamental + inverted harmonic series (unusual spacing → unsettling)
+    [[55, 0.40], [82.4, 0.24], [110, 0.10], [138.6, 0.16], [165, 0.07]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Slow wavering LFO — like breathing heard through a wall
+    const lfo  = this._osc(ctx, 'sine', 0.08);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.22;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    // Faint broadband hiss — digital room noise
+    const noise = this._noise(ctx, 10);
+    const hp    = this._bpf(ctx, 'highpass', 3000, 0.6);
+    const gn    = ctx.createGain(); gn.gain.value = 0.022;
+    noise.connect(hp); hp.connect(gn); gn.connect(out);
+    noise.loop = true; noise.start(); nodes.push(noise);
+    // Sub rumble: feels like the stream is carrying something
+    const sub  = this._osc(ctx, 'sine', 27.5);
+    const gsub = ctx.createGain(); gsub.gain.value = 0.18;
+    sub.connect(gsub); gsub.connect(out); sub.start(); nodes.push(sub);
+    return nodes;
+  }
+
+
+
   /** Hospital night ambiance: AC hum + fluorescent + distant monitor pulse */
   _bgm_ambient_hospital(ctx, out) {
     const nodes = [];

@@ -855,6 +855,41 @@ button:focus-visible {
 
 /* ── Episode 6 background gradients ─────────────────────────────────────── */
 
+/* Streaming room with red LED wash — equipment and camera in darkness */
+.bg-stream_room_red {
+  background:
+    radial-gradient(ellipse 35% 40% at 18% 62%, rgba(80, 8, 8, 0.50) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 28% at 62% 42%, rgba(20, 18, 32, 0.55) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #0a0408 0%,
+      #080306 50%,
+      #060204 100%
+    );
+}
+
+/* Stream monitor close-up — cold screen glow fills frame */
+.bg-stream_monitor {
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 42%, rgba(18, 16, 30, 0.72) 0%, transparent 68%),
+    radial-gradient(ellipse 20% 15% at 50% 60%, rgba(30, 8, 8, 0.20) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #060408 0%,
+      #07050a 50%,
+      #050306 100%
+    );
+}
+
+/* Stream offline — black with faint red standby glow */
+.bg-stream_offline {
+  background:
+    radial-gradient(ellipse 25% 20% at 50% 50%, rgba(50, 4, 4, 0.30) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #040204 0%,
+      #050304 50%,
+      #040204 100%
+    );
+}
+
 /* Hospital ward — cool blue-green fluorescent wash, clinical */
 .bg-hospital_ward {
   background:

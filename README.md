@@ -191,6 +191,17 @@ this._bgmPaths = {
 3. Source: `Deploy from a branch` → `main` / `/ (root)`  
 4. 数分後に `https://{username}.github.io/{repo}/` で公開されます
 
+### Pages 反映確認手順
+
+push 後、以下の順で確認してください。
+
+1. GitHub リポジトリの **Actions** タブを開く
+2. `pages build and deployment` ワークフローが **新規実行中**（黄色）になっていることを確認
+3. ✅ 緑になったら公開完了（1〜3分程度）
+4. `https://{username}.github.io/{repo}/` をブラウザで開く
+5. キャッシュが残っている場合は **Ctrl+Shift+R**（Mac: Cmd+Shift+R）で強制リロード
+6. 話選択画面に最新エピソードが表示されていれば反映成功
+
 ---
 
 ## ライセンス
