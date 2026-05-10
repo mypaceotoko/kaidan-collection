@@ -853,6 +853,67 @@ button:focus-visible {
     );
 }
 
+/* ── Episode 6 background gradients ─────────────────────────────────────── */
+
+/* Hospital ward — cool blue-green fluorescent wash, clinical */
+.bg-hospital_ward {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 30%, rgba(20, 48, 56, 0.60) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 20% at 50% 80%, rgba(10, 30, 40, 0.35) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #07090e 0%,
+      #080b10 45%,
+      #070a0d 100%
+    );
+}
+
+/* Hospital corridor — cold green-tinted fluorescent hallway */
+.bg-hospital_corridor {
+  background:
+    radial-gradient(ellipse 18% 35% at 50% 30%, rgba(30, 60, 50, 0.50) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 18% at 50% 65%, rgba(15, 40, 35, 0.25) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #080b0a 0%,
+      #090c0b 50%,
+      #070a09 100%
+    );
+}
+
+/* Hospital room — single patient room, pale diffuse glow */
+.bg-hospital_room {
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 38%, rgba(22, 44, 48, 0.65) 0%, transparent 68%),
+    linear-gradient(to bottom,
+      #060809 0%,
+      #07090b 50%,
+      #060708 100%
+    );
+}
+
+/* Nurse station — monitor glow, slightly warmer than ward */
+.bg-nurse_station {
+  background:
+    radial-gradient(ellipse 50% 35% at 50% 35%, rgba(14, 36, 54, 0.70) 0%, transparent 65%),
+    radial-gradient(ellipse 25% 20% at 75% 55%, rgba(10, 28, 44, 0.40) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #060809 0%,
+      #07090c 45%,
+      #060709 100%
+    );
+}
+
+/* Doctor office — warmer desk lamp glow, but still unsettling */
+.bg-doctor_office {
+  background:
+    radial-gradient(ellipse 40% 40% at 38% 42%, rgba(28, 24, 12, 0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 25% at 70% 30%, rgba(10, 20, 30, 0.40) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #08080a 0%,
+      #09090c 50%,
+      #07070a 100%
+    );
+}
+
 /* ===================================================
    GAME UI
    =================================================== */

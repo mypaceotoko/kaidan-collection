@@ -1,0 +1,295 @@
+{
+  "title": "夜の回診",
+  "scenes": [
+    {
+      "id": "s01",
+      "bg": "hospital_ward",
+      "bgm": "ambient_hospital",
+      "se": "monitor_beep",
+      "text": "午前三時。\n病棟は、眠っていた。\n三号棟の夜勤は自分ひとり。回診を始める。",
+      "next": "s02"
+    },
+    {
+      "id": "s02",
+      "bg": "hospital_corridor",
+      "bgm": "ambient_hospital",
+      "text": "一号室、二号室、三号室。\nいずれも、患者は穏やかに眠っている。\n次は、四号室。",
+      "next": "s03"
+    },
+    {
+      "id": "s03",
+      "bg": "hospital_corridor",
+      "bgm": "ambient_hospital",
+      "text": "四号室は、今夜は空室のはずだった。\n患者記録を見直した。\nベッドは空き、次の入院は明朝の予定。",
+      "next": "s04"
+    },
+    {
+      "id": "s04",
+      "bg": "hospital_room",
+      "bgm": "ambient_hospital_dark",
+      "se": "curtain_slide",
+      "text": "扉を開けると、カーテンが引かれていた。\n電気が点いている。\n消し忘れだろうと思った。",
+      "next": "s05"
+    },
+    {
+      "id": "s05",
+      "bg": "hospital_room",
+      "bgm": "ambient_hospital_dark",
+      "text": "カーテンを少し開けると、ベッドがあった。\n誰も、いない。\nしかし、シーツが体の形にへこんでいた。",
+      "next": "s06"
+    },
+    {
+      "id": "s06",
+      "bg": "hospital_room",
+      "bgm": "ambient_hospital_dark",
+      "text": "ベッドに触れた。\nまだ、温かい。\n誰かが、ついさっきまでここにいた。",
+      "next": "s07"
+    },
+    {
+      "id": "s07",
+      "bg": "nurse_station",
+      "bgm": "ambient_hospital_dark",
+      "se": "call_button",
+      "text": "ナースステーションに戻ると、コールランプが点灯していた。\n四号室。\n今、誰もいないはずの部屋から。",
+      "next": "s08"
+    },
+    {
+      "id": "s08",
+      "bg": "hospital_corridor",
+      "bgm": "ambient_hospital_dark",
+      "text": "廊下を四号室へ向かった。\n扉は、閉まっていた。\nさっき出るとき、開けたまま出たはずだ。",
+      "next": "s09"
+    },
+    {
+      "id": "s09",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "se": "monitor_beep",
+      "text": "扉のネームホルダーを見た。\n今朝まで空白だった場所に、名前が書かれていた。\n自分の名前だった。",
+      "next": "s10"
+    },
+    {
+      "id": "s10",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "text": "院内電話が鳴った。\n四号室の内線番号。\n扉の向こうから、電話の音が聞こえた。",
+      "choices": [
+        { "label": "院内電話に出る", "next": "a01" },
+        { "label": "扉を開ける", "next": "b01" }
+      ]
+    },
+
+    {
+      "id": "a01",
+      "bg": "nurse_station",
+      "bgm": "tension_ward",
+      "se": "call_button",
+      "text": "ステーションの受話器を取った。\n「……回診、終わりましたか？」\n声があった。",
+      "next": "a02"
+    },
+    {
+      "id": "a02",
+      "bg": "nurse_station",
+      "bgm": "tension_ward",
+      "text": "聞き覚えのある声だった。\n自分の声だった。\nでも、少しだけ低く、少しだけ遠かった。",
+      "next": "a03"
+    },
+    {
+      "id": "a03",
+      "bg": "nurse_station",
+      "bgm": "tension_ward",
+      "text": "「四号室に、忘れ物があります」\n受話器の向こうから、かすかなモニター音が聞こえた。\n入院患者が使うタイプの音だった。",
+      "next": "a04"
+    },
+    {
+      "id": "a04",
+      "bg": "nurse_station",
+      "bgm": "tension_ward",
+      "text": "「早く戻ってきてください」\n声が続いた。\n「そろそろ消灯の時間ですよ」",
+      "choices": [
+        { "label": "電話を切る", "next": "aa01" },
+        { "label": "「終わりました」と答える", "next": "ab01" }
+      ]
+    },
+
+    {
+      "id": "aa01",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "text": "受話器を置いた。\n出口へ向かって走った。\n廊下が、ひどく長く感じた。",
+      "next": "aa02"
+    },
+    {
+      "id": "aa02",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "se": "monitor_beep",
+      "text": "角を曲がるたびに、同じ廊下が続いた。\n三度目に、四号室の扉を通りすぎた。\nネームホルダーの名前が、まだ自分の名前だった。",
+      "next": "aa03"
+    },
+    {
+      "id": "aa03",
+      "bg": "emergency_stairs",
+      "bgm": "dread",
+      "se": "curtain_slide",
+      "text": "非常口のサインを見つけた。\nドアを押した。\n「地下一階」とプレートに書かれていた。\nなぜ、下がっているのか。",
+      "next": "aa04"
+    },
+    {
+      "id": "aa04",
+      "bg": "hospital_room",
+      "bgm": "dread",
+      "se": "heartbeat",
+      "text": "翌朝、スタッフが四号室に入ったとき、\nベッドに人が横たわっていた。\n患者票には「入院三日目」と書かれていた。\n顔は、自分だった。",
+      "ending": { "label": "ENDING A「入院三日目」", "type": "bad" }
+    },
+
+    {
+      "id": "ab01",
+      "bg": "nurse_station",
+      "bgm": "ambient_hospital_dark",
+      "text": "「終わりました」\nそう答えた。\n受話器の向こうで、かすかな息の音がした。",
+      "next": "ab02"
+    },
+    {
+      "id": "ab02",
+      "bg": "nurse_station",
+      "bgm": "ambient_hospital_dark",
+      "text": "「では、おやすみなさい」\n電話が切れた。\n急に、眠気がきた。",
+      "next": "ab03"
+    },
+    {
+      "id": "ab03",
+      "bg": "hospital_room",
+      "bgm": null,
+      "se": "curtain_slide",
+      "text": "気がつくと、ベッドの中にいた。\nカーテンの外から、朝の光が差し込んでいた。\n白いシーツ。白い天井。",
+      "next": "ab04"
+    },
+    {
+      "id": "ab04",
+      "bg": "hospital_room",
+      "bgm": null,
+      "se": "monitor_beep",
+      "text": "腕に、患者識別バンドがついていた。\n名前の欄に、自分の名前が書かれていた。\n「入院五日目」と、記録に書かれていた。",
+      "ending": { "label": "ENDING B「消えた五日間」", "type": "bad" }
+    },
+
+    {
+      "id": "b01",
+      "bg": "hospital_room",
+      "bgm": "tension_ward",
+      "se": "curtain_slide",
+      "text": "扉を開けた。\n部屋は、暗かった。\n電気が、消えていた。",
+      "next": "b02"
+    },
+    {
+      "id": "b02",
+      "bg": "hospital_room",
+      "bgm": "tension_ward",
+      "text": "懐中電灯で照らした。\nクローゼットが、少し開いていた。\n白いものが、かかっていた。",
+      "next": "b03"
+    },
+    {
+      "id": "b03",
+      "bg": "hospital_room",
+      "bgm": "tension_ward",
+      "se": "curtain_slide",
+      "text": "ナース服だった。\n胸のネームタグを見た。\n自分の名前が、書いてあった。",
+      "next": "b04"
+    },
+    {
+      "id": "b04",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "se": "monitor_beep",
+      "text": "廊下に出た。\n全室のネームホルダーに、自分の名前が書かれていた。\n一号室から、四号室まで。全部。",
+      "next": "b05"
+    },
+    {
+      "id": "b05",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "text": "廊下の奥に、灯りが見えた。\n医局の扉が、開いていた。\n誰かがいる。",
+      "choices": [
+        { "label": "医局へ向かう", "next": "ba01" },
+        { "label": "出口を探して逃げる", "next": "bb01" }
+      ]
+    },
+
+    {
+      "id": "ba01",
+      "bg": "doctor_office",
+      "bgm": "tension_ward",
+      "text": "当直の医師がいた。\nカルテを書いていた。\n助かった、と思った。",
+      "next": "ba02"
+    },
+    {
+      "id": "ba02",
+      "bg": "doctor_office",
+      "bgm": "tension_ward",
+      "se": "call_button",
+      "text": "「先生、四号室に——」\n医師が振り向いた。\n「あなたは、誰ですか？」",
+      "next": "ba03"
+    },
+    {
+      "id": "ba03",
+      "bg": "doctor_office",
+      "bgm": "dread",
+      "text": "「四号室の患者さんが、なぜここにいるんですか？」\n医師の目に、困惑と恐怖が混じっていた。\n「今すぐ、部屋に戻ってください」",
+      "next": "ba04"
+    },
+    {
+      "id": "ba04",
+      "bg": "hospital_room",
+      "bgm": "dread",
+      "se": "heartbeat",
+      "text": "翌日、病院の記録には、こう書かれた。\n「夜間、四号室患者が徘徊。本人に記憶なし」\n退院は、まだ先のことだった。",
+      "ending": { "label": "ENDING C「患者の記録」", "type": "bad" }
+    },
+
+    {
+      "id": "bb01",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "text": "非常階段を探した。\nサインを見つけた。\nドアを押した。",
+      "next": "bb02"
+    },
+    {
+      "id": "bb02",
+      "bg": "emergency_stairs",
+      "bgm": "dread",
+      "text": "階段は、下にしか続いていなかった。\n地下一階、地下二階、地下三階。\n上へ戻れなかった。",
+      "next": "bb03"
+    },
+    {
+      "id": "bb03",
+      "bg": "hospital_corridor",
+      "bgm": "tension_ward",
+      "se": "monitor_beep",
+      "text": "立ち止まった。\n引き返した。\nまた、あの廊下だった。",
+      "next": "bb04"
+    },
+    {
+      "id": "bb04",
+      "bg": "hospital_ward",
+      "bgm": "ending_relief",
+      "text": "夜が明けた。\n窓の外に、朝の光が見えた。\nナースステーションに座っていた。",
+      "next": "bb05"
+    },
+    {
+      "id": "bb05",
+      "bg": "nurse_station",
+      "bgm": "ending_relief",
+      "text": "引継ぎのスタッフが来た。\n「お疲れさまでした」\nそう言われた。",
+      "next": "bb06"
+    },
+    {
+      "id": "bb06",
+      "bg": "nurse_station",
+      "bgm": null,
+      "text": "勤務記録を見た。\n三日分、記録がなかった。\nサインだけは、自分のものだった。",
+      "ending": { "label": "ENDING D「三日分の空白」", "type": "ambiguous" }
+    }
+  ]
+}
