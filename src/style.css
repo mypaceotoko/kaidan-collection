@@ -285,7 +285,23 @@ button:focus-visible {
   gap: 0.8rem;
   overflow-y: auto;
   max-height: 60vh;
-  padding: 0.2rem;
+  padding: 0.2rem 0.2rem 1.2rem;
+  /* show scrollbar on webkit so users know more content exists */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 80, 60, 0.4) transparent;
+}
+
+.story-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.story-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.story-list::-webkit-scrollbar-thumb {
+  background: rgba(180, 80, 60, 0.35);
+  border-radius: 2px;
 }
 
 /* Story item button (generated in JS) */
