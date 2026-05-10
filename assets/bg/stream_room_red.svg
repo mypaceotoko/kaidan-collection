@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="roomBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a0408"/>
+      <stop offset="100%" stop-color="#060204"/>
+    </linearGradient>
+    <!-- Red LED ambient wash from equipment rack -->
+    <radialGradient id="ledGlow" cx="18%" cy="62%" r="35%">
+      <stop offset="0%"   stop-color="#5a0808" stop-opacity="0.55"/>
+      <stop offset="55%"  stop-color="#3a0404" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#200202" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Monitor screen cold glow -->
+    <radialGradient id="monitorGlow" cx="62%" cy="42%" r="30%">
+      <stop offset="0%"   stop-color="#1a1828" stop-opacity="0.65"/>
+      <stop offset="60%"  stop-color="#100e1c" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#080610" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Camera red recording light -->
+    <radialGradient id="camLed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff2020" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#cc0000" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="25%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.92"/>
+    </radialGradient>
+    <!-- Desk surface gradient -->
+    <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a0c10"/>
+      <stop offset="100%" stop-color="#0e0608"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Room background -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#roomBg)"/>
+
+  <!-- Rear wall (dark, slightly textured via gradient bands) -->
+  <rect x="0" y="0" width="1920" height="700" fill="#08030a"/>
+  <rect x="0" y="680" width="1920" height="20" fill="#0c0408" opacity="0.6"/>
+
+  <!-- LED equipment rack glow (left side) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#ledGlow)"/>
+
+  <!-- Monitor glow (center-right) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#monitorGlow)"/>
+
+  <!-- DESK surface -->
+  <rect x="100" y="700" width="1720" height="160" fill="url(#deskGrad)" rx="4"/>
+  <!-- Desk edge highlight -->
+  <rect x="100" y="700" width="1720" height="3" fill="#2a1018" opacity="0.5"/>
+
+  <!-- MONITOR (center) -->
+  <!-- Bezel -->
+  <rect x="640" y="200" width="640" height="460" fill="#0c080e" rx="6"/>
+  <rect x="648" y="207" width="624" height="445" fill="#0e0a10" rx="4"/>
+  <!-- Screen -->
+  <rect x="658" y="216" width="604" height="426" fill="#0d0b14" rx="2"/>
+  <!-- Screen content: streaming software dark UI -->
+  <rect x="662" y="220" width="596" height="30"  fill="#100c18" opacity="0.9"/>
+  <rect x="662" y="252" width="596" height="360" fill="#0a081000" opacity="0.0"/>
+  <!-- Preview pane (stream preview — showing the room, slightly reddish) -->
+  <rect x="668" y="256" width="360" height="202" fill="#1a0a0e" rx="2"/>
+  <rect x="668" y="256" width="360" height="202" fill="#300808" opacity="0.18" rx="2"/>
+  <!-- Timeline / controls bar at bottom of screen -->
+  <rect x="662" y="610" width="596" height="28" fill="#0c0a14" opacity="0.9"/>
+  <!-- Monitor stand -->
+  <rect x="920" y="660" width="80"  height="44" fill="#0c080e"/>
+  <rect x="870" y="700" width="180" height="8"  fill="#0e0a10" rx="3"/>
+
+  <!-- EQUIPMENT RACK (left) -->
+  <rect x="130" y="540" width="200" height="180" fill="#0a0608" rx="4"/>
+  <rect x="134" y="544" width="192" height="172" fill="#0c0809" rx="3"/>
+  <!-- Rack units -->
+  <rect x="138" y="548" width="184" height="22" fill="#0e090b" rx="2"/>
+  <rect x="138" y="574" width="184" height="22" fill="#100a0c" rx="2"/>
+  <rect x="138" y="600" width="184" height="22" fill="#0e090b" rx="2"/>
+  <rect x="138" y="626" width="184" height="22" fill="#100a0c" rx="2"/>
+  <rect x="138" y="652" width="184" height="22" fill="#0e090b" rx="2"/>
+  <rect x="138" y="678" width="184" height="16" fill="#100a0c" rx="2"/>
+  <!-- LED indicators on rack -->
+  <ellipse cx="308" cy="559" rx="5" ry="5" fill="#cc1010" opacity="0.85"/>
+  <ellipse cx="308" cy="559" rx="10" ry="7" fill="#cc1010" opacity="0.20"/>
+  <ellipse cx="308" cy="585" rx="5" ry="5" fill="#cc1010" opacity="0.70"/>
+  <ellipse cx="308" cy="611" rx="5" ry="5" fill="#108830" opacity="0.60"/>
+  <ellipse cx="308" cy="637" rx="5" ry="5" fill="#cc1010" opacity="0.75"/>
+  <ellipse cx="308" cy="663" rx="5" ry="5" fill="#cc1010" opacity="0.50"/>
+
+  <!-- CAMERA (on tripod / on desk, center) -->
+  <!-- Camera body -->
+  <rect x="890"  y="648" width="140" height="56"  fill="#0e0a10" rx="6"/>
+  <rect x="895"  y="652" width="130" height="48"  fill="#100c12" rx="4"/>
+  <!-- Lens barrel -->
+  <ellipse cx="960" cy="676" rx="22" ry="22" fill="#0c080e"/>
+  <ellipse cx="960" cy="676" rx="16" ry="16" fill="#080608"/>
+  <ellipse cx="960" cy="676" rx="10" ry="10" fill="#060408"/>
+  <ellipse cx="960" cy="676" rx="5"  ry="5"  fill="#0a0810" opacity="0.6"/>
+  <!-- Recording indicator LED (RED — live) -->
+  <ellipse cx="1002" cy="656" rx="5" ry="5" fill="url(#camLed)"/>
+  <ellipse cx="1002" cy="656" rx="9" ry="6" fill="#ff1010" opacity="0.30"/>
+
+  <!-- KEYBOARD (on desk) -->
+  <rect x="640"  y="720" width="380" height="26" fill="#100c14" rx="3"/>
+  <rect x="644"  y="722" width="372" height="22" fill="#120e16" rx="2"/>
+  <!-- Key rows (abstract bars) -->
+  <rect x="650"  y="724" width="360" height="5"  fill="#1a1420" opacity="0.6" rx="1"/>
+  <rect x="650"  y="731" width="360" height="5"  fill="#1a1420" opacity="0.5" rx="1"/>
+  <rect x="662"  y="738" width="348" height="5"  fill="#1a1420" opacity="0.4" rx="1"/>
+
+  <!-- MIC on arm (right side, tall) -->
+  <rect x="1420" y="380" width="8"   height="340" fill="#0e0a10"/>
+  <rect x="1370" y="360" width="108" height="70"  fill="#100c12" rx="18"/>
+  <rect x="1376" y="366" width="96"  height="58"  fill="#0c0810" rx="16"/>
+  <!-- Mic mesh lines -->
+  <line x1="1388" y1="373" x2="1388" y2="417" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1400" y1="370" x2="1400" y2="420" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1412" y1="368" x2="1412" y2="422" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1424" y1="368" x2="1424" y2="422" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1436" y1="370" x2="1436" y2="420" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1448" y1="373" x2="1448" y2="417" stroke="#181420" stroke-width="1.5" opacity="0.5"/>
+  <!-- Mic stand base -->
+  <rect x="1390" y="716" width="60"  height="8"  fill="#0e0a10" rx="3"/>
+
+  <!-- HEADPHONES hanging on rack -->
+  <path d="M 180,498 Q 230,460 280,498" stroke="#1a1018" stroke-width="8" fill="none" opacity="0.7"/>
+  <rect x="166" y="494" width="20" height="24" fill="#181014" rx="4" opacity="0.8"/>
+  <rect x="278" y="494" width="20" height="24" fill="#181014" rx="4" opacity="0.8"/>
+
+  <!-- Ambient red LED glow strips (under desk) -->
+  <rect x="102" y="855" width="1716" height="4" fill="#3a0606" opacity="0.35" rx="2"/>
+  <rect x="102" y="855" width="1716" height="2" fill="#cc1010" opacity="0.08" rx="1"/>
+
+  <!-- THE SHADOW — faint figure barely visible at far right edge -->
+  <!-- Just a barely-perceptible silhouette in the room corner -->
+  <rect x="1680" y="300" width="80"  height="410" fill="#1a0810" opacity="0.22"/>
+  <ellipse cx="1718" cy="285" rx="40" ry="44"   fill="#180608" opacity="0.20"/>
+
+  <!-- Floor shadow / reflection -->
+  <rect x="0"  y="856" width="1920" height="224" fill="#060204"/>
+  <rect x="100" y="856" width="1720" height="6"  fill="#1a0810" opacity="0.15"/>
+
+  <!-- Vignette (heavy) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

@@ -75,8 +75,8 @@ export const STORY_INDEX = [
   {
     id:        'chapter6',
     chapter:   'Episode 6',
-    title:     '夜の回診',
-    subtitle:  '四号室の患者が、まだ起きていた',
+    title:     '赤い配信室',
+    subtitle:  'コメント欄に「うしろ」と流れた',
     path:      './stories/chapter6.json',
     available: true,
   },
