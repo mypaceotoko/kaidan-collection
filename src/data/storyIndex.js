@@ -71,4 +71,13 @@ export const STORY_INDEX = [
     path:      './stories/chapter5.json',
     available: true,
   },
+
+  {
+    id:        'chapter6',
+    chapter:   'Episode 6',
+    title:     '夜の回診',
+    subtitle:  '四号室の患者が、まだ起きていた',
+    path:      './stories/chapter6.json',
+    available: true,
+  },
 ];
