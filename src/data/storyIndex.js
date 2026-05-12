@@ -80,4 +80,14 @@ export const STORY_INDEX = [
     path:      './stories/chapter6.json',
     available: true,
   },
+
+
+  {
+    id:        'chapter7',
+    chapter:   'Episode 7',
+    title:     '夏祭りの裏道',
+    subtitle:  '提灯の下に、もうひとりいた',
+    path:      './stories/chapter7.json',
+    available: true,
+  },
 ];
