@@ -538,6 +538,26 @@ export class AudioEngine {
     return nodes;
   }
 
+  _bgm_festival_nightmare(ctx, out) {
+    const nodes = [];
+    [[73.4, 0.22], [77.2, 0.24], [155.6, 0.20], [311.1, 0.08]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'triangle', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Shrieking festival hiss
+    const hiss = this._noise(ctx, 10);
+    const bp   = this._bpf(ctx, 'bandpass', 1700, 0.7);
+    const gh   = ctx.createGain(); gh.gain.value = 0.03;
+    hiss.connect(bp); bp.connect(gh); gh.connect(out);
+    hiss.loop = true; hiss.start(); nodes.push(hiss);
+    // Relentless pulse
+    const pulse = this._osc(ctx, 'sine', 2.6);
+    const pg    = ctx.createGain(); pg.gain.value = 0.16;
+    pulse.connect(pg); pg.connect(out.gain); pulse.start(); nodes.push(pulse);
+    return nodes;
+  }
+
   /** Post-escape: single unresolved drone — alive but not safe */
   _bgm_ending_relief(ctx, out) {
     const nodes = [];
