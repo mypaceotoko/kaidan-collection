@@ -285,7 +285,23 @@ button:focus-visible {
   gap: 0.8rem;
   overflow-y: auto;
   max-height: 60vh;
-  padding: 0.2rem;
+  padding: 0.2rem 0.2rem 1.2rem;
+  /* show scrollbar on webkit so users know more content exists */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 80, 60, 0.4) transparent;
+}
+
+.story-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.story-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.story-list::-webkit-scrollbar-thumb {
+  background: rgba(180, 80, 60, 0.35);
+  border-radius: 2px;
 }
 
 /* Story item button (generated in JS) */
@@ -850,6 +866,102 @@ button:focus-visible {
       #203060 55%,
       #b09040 62%,
       #988030 100%
+    );
+}
+
+/* ── Episode 6 background gradients ─────────────────────────────────────── */
+
+/* Streaming room with red LED wash — equipment and camera in darkness */
+.bg-stream_room_red {
+  background:
+    radial-gradient(ellipse 35% 40% at 18% 62%, rgba(80, 8, 8, 0.50) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 28% at 62% 42%, rgba(20, 18, 32, 0.55) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #0a0408 0%,
+      #080306 50%,
+      #060204 100%
+    );
+}
+
+/* Stream monitor close-up — cold screen glow fills frame */
+.bg-stream_monitor {
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 42%, rgba(18, 16, 30, 0.72) 0%, transparent 68%),
+    radial-gradient(ellipse 20% 15% at 50% 60%, rgba(30, 8, 8, 0.20) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #060408 0%,
+      #07050a 50%,
+      #050306 100%
+    );
+}
+
+/* Stream offline — black with faint red standby glow */
+.bg-stream_offline {
+  background:
+    radial-gradient(ellipse 25% 20% at 50% 50%, rgba(50, 4, 4, 0.30) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #040204 0%,
+      #050304 50%,
+      #040204 100%
+    );
+}
+
+/* Hospital ward — cool blue-green fluorescent wash, clinical */
+.bg-hospital_ward {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 30%, rgba(20, 48, 56, 0.60) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 20% at 50% 80%, rgba(10, 30, 40, 0.35) 0%, transparent 60%),
+    linear-gradient(to bottom,
+      #07090e 0%,
+      #080b10 45%,
+      #070a0d 100%
+    );
+}
+
+/* Hospital corridor — cold green-tinted fluorescent hallway */
+.bg-hospital_corridor {
+  background:
+    radial-gradient(ellipse 18% 35% at 50% 30%, rgba(30, 60, 50, 0.50) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 18% at 50% 65%, rgba(15, 40, 35, 0.25) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #080b0a 0%,
+      #090c0b 50%,
+      #070a09 100%
+    );
+}
+
+/* Hospital room — single patient room, pale diffuse glow */
+.bg-hospital_room {
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 38%, rgba(22, 44, 48, 0.65) 0%, transparent 68%),
+    linear-gradient(to bottom,
+      #060809 0%,
+      #07090b 50%,
+      #060708 100%
+    );
+}
+
+/* Nurse station — monitor glow, slightly warmer than ward */
+.bg-nurse_station {
+  background:
+    radial-gradient(ellipse 50% 35% at 50% 35%, rgba(14, 36, 54, 0.70) 0%, transparent 65%),
+    radial-gradient(ellipse 25% 20% at 75% 55%, rgba(10, 28, 44, 0.40) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #060809 0%,
+      #07090c 45%,
+      #060709 100%
+    );
+}
+
+/* Doctor office — warmer desk lamp glow, but still unsettling */
+.bg-doctor_office {
+  background:
+    radial-gradient(ellipse 40% 40% at 38% 42%, rgba(28, 24, 12, 0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 25% at 70% 30%, rgba(10, 20, 30, 0.40) 0%, transparent 55%),
+    linear-gradient(to bottom,
+      #08080a 0%,
+      #09090c 50%,
+      #07070a 100%
     );
 }
 

@@ -285,6 +285,114 @@ export class AudioEngine {
     return nodes;
   }
 
+  // ── Chapter 6 BGM ─────────────────────────────────────────────────────────
+
+  /** Void chant: reversed-harmonic drone suggesting unseen watchers */
+  _bgm_void_chant(ctx, out) {
+    const nodes = [];
+    // Fundamental + inverted harmonic series (unusual spacing → unsettling)
+    [[55, 0.40], [82.4, 0.24], [110, 0.10], [138.6, 0.16], [165, 0.07]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Slow wavering LFO — like breathing heard through a wall
+    const lfo  = this._osc(ctx, 'sine', 0.08);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.22;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    // Faint broadband hiss — digital room noise
+    const noise = this._noise(ctx, 10);
+    const hp    = this._bpf(ctx, 'highpass', 3000, 0.6);
+    const gn    = ctx.createGain(); gn.gain.value = 0.022;
+    noise.connect(hp); hp.connect(gn); gn.connect(out);
+    noise.loop = true; noise.start(); nodes.push(noise);
+    // Sub rumble: feels like the stream is carrying something
+    const sub  = this._osc(ctx, 'sine', 27.5);
+    const gsub = ctx.createGain(); gsub.gain.value = 0.18;
+    sub.connect(gsub); gsub.connect(out); sub.start(); nodes.push(sub);
+    return nodes;
+  }
+
+
+
+  /** Hospital night ambiance: AC hum + fluorescent + distant monitor pulse */
+  _bgm_ambient_hospital(ctx, out) {
+    const nodes = [];
+    // AC ventilation: low broadband hum
+    const ac  = this._noise(ctx, 12);
+    const lp  = this._bpf(ctx, 'lowpass', 260, 0.8);
+    const gac = ctx.createGain(); gac.gain.value = 0.032;
+    ac.connect(lp); lp.connect(gac); gac.connect(out);
+    ac.loop = true; ac.start(); nodes.push(ac);
+    // 60 Hz fluorescent ballast hum
+    const fl  = this._osc(ctx, 'sine', 60);
+    const gfl = ctx.createGain(); gfl.gain.value = 0.030;
+    fl.connect(gfl); gfl.connect(out); fl.start(); nodes.push(fl);
+    // Sub-bass grounding tone: clinical weight
+    const sub  = this._osc(ctx, 'sine', 46);
+    const gsub = ctx.createGain(); gsub.gain.value = 0.12;
+    sub.connect(gsub); gsub.connect(out); sub.start(); nodes.push(sub);
+    // Very slow breath LFO
+    const lfo  = this._osc(ctx, 'sine', 0.055);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.07;
+    lfo.connect(lfoG); lfoG.connect(gsub.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
+  /** Hospital with wrongness: HVAC + psychoacoustic beating + cold overtone */
+  _bgm_ambient_hospital_dark(ctx, out) {
+    const nodes = [];
+    // AC hum (slightly louder)
+    const ac  = this._noise(ctx, 12);
+    const lp  = this._bpf(ctx, 'lowpass', 240, 0.8);
+    const gac = ctx.createGain(); gac.gain.value = 0.030;
+    ac.connect(lp); lp.connect(gac); gac.connect(out);
+    ac.loop = true; ac.start(); nodes.push(ac);
+    // Detuned pair → beating creates unease (46 Hz, 47.6 Hz)
+    [46, 47.6].forEach(f => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = 0.18;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Cold antiseptic overtone: 184 Hz (4th harmonic of 46)
+    const hi  = this._osc(ctx, 'sine', 184);
+    const ghi = ctx.createGain(); ghi.gain.value = 0.035;
+    hi.connect(ghi); ghi.connect(out); hi.start(); nodes.push(hi);
+    // 60 Hz fluorescent flicker
+    const fl  = this._osc(ctx, 'sawtooth', 60);
+    const hpf = this._bpf(ctx, 'highpass', 50, 2);
+    const gfl = ctx.createGain(); gfl.gain.value = 0.012;
+    fl.connect(hpf); hpf.connect(gfl); gfl.connect(out);
+    fl.start(); nodes.push(fl);
+    // Slow wrongness LFO
+    const lfo  = this._osc(ctx, 'sine', 0.07);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.11;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
+  /** Ward tension: clinical dissonance + monitor-pace tremor */
+  _bgm_tension_ward(ctx, out) {
+    const nodes = [];
+    // AC underneath
+    const ac  = this._noise(ctx, 12);
+    const lp  = this._bpf(ctx, 'lowpass', 220, 0.8);
+    const gac = ctx.createGain(); gac.gain.value = 0.025;
+    ac.connect(lp); lp.connect(gac); gac.connect(out);
+    ac.loop = true; ac.start(); nodes.push(ac);
+    // Dissonant tritone-adjacent cluster
+    [[46, 0.34], [65.0, 0.26], [92, 0.14], [130, 0.06]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'sine', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Monitor-pace LFO: ~1 Hz (one beat per second — cardiac monitor rhythm)
+    const lfo  = this._osc(ctx, 'sine', 1.0);
+    const lfoG = ctx.createGain(); lfoG.gain.value = 0.26;
+    lfo.connect(lfoG); lfoG.connect(out.gain); lfo.start(); nodes.push(lfo);
+    return nodes;
+  }
+
   // ── Chapter 4 BGM ─────────────────────────────────────────────────────────
 
   /** Abandoned house silence: wind through broken glass + oppressive sub drone */
@@ -427,6 +535,26 @@ export class AudioEngine {
     const pulse  = this._osc(ctx, 'sine', 0.14);
     const pulseG = ctx.createGain(); pulseG.gain.value = 0.24;
     pulse.connect(pulseG); pulseG.connect(out.gain); pulse.start(); nodes.push(pulse);
+    return nodes;
+  }
+
+  _bgm_festival_nightmare(ctx, out) {
+    const nodes = [];
+    [[73.4, 0.22], [77.2, 0.24], [155.6, 0.20], [311.1, 0.08]].forEach(([f, v]) => {
+      const osc = this._osc(ctx, 'triangle', f);
+      const g   = ctx.createGain(); g.gain.value = v;
+      osc.connect(g); g.connect(out); osc.start(); nodes.push(osc);
+    });
+    // Shrieking festival hiss
+    const hiss = this._noise(ctx, 10);
+    const bp   = this._bpf(ctx, 'bandpass', 1700, 0.7);
+    const gh   = ctx.createGain(); gh.gain.value = 0.03;
+    hiss.connect(bp); bp.connect(gh); gh.connect(out);
+    hiss.loop = true; hiss.start(); nodes.push(hiss);
+    // Relentless pulse
+    const pulse = this._osc(ctx, 'sine', 2.6);
+    const pg    = ctx.createGain(); pg.gain.value = 0.16;
+    pulse.connect(pg); pg.connect(out.gain); pulse.start(); nodes.push(pulse);
     return nodes;
   }
 
@@ -667,6 +795,74 @@ export class AudioEngine {
     g.gain.linearRampToValueAtTime(0, t + 0.80);
     n.connect(bp); bp.connect(g); g.connect(ctx.destination);
     n.start(t); n.stop(t + 0.82);
+  }
+
+  // ── Chapter 6 SE ──────────────────────────────────────────────────────────
+
+  /** Nurse call button: electronic buzz + two-tone alert chime */
+  _se_call_button(ctx) {
+    const t = ctx.currentTime;
+    // Buzzer burst
+    const n  = this._noise(ctx, 0.12);
+    const bp = this._bpf(ctx, 'bandpass', 1200, 2.5);
+    const gn = ctx.createGain();
+    gn.gain.setValueAtTime(this._seVolume * 0.45, t);
+    gn.gain.exponentialRampToValueAtTime(0.001, t + 0.10);
+    n.connect(bp); bp.connect(gn); gn.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.12);
+    // Alert tone: two-note electronic chime
+    [[880, 0.15], [1047, 0.32]].forEach(([freq, delay]) => {
+      const o = this._osc(ctx, 'sine', freq);
+      const g = ctx.createGain();
+      const ti = t + delay;
+      g.gain.setValueAtTime(0, ti);
+      g.gain.linearRampToValueAtTime(this._seVolume * 0.22, ti + 0.01);
+      g.gain.setValueAtTime(this._seVolume * 0.22, ti + 0.10);
+      g.gain.linearRampToValueAtTime(0, ti + 0.16);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(ti); o.stop(ti + 0.18);
+    });
+  }
+
+  /** Patient monitor beep: clean sine pulse */
+  _se_monitor_beep(ctx) {
+    const t = ctx.currentTime;
+    const o = this._osc(ctx, 'sine', 880);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.18, t + 0.006);
+    g.gain.setValueAtTime(this._seVolume * 0.18, t + 0.08);
+    g.gain.linearRampToValueAtTime(0, t + 0.12);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t + 0.14);
+  }
+
+  /** Hospital curtain sliding: cloth friction over metal rail */
+  _se_curtain_slide(ctx) {
+    const t = ctx.currentTime;
+    // Cloth friction: high-mid bandpass noise sweep
+    const n  = this._noise(ctx, 0.7);
+    const bp = this._bpf(ctx, 'bandpass', 2200, 1.2);
+    bp.frequency.setValueAtTime(2600, t);
+    bp.frequency.linearRampToValueAtTime(1800, t + 0.55);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(this._seVolume * 0.20, t + 0.06);
+    g.gain.setValueAtTime(this._seVolume * 0.14, t + 0.45);
+    g.gain.linearRampToValueAtTime(0, t + 0.65);
+    n.connect(bp); bp.connect(g); g.connect(ctx.destination);
+    n.start(t); n.stop(t + 0.70);
+    // Metal ring clicks along the rail
+    for (let i = 0; i < 4; i++) {
+      const ti = t + i * 0.14 + 0.04;
+      const n2 = this._noise(ctx, 0.05);
+      const f2 = this._bpf(ctx, 'bandpass', 3500 + i * 200, 5);
+      const g2 = ctx.createGain();
+      g2.gain.setValueAtTime(this._seVolume * 0.12, ti);
+      g2.gain.exponentialRampToValueAtTime(0.001, ti + 0.045);
+      n2.connect(f2); f2.connect(g2); g2.connect(ctx.destination);
+      n2.start(ti); n2.stop(ti + 0.05);
+    }
   }
 
   // ── Chapter 5 SE ──────────────────────────────────────────────────────────

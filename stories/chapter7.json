@@ -1,0 +1,102 @@
+{
+  "title": "夏祭りの裏道",
+  "scenes": [
+    {
+      "id": "s01",
+      "bg": "festival_curse",
+      "bgm": "festival_nightmare",
+      "text": "八月十五日、夜九時。\n地元の夏祭りは、提灯の列が風に揺れていた。",
+      "next": "s02"
+    },
+    {
+      "id": "s02",
+      "bg": "festival_curse",
+      "bgm": "festival_nightmare",
+      "se": "child_laugh",
+      "text": "屋台の奥、金魚すくいの水面に。\n自分の顔が、ひとり多く映っていた。",
+      "next": "s03"
+    },
+    {
+      "id": "s03",
+      "bg": "festival_curse",
+      "bgm": "festival_nightmare",
+      "se": "whisper",
+      "text": "「かえれないよ」\n耳元で囁かれ、振り向く。\n誰もいない。",
+      "next": "s04"
+    },
+    {
+      "id": "s04",
+      "bg": "festival_curse",
+      "bgm": "dread",
+      "se": "heartbeat",
+      "text": "境内の裏道に入ると、祭り囃子が逆再生のように歪んだ。\n提灯の紙には、びっしりと自分の名前。",
+      "choices": [
+        {
+          "label": "鳥居をくぐる",
+          "next": "a01"
+        },
+        {
+          "label": "屋台通りへ戻る",
+          "next": "b01"
+        }
+      ]
+    },
+    {
+      "id": "a01",
+      "bg": "festival_curse",
+      "bgm": "festival_nightmare",
+      "text": "鳥居をくぐった瞬間、足元の砂利が濡れた。\n見下ろすと、水ではなく黒い髪だった。",
+      "next": "a02"
+    },
+    {
+      "id": "a02",
+      "bg": "festival_curse",
+      "bgm": "festival_nightmare",
+      "se": "glass_break",
+      "text": "社務所の窓が内側から割れ、\n祭りの面をつけた人々が同時にこちらを向いた。",
+      "next": "a03"
+    },
+    {
+      "id": "a03",
+      "bg": "festival_curse",
+      "bgm": null,
+      "text": "気づくと朝だった。\n境内の掲示板に、今年の行方不明者名簿。\n一番上に自分の名前があった。",
+      "ending": {
+        "label": "ENDING A「祭りの名簿」",
+        "type": "bad"
+      }
+    },
+    {
+      "id": "b01",
+      "bg": "festival_curse",
+      "bgm": "tension_b",
+      "text": "屋台通りへ戻ったはずなのに、\n並ぶ店はすべて『形見預かります』という看板だった。",
+      "next": "b02"
+    },
+    {
+      "id": "b02",
+      "bg": "festival_curse",
+      "bgm": "tension_b",
+      "se": "distant_call",
+      "text": "遠くで母の声がした。\n「こっちにおいで」\n声の先には、顔のない浴衣の列。",
+      "next": "b03"
+    },
+    {
+      "id": "b03",
+      "bg": "festival_curse",
+      "bgm": "ending_relief",
+      "text": "目を閉じて走った。\n次に目を開けると、駅前のベンチに座っていた。",
+      "next": "b04"
+    },
+    {
+      "id": "b04",
+      "bg": "festival_curse",
+      "bgm": null,
+      "text": "スマホに通知が届く。\n『昨夜の祭りライブ配信：視聴者 1,024人』\nサムネイルには、笑う自分の後ろで口を開く“もうひとり”が映っていた。",
+      "ending": {
+        "label": "ENDING B「映ってはいけない夏」",
+        "type": "ambiguous"
+      }
+    }
+  ]
+}

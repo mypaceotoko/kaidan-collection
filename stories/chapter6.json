@@ -1,0 +1,260 @@
+{
+  "title": "赤い配信室",
+  "scenes": [
+    {
+      "id": "s01",
+      "bg": "stream_room_red",
+      "bgm": "ambient_dark",
+      "text": "深夜二時。\n赤いLEDが、機材の端で点滅している。\n今夜もひとりで配信を始める。",
+      "next": "s02"
+    },
+    {
+      "id": "s02",
+      "bg": "stream_room_red",
+      "bgm": "ambient_dark",
+      "se": "intercom_static",
+      "text": "カメラのランプが赤く光った。\n配信開始。\nコメントが流れはじめる。",
+      "next": "s03"
+    },
+    {
+      "id": "s03",
+      "bg": "stream_room_red",
+      "bgm": "ambient_dark",
+      "text": "「こんばんは」「音量いい」「今日も来た」\n穏やかな深夜配信。\nしばらくして、コメントが変わった。",
+      "next": "s04"
+    },
+    {
+      "id": "s04",
+      "bg": "stream_room_red",
+      "bgm": "ambient_dark",
+      "se": "whisper",
+      "text": "「うしろ」\n「うしろうしろ」\n「……見えてる」",
+      "next": "s05"
+    },
+    {
+      "id": "s05",
+      "bg": "stream_room_red",
+      "bgm": "void_chant",
+      "text": "振り返った。\n何もなかった。\nカメラに向かって「何もいないよ」と言った。",
+      "next": "s06"
+    },
+    {
+      "id": "s06",
+      "bg": "stream_monitor",
+      "bgm": "void_chant",
+      "se": "static",
+      "text": "コメント欄が止まった。\n三秒、沈黙。\nそして「もう遅い」とひとつだけ流れた。",
+      "next": "s07"
+    },
+    {
+      "id": "s07",
+      "bg": "stream_monitor",
+      "bgm": "void_chant",
+      "text": "モニターの配信プレビューを見た。\n自分の部屋が映っている。\nしかし、背後に何かが、立っていた。",
+      "next": "s08"
+    },
+    {
+      "id": "s08",
+      "bg": "stream_room_red",
+      "bgm": "void_chant",
+      "se": "heartbeat",
+      "text": "また振り返った。\n何もいない。\nプレビューを見た。まだ、いる。",
+      "choices": [
+        { "label": "配信を続ける", "next": "a01" },
+        { "label": "配信を切る", "next": "b01" }
+      ]
+    },
+
+    {
+      "id": "a01",
+      "bg": "stream_room_red",
+      "bgm": "void_chant",
+      "text": "「気にしないで続けます」\nそう言った。\nコメントが再び動きだした。「やめて」「逃げて」「見てる」",
+      "next": "a02"
+    },
+    {
+      "id": "a02",
+      "bg": "stream_room_red",
+      "bgm": "tension_a",
+      "se": "whisper",
+      "text": "赤いLEDが、ひとつひとつ消えていった。\n機材は動いている。配信は続いている。\nでも部屋が、暗くなっていく。",
+      "next": "a03"
+    },
+    {
+      "id": "a03",
+      "bg": "stream_monitor",
+      "bgm": "tension_a",
+      "text": "プレビュー画面を見た。\n自分の映像が、少しずれていた。\nコンマ数秒、未来を映しているような。",
+      "next": "a04"
+    },
+    {
+      "id": "a04",
+      "bg": "stream_monitor",
+      "bgm": "tension_a",
+      "se": "static",
+      "text": "プレビューの中の自分が、カメラに向かってゆっくり手を振った。\nまだ、自分はそんな動きをしていない。\n背後の影が、近づいてくる。",
+      "choices": [
+        { "label": "カメラを消す", "next": "aa01" },
+        { "label": "画面を確認する", "next": "ab01" }
+      ]
+    },
+
+    {
+      "id": "aa01",
+      "bg": "stream_offline",
+      "bgm": null,
+      "se": "door_beep",
+      "text": "カメラをオフにした。\n真っ暗になった。\n配信プレビューも消えた。",
+      "next": "aa02"
+    },
+    {
+      "id": "aa02",
+      "bg": "stream_offline",
+      "bgm": "dread",
+      "text": "部屋の静寂。\n機材の電源ランプだけが、赤く残っている。\n扉のあたりで、何かが擦れる音がした。",
+      "next": "aa03"
+    },
+    {
+      "id": "aa03",
+      "bg": "stream_offline",
+      "bgm": "dread",
+      "se": "door_creak",
+      "text": "扉を開けた。\n廊下は、見慣れたはずの場所だった。\nでも電球が赤くなっていた。",
+      "next": "aa04"
+    },
+    {
+      "id": "aa04",
+      "bg": "stream_room_red",
+      "bgm": "dread",
+      "se": "heartbeat",
+      "text": "翌朝、視聴者からDMが届いた。\n「カメラ切った後も配信続いてましたよ。二時間。ずっと部屋が映ってた」\n配信ログには、確かにその記録があった。",
+      "ending": { "label": "ENDING A「配信は続いていた」", "type": "bad" }
+    },
+
+    {
+      "id": "ab01",
+      "bg": "stream_monitor",
+      "bgm": "tension_b",
+      "text": "モニターに顔を近づけた。\nプレビューには、自分の後ろ姿が映っていた。\nモニターを見ている自分の後ろ姿が。",
+      "next": "ab02"
+    },
+    {
+      "id": "ab02",
+      "bg": "stream_monitor",
+      "bgm": "tension_b",
+      "se": "static",
+      "text": "カメラは前にある。\nなのになぜ、後ろから映っているのか。\n映像の中の自分が、ゆっくりと顔をこちらに向けた。",
+      "next": "ab03"
+    },
+    {
+      "id": "ab03",
+      "bg": "monitor_static",
+      "bgm": "dread",
+      "se": "heartbeat",
+      "text": "目が合った。\n画面の中の自分と。\n「こっちから見てたよ」と、口が動いた。",
+      "next": "ab04"
+    },
+    {
+      "id": "ab04",
+      "bg": "monitor_static",
+      "bgm": "dread",
+      "text": "コメントが一斉に流れた。\n「さっきのなに？」「入れ替わった？」「えっ、どっちが本物？」\n自分には、もうわからなかった。",
+      "ending": { "label": "ENDING B「カメラの向こう」", "type": "bad" }
+    },
+
+    {
+      "id": "b01",
+      "bg": "stream_offline",
+      "bgm": "ambient_dark",
+      "se": "door_beep",
+      "text": "配信を終了した。\n「お疲れさまでした」の画面が出た。\n部屋が、急に静かになった。",
+      "next": "b02"
+    },
+    {
+      "id": "b02",
+      "bg": "stream_offline",
+      "bgm": "ambient_dark",
+      "se": "phone_ring",
+      "text": "スマートフォンに通知が来た。\n「あなたのチャンネルで配信が開始されました」\n今、切ったばかりなのに。",
+      "next": "b03"
+    },
+    {
+      "id": "b03",
+      "bg": "stream_monitor",
+      "bgm": "void_chant",
+      "text": "アプリを開いた。\n自分のチャンネルで、配信が始まっていた。\nカメラは、自分の部屋を映していた。今この部屋を。",
+      "next": "b04"
+    },
+    {
+      "id": "b04",
+      "bg": "stream_room_red",
+      "bgm": "void_chant",
+      "se": "static",
+      "text": "配信画面に映る部屋に、自分がいた。\nスマートフォンを持って、立っている。\n視聴者数：1。",
+      "choices": [
+        { "label": "アカウントを確認する", "next": "ba01" },
+        { "label": "窓の外を見る", "next": "bb01" }
+      ]
+    },
+
+    {
+      "id": "ba01",
+      "bg": "stream_monitor",
+      "bgm": "void_chant",
+      "text": "ログイン情報を確認した。\n自分のアカウントで間違いない。\n配信者も、自分だ。",
+      "next": "ba02"
+    },
+    {
+      "id": "ba02",
+      "bg": "stream_monitor",
+      "bgm": "tension_b",
+      "se": "static",
+      "text": "画面の中の自分が、ゆっくりと振り返った。\nカメラの方を向いた。\n表情が、少しだけ違った。",
+      "next": "ba03"
+    },
+    {
+      "id": "ba03",
+      "bg": "stream_monitor",
+      "bgm": "tension_b",
+      "text": "「視聴してくれてありがとう」と、口が動いた。\n自分は一言も話していない。\n視聴者数：0。",
+      "next": "ba04"
+    },
+    {
+      "id": "ba04",
+      "bg": "stream_offline",
+      "bgm": null,
+      "text": "配信は、自然に終了した。\n翌日、チャンネルの配信履歴に昨夜の記録はなかった。\nただ、アーカイブに見知らぬ映像が一本、残っていた。",
+      "ending": { "label": "ENDING C「視聴者はひとり」", "type": "ambiguous" }
+    },
+
+    {
+      "id": "bb01",
+      "bg": "stream_room_red",
+      "bgm": "tension_b",
+      "text": "窓の方へ向かった。\nガラスに自分の顔が映っていた。\n夜の闇を背景に。",
+      "next": "bb02"
+    },
+    {
+      "id": "bb02",
+      "bg": "stream_room_red",
+      "bgm": "tension_b",
+      "se": "whisper",
+      "text": "自分が手を上げた。\n反射の中の自分は、動かなかった。\nしばらくして、反射の自分がゆっくりと首を振った。",
+      "next": "bb03"
+    },
+    {
+      "id": "bb03",
+      "bg": "stream_room_red",
+      "bgm": "ending_relief",
+      "text": "夜明けまで、その場に座っていた。\n朝になると、窓の外は普通の景色に戻った。\n配信の通知も、いつの間にか消えていた。",
+      "next": "bb04"
+    },
+    {
+      "id": "bb04",
+      "bg": "stream_room_red",
+      "bgm": null,
+      "text": "スマートフォンを確認した。\n昨夜の配信履歴は、残っていた。\nサムネイルには、窓の外から部屋を見ている何かが映っていた。",
+      "ending": { "label": "ENDING D「朝まで配信」", "type": "ambiguous" }
+    }
+  ]
+}

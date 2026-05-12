@@ -71,4 +71,23 @@ export const STORY_INDEX = [
     path:      './stories/chapter5.json',
     available: true,
   },
+
+  {
+    id:        'chapter6',
+    chapter:   'Episode 6',
+    title:     '赤い配信室',
+    subtitle:  'コメント欄に「うしろ」と流れた',
+    path:      './stories/chapter6.json',
+    available: true,
+  },
+
+
+  {
+    id:        'chapter7',
+    chapter:   'Episode 7',
+    title:     '夏祭りの裏道',
+    subtitle:  '提灯の下に、もうひとりいた',
+    path:      './stories/chapter7.json',
+    available: true,
+  },
 ];
